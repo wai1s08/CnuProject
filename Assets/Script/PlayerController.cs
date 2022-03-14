@@ -49,14 +49,10 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGround == true)
         {
-            if (isGround == true)
-            {
-                Vector2 jumpVal = new Vector2(0, jumpspeed);
-                myRigidbody.velocity = Vector2.up * jumpVal;
-            }
-            
+            Vector2 jumpVal = new Vector2(0, jumpspeed);
+            myRigidbody.velocity = Vector2.up * jumpVal;
         }
     }
 }
