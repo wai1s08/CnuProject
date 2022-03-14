@@ -29,7 +29,7 @@ public abstract class Enemy : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.DamagePlayer(damage);
-                //Debug.Log(damage);
+                //Debug.Log(damage );
             }
         }
     }
