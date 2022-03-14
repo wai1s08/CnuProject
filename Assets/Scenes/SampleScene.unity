@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 50701296}
   - component: {fileID: 50701295}
   - component: {fileID: 50701297}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: "\u5730\u677F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -483,3 +483,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSpeed: 5
+  jumpspeed: 5

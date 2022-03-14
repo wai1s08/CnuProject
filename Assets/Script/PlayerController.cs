@@ -5,12 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float runSpeed;
+    public float jumpspeed;
+
     private Rigidbody2D myRigidbody;
+
+    private BoxCollider2D myFeet;
+    private bool isGround;
     // Start is called before the first frame update
     void Start()
     {
-        // 遊戲開始後取得組件 Rigidbody2D
+        // 遊戲開始後取得組件
         myRigidbody = GetComponent<Rigidbody2D>();
+
+        myFeet = GetComponent<BoxCollider2D>();
     }
 
     // Update is called once per frame
@@ -18,6 +25,14 @@ public class PlayerController : MonoBehaviour
     {
         // 在遊戲進行當中不斷取得Run的數值
         Run();
+        Jump();
+        checkGround();
+    }
+
+    void checkGround()
+    {
+        isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        //Debug.Log(isGround);
     }
 
     void Run()
@@ -30,5 +45,18 @@ public class PlayerController : MonoBehaviour
 
         // 回傳結果
         myRigidbody.velocity = playerVal;
+    }
+
+    void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            if (isGround == true)
+            {
+                Vector2 jumpVal = new Vector2(0, jumpspeed);
+                myRigidbody.velocity = Vector2.up * jumpVal;
+            }
+            
+        }
     }
 }
