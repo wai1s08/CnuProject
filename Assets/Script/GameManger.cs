@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManger : MonoBehaviour
 {
+    public GameObject character;
+    public Transform spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,7 +15,11 @@ public class GameManger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!GameObject.FindGameObjectWithTag("Player"))
+        {
+            Instantiate(character, spawn.position, spawn.rotation);
+        }
     }
+
 
 }

@@ -11,13 +11,14 @@ public abstract class Enemy : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
     }
 
     // Update is called once per frame
     public void Update()
     {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
     }
 

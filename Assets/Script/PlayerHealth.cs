@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health;
 
-    public int Scene;
+    public static int Scene;
 
 
     // Start is called before the first frame update
@@ -16,6 +16,8 @@ public class PlayerHealth : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         HealthBar.HealthCurrent = health;
         HealthBar.HealthMax = health;
+
+
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(Scene);
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -41,6 +43,8 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("123");
             collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
+
+            Scene = +1;
 
         }
     }
