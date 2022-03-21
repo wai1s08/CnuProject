@@ -6,6 +6,8 @@ public abstract class Enemy : MonoBehaviour
 {
     public int damage;
 
+    public int health;
+
     private PlayerHealth playerHealth;
 
     // Start is called before the first frame update
@@ -18,7 +20,6 @@ public abstract class Enemy : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,8 +30,13 @@ public abstract class Enemy : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.DamagePlayer(damage);
-                //Debug.Log(damage);
+                Debug.Log(damage);
+                
+
+                
+
             }
         }
+
     }
 }
