@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
+    public int Scene;
 
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,16 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
+            SceneManager.LoadScene(Scene);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Portal")
+        {
+            Debug.Log("123");
+            collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
         }
     }
 }
