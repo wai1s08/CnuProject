@@ -6,12 +6,15 @@ public class PlayerHealth : MonoBehaviour
 {
     public int health;
 
-    
+    public int LoadLevel;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        HealthBar.HealthCurrent = health;
-        HealthBar.HealthMax = health;
+        HealthBar.HealthCurrent = health ;
+        HealthBar.HealthMax = health ;
     }
 
     // Update is called once per frame
@@ -27,7 +30,18 @@ public class PlayerHealth : MonoBehaviour
 
         if(health <= 0)
         {
+            HealthBar.HealthCurrent = HealthBar.HealthMax;
+            Debug.Log("重生");
             Destroy(gameObject);
+
+            Application.LoadLevel(LoadLevel);
+
+
+
+
+
         }
     }
+
+
 }
