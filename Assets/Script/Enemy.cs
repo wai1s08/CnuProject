@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Enemy : MonoBehaviour
 {
     public int damage;
+    public int health;
 
     private PlayerHealth playerHealth;
 
@@ -20,6 +21,11 @@ public abstract class Enemy : MonoBehaviour
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,5 +39,10 @@ public abstract class Enemy : MonoBehaviour
                 //Debug.Log(damage);
             }
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
     }
 }
