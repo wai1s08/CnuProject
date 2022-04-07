@@ -586,12 +586,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5290a36100466094694e613cf897147f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
   damage: 5
-  flashTime: 0
-  bloodEffect: {fileID: 0}
-  dropCoin: {fileID: 0}
-  floatPoint: {fileID: 519420028}
+  health: 5
+  FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
+    type: 3}
 --- !u!212 &1030415201
 SpriteRenderer:
   m_ObjectHideFlags: 0

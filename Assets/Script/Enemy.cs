@@ -7,6 +7,8 @@ public abstract class Enemy : MonoBehaviour
     public int damage;
     public int health;
 
+    public GameObject FloatPoint;
+
     private PlayerHealth playerHealth;
 
     // Start is called before the first frame update
@@ -48,6 +50,9 @@ public abstract class Enemy : MonoBehaviour
     //怪物受傷
     public void TakeDamage(int damage)
     {
+        GameObject gb = Instantiate(FloatPoint, transform.position, Quaternion.identity) as GameObject;
+        gb.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
+        Instantiate(FloatPoint, transform.position, Quaternion.identity);
         health -= damage;
     }
 }
