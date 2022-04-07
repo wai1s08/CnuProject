@@ -301,8 +301,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: "\u4EBA\u7269 (2)"
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 243448729227648444, guid: 50cb1a82f482ca44fb2cc0df790f35ab,
+        type: 3}
+      propertyPath: m_TagString
+      value: Portal
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 243448729227648320, guid: 50cb1a82f482ca44fb2cc0df790f35ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50cb1a82f482ca44fb2cc0df790f35ab, type: 3}
+--- !u!1 &83737136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 243448729227648444, guid: 50cb1a82f482ca44fb2cc0df790f35ab,
+    type: 3}
+  m_PrefabInstance: {fileID: 83737135}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &83737137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83737136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6472e7fe0860ca4f929746a6ddbe9b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Scene: 0
 --- !u!1 &241426588
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,9 +357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7201b5faad0e034e82e09ab0b19f887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 7663380081982038675, guid: 8ac252e82ff66b74e81a30b6689b7725,
+  character: {fileID: 4139133223590850607, guid: baa442b0a87199e4bb550cc0aad18cc7,
     type: 3}
+  HP: {fileID: 0}
   spawn: {fileID: 777117710}
+  score: 1
 --- !u!4 &241426590
 Transform:
   m_ObjectHideFlags: 0
@@ -522,7 +549,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 777117709}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.27, y: -1.4520375, z: -0.6322382}
+  m_LocalPosition: {x: -2.87, y: -1.4520375, z: -0.6322382}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -542,7 +569,7 @@ GameObject:
   - component: {fileID: 1030415200}
   m_Layer: 0
   m_Name: "\u4EBA\u7269 (1)"
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -559,8 +586,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5290a36100466094694e613cf897147f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
   damage: 5
-  health: 0
+  flashTime: 0
+  bloodEffect: {fileID: 0}
+  dropCoin: {fileID: 0}
+  floatPoint: {fileID: 519420028}
 --- !u!212 &1030415201
 SpriteRenderer:
   m_ObjectHideFlags: 0

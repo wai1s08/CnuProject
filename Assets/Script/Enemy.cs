@@ -19,6 +19,8 @@ public abstract class Enemy : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+
+        // 玩家死亡
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
         if (health <= 0)
@@ -28,6 +30,8 @@ public abstract class Enemy : MonoBehaviour
 
     }
 
+    
+    // 玩家碰到怪物
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
@@ -36,11 +40,12 @@ public abstract class Enemy : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.DamagePlayer(damage);
-                //Debug.Log(damage);
+                Debug.Log(damage);
             }
         }
     }
 
+    //怪物受傷
     public void TakeDamage(int damage)
     {
         health -= damage;

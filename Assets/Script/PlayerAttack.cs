@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public int damage;
+    public int PlayerDamage;
 
     private Animator anim;
     private PolygonCollider2D coll;
+
 
     public float time;
 
@@ -29,8 +30,8 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetButtonDown("attack"))
         {
             coll.enabled = true;
-            anim.SetTrigger("testAtt");
-            Debug.Log("123");
+            //anim.SetTrigger("testAtt");
+            //Debug.Log("123");
             StartCoroutine(disableHitBox());
         }
     }
@@ -40,11 +41,15 @@ public class PlayerAttack : MonoBehaviour
         coll.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") )
         {
-            collision.GetComponent<Enemy>().TakeDamage(damage);
+            other.GetComponent<Enemy>().TakeDamage(PlayerDamage);
+
+            //UnityEngine.PolygonCollider2D
         }
+
     }
+
 }

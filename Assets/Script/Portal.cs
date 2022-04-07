@@ -21,5 +21,6 @@ public class Portal : MonoBehaviour
     public void ChangeScene()
     {
         SceneManager.LoadScene(Scene);
+
     }
 }
