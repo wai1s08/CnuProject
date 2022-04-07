@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7201b5faad0e034e82e09ab0b19f887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 4139133223590850607, guid: baa442b0a87199e4bb550cc0aad18cc7,
+  character: {fileID: 9120864835595354236, guid: baa442b0a87199e4bb550cc0aad18cc7,
     type: 3}
   HP: {fileID: 0}
   spawn: {fileID: 777117710}
