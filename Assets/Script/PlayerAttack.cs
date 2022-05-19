@@ -27,7 +27,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetButtonDown("attack"))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
             coll.enabled = true;
             //anim.SetTrigger("testAtt");
