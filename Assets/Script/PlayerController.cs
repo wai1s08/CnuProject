@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float jumpspeed;
 
     private Rigidbody2D myRigidbody;
+    private Animator myAnim;
 
     private BoxCollider2D myFeet;
     private bool isGround;
@@ -16,6 +17,7 @@ public class PlayerController : MonoBehaviour
     {
         // 遊戲開始後取得組件
         myRigidbody = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>();
 
         myFeet = GetComponent<BoxCollider2D>();
     }
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         // 在遊戲進行當中不斷取得Run的數值
         Run();
+        Flip();
         Jump();
         checkGround();
     }
@@ -45,6 +48,27 @@ public class PlayerController : MonoBehaviour
 
         // 回傳結果
         myRigidbody.velocity = playerVal;
+
+        bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+
+        myAnim.SetBool("Run", playerHasXAxisSpeed);
+    }
+
+    void Flip()
+    {
+        bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+        if (playerHasXAxisSpeed)
+        {
+            if(myRigidbody.velocity.x > 0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+
+            if (myRigidbody.velocity.x < -0.1f)
+            {
+                transform.localRotation = Quaternion.Euler(0, 180, 0);
+            }
+        }
     }
 
     void Jump()
