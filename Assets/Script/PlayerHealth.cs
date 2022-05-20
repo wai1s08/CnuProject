@@ -56,7 +56,7 @@ public class PlayerHealth : MonoBehaviour
             //Debug.Log("123");
             collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
             Vector3 move = gameObject.transform.position;
-            move = new Vector2(move.x - 18, move.y + 1  );
+            move = new Vector2(move.x = -10, move.y = -4);
             gameObject.transform.position = move;
 
 
