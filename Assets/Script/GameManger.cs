@@ -9,12 +9,20 @@ public class GameManger : MonoBehaviour
 
     public Transform spawn;
 
+    public GameObject PlayerCamera;
+    public GameObject TestCamera;
+
+    public GameObject Chnemachine;
+
     public int score;
     // Start is called before the first frame update
     void Start()
     {
         PlayerHealth.Scene = score;
-    }
+
+        PlayerCamera.SetActive(true);
+        TestCamera.SetActive(false);
+}
 
     // Update is called once per frame
     void Update()
@@ -22,6 +30,9 @@ public class GameManger : MonoBehaviour
         if (!GameObject.FindGameObjectWithTag("Player"))
         {
             Instantiate(character, spawn.position, spawn.rotation);
+
+            Chnemachine.SetActive(true);
+
         }
 
         /*if (!GameObject.FindGameObjectWithTag("Hp"))

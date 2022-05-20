@@ -13,8 +13,7 @@ public class GameStart : MonoBehaviour
 
     public void play()
     {
-        SceneManager.LoadScene(2);
-        Instantiate(HP);
+        SceneManager.LoadScene(1);
         //Instantiate(character);
     }
 }

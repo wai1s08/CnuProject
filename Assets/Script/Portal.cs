@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     public int Scene;
+
+    public int PlayerScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class Portal : MonoBehaviour
     public void ChangeScene()
     {
         SceneManager.LoadScene(Scene);
+
+        initPlayer.PlayerSpawnScene = PlayerScene;
 
     }
 }

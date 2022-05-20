@@ -6,8 +6,11 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
+    public GameObject chin;
+    public GameObject Main;
 
     public static int Scene;
+
 
 
 
@@ -38,7 +41,10 @@ public class PlayerHealth : MonoBehaviour
         if(health <= 0)
         {
             Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Destroy(chin);
+            Destroy(Main);
+            SceneManager.LoadScene(1);
+            
         }
     }
     void OnTriggerEnter2D(Collider2D collision)

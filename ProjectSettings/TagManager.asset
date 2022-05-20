@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Portal
   - Hp
+  - cine
   layers:
   - Default
   - TransparentFX
