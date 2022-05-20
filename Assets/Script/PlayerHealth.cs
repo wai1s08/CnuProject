@@ -9,8 +9,6 @@ public class PlayerHealth : MonoBehaviour
     public GameObject chin;
     public GameObject Main;
 
-    public Transform spawn;
-
     public static int Scene;
 
 
@@ -55,15 +53,7 @@ public class PlayerHealth : MonoBehaviour
         {
             //Debug.Log("123");
             collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
-            Vector3 move = gameObject.transform.position;
-            move = new Vector2(move.x - 18, move.y + 1  );
-            gameObject.transform.position = move;
-
-
-
-
             
-
             //Scene = +1;
 
         }
