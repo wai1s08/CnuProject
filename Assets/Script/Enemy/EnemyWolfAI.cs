@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyWolfAI : Enemy
 {
-    public enum Status { idle, walk };
+    public enum Status { idle, walk, patrol };
 
     public Status status;
 
@@ -13,7 +13,16 @@ public class EnemyWolfAI : Enemy
     public Transform PlayerTransform;
     private SpriteRenderer spr;
 
+    public Transform[] moveSpots;
+
+    public int i = 0;
+
     public float Distance;
+
+    private float wait;
+    public float waitTime = 5;
+    private bool movingRight = true;
+
 
     public enum Face { Right, Left }
     public Face face;
@@ -26,6 +35,7 @@ public class EnemyWolfAI : Enemy
 
         spr = this.transform.GetComponent<SpriteRenderer>();
 
+        wait = waitTime;
         if (spr.flipX)
         {
             face = Face.Left;
@@ -47,6 +57,9 @@ public class EnemyWolfAI : Enemy
     public new void Update()
     {
         base.Update();
+
+        Debug.Log(status);
+
         switch (status)
         {
             case Status.idle:
@@ -55,6 +68,14 @@ public class EnemyWolfAI : Enemy
                     if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
                     {
                         status = Status.walk;
+                    }
+                    else
+                    {
+                        status = Status.patrol;
+                    }
+                    if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.2)
+                    {
+                        status = Status.idle;
                     }
                 }
                 break;
@@ -82,10 +103,71 @@ public class EnemyWolfAI : Enemy
                         myTransform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
                         break;
                 }
-                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= Distance)
+                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) > Distance)
+                {
+                    status = Status.patrol;
+                    if (movingRight == true)
+                    {
+                        spr.flipX = false;
+                        //movingRight = true;
+                    }
+                    else
+                    {
+                        spr.flipX = true;
+                       // movingRight = false;
+                    }
+                }
+                if(Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.2)
                 {
                     status = Status.idle;
                 }
+
+                break;
+
+            case Status.patrol:
+                transform.position = Vector2.MoveTowards(transform.position, moveSpots[i].position, speed * Time.deltaTime);
+
+
+                if (Vector2.Distance(transform.position, moveSpots[i].position) < 0.1f)
+                {
+                    if (waitTime <= 0)
+                    {
+                        if (movingRight == true)
+                        {
+                            spr.flipX = false;
+                            movingRight = false;
+                        }
+                        else
+                        {
+                            spr.flipX = true;
+                            movingRight = true;
+                        }
+
+                        if (i == 0)
+                        {
+
+                            i = 1;
+                        }
+                        else
+                        {
+
+                            i = 0;
+                        }
+
+                        waitTime = wait;
+                    }
+                    else
+                    {
+                        waitTime -= Time.deltaTime;
+                    }
+                    if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
+                    {
+                        status = Status.walk;
+                    }
+                }
+
+
+
                 break;
         }
 
