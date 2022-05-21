@@ -58,9 +58,12 @@
   <ItemGroup>
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\DoNotDestroy.cs" />
-    <Compile Include="Assets\Script\Enemy.cs" />
-    <Compile Include="Assets\Script\EnemyAITest.cs" />
-    <Compile Include="Assets\Script\EnemyWolf.cs" />
+    <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyAITest.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyPatrol.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemySmartWolf.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyWolf.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemyWolfAI.cs" />
     <Compile Include="Assets\Script\FloatPointBase.cs" />
     <Compile Include="Assets\Script\GameManger.cs" />
     <Compile Include="Assets\Script\GameStart.cs" />
