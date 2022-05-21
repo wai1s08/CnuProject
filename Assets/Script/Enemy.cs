@@ -22,7 +22,7 @@ public abstract class Enemy : MonoBehaviour
     public void Update()
     {
 
-        // 玩家死亡
+        // 怪物死亡
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
         if (health <= 0)

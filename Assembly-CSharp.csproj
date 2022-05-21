@@ -60,6 +60,7 @@
     <Compile Include="Assets\Script\DoNotDestroy.cs" />
     <Compile Include="Assets\Script\Enemy.cs" />
     <Compile Include="Assets\Script\EnemyAITest.cs" />
+    <Compile Include="Assets\Script\EnemyWolf.cs" />
     <Compile Include="Assets\Script\FloatPointBase.cs" />
     <Compile Include="Assets\Script\GameManger.cs" />
     <Compile Include="Assets\Script\GameStart.cs" />
