@@ -7,15 +7,19 @@ public abstract class Enemy : MonoBehaviour
     public int damage;
     public int health;
     public float speed;
+    public float superTime ;
 
     public GameObject FloatPoint;
 
     private PlayerHealth playerHealth;
 
+    private Collider2D PlayerCollider;
+
     // Start is called before the first frame update
     public void Start()
     {
-        //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
     }
 
@@ -24,11 +28,22 @@ public abstract class Enemy : MonoBehaviour
     {
 
         // 怪物死亡
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        //playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
 
         if (health <= 0)
         {
             Destroy(gameObject);
+        }
+        superTime -= Time.deltaTime;
+
+        if (superTime <= 0.5f)
+        {
+            PlayerCollider.enabled = true;
+        }
+
+        if (superTime <= 0)
+        {
+            superTime = 0;
         }
 
     }
@@ -44,9 +59,15 @@ public abstract class Enemy : MonoBehaviour
             {
                 playerHealth.DamagePlayer(damage);
                 Debug.Log(damage);
+                PlayerCollider.enabled = false;
+                superTime = playerHealth.SuperTime;
+                
             }
+            
         }
+        
     }
+
 
     //怪物受傷
     public void TakeDamage(int damage)

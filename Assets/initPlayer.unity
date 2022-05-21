@@ -412,6 +412,21 @@ PrefabInstance:
       propertyPath: chin
       value: 
       objectReference: {fileID: 1392849253}
+    - target: {fileID: -8719754310887502603, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: Blinks
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8719754310887502603, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: SuperTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8719754310887502603, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: BlinksTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3248099340498301435, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
       propertyPath: m_Name

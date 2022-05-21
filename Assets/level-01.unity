@@ -2655,6 +2655,7 @@ MonoBehaviour:
   damage: 1
   health: 10
   speed: 2
+  superTime: 0
   FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
     type: 3}
   status: 0
@@ -2796,8 +2797,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -946917047
-  m_SortingLayer: 2
+  m_SortingLayerID: -15380593
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1602107349491531290, guid: 4cc6cedd31f332b47af541f927df6c69,
     type: 3}
@@ -3360,8 +3361,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -946917047
-  m_SortingLayer: 2
+  m_SortingLayerID: -15380593
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1602107349491531290, guid: 4cc6cedd31f332b47af541f927df6c69,
     type: 3}
@@ -3486,8 +3487,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -946917047
-  m_SortingLayer: 2
+  m_SortingLayerID: -15380593
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: -1602107349491531290, guid: 4cc6cedd31f332b47af541f927df6c69,
     type: 3}
