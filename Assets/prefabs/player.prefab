@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3755234376404375431}
   - component: {fileID: 7210625611310900383}
-  - component: {fileID: 7271190717203611995}
+  - component: {fileID: 6759908723827728610}
   m_Layer: 0
   m_Name: playerattack
   m_TagString: Untagged
@@ -46,14 +46,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerDamage: 1
   time: 0.2
---- !u!60 &7271190717203611995
+--- !u!60 &6759908723827728610
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320230839400356844}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -71,11 +71,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 1.5135475, y: -0.8055606}
-      - {x: 1.5532956, y: 0.27460355}
+    - - {x: -0.45823967, y: 0.3665508}
+      - {x: -0.7825863, y: -0.1492227}
+      - {x: -0.5271358, y: -0.69445705}
+      - {x: 0.22388887, y: -0.6877181}
+      - {x: 0.42542833, y: 0.05294192}
 --- !u!1 &3248099340498301435
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,7 +151,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 816238483
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 2
   m_Sprite: {fileID: -6540331119157491202, guid: 9bb7b810b96ff01469e865f950d6ff61,
     type: 3}
@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   jumpspeed: 6
+  MyBag: {fileID: 0}
 --- !u!114 &-8719754310887502603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,6 +193,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  chin: {fileID: 0}
+  Main: {fileID: 0}
+  spawn: {fileID: 0}
+  Blinks: 0
+  BlinksTime: 0
+  SuperTime: 0
 --- !u!50 &-5174414235170475896
 Rigidbody2D:
   serializedVersion: 4

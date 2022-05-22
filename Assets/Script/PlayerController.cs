@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     private BoxCollider2D myFeet;
     private bool isGround;
+
+    public GameObject MyBag;
+    private bool isOpen;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class PlayerController : MonoBehaviour
         Flip();
         Jump();
         checkGround();
+        OpenMyBag();
     }
 
     void checkGround()
@@ -77,6 +81,15 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 jumpVal = new Vector2(0, jumpspeed);
             myRigidbody.velocity = Vector2.up * jumpVal;
+        }
+    }
+
+    void OpenMyBag()
+    {
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            isOpen = !isOpen;
+            MyBag.SetActive(isOpen);
         }
     }
 }
