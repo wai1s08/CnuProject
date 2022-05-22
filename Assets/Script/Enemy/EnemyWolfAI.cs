@@ -58,7 +58,7 @@ public class EnemyWolfAI : Enemy
     {
         base.Update();
 
-        Debug.Log(status);
+        //Debug.Log(status);
 
         switch (status)
         {
@@ -165,7 +165,6 @@ public class EnemyWolfAI : Enemy
                         status = Status.walk;
                     }
                 }
-
 
 
                 break;

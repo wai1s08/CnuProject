@@ -43,7 +43,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         Face = GetComponent<Transform>().rotation.y;
-        Debug.Log(Face);
+        //Debug.Log(Face);
     }
 
     public void DamagePlayer(int Damage)

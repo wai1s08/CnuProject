@@ -37,7 +37,7 @@ public class Sign : MonoBehaviour
         {
             isPlayerInSign = true;
             warn.SetActive(true);
-
+            
         }
     }
     

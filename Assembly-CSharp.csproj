@@ -69,6 +69,7 @@
     <Compile Include="Assets\Script\GameStart.cs" />
     <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\MeshRendererSortingEditor.cs" />
+    <Compile Include="Assets\Script\OpenBox.cs" />
     <Compile Include="Assets\Script\PlayerAttack.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\PlayerHealth.cs" />
