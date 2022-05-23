@@ -12,6 +12,9 @@ public class PlayerAttack : MonoBehaviour
 
     public float time;
 
+    public float AttackwaitTime;
+    private float waitTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,15 +27,21 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         Attack();
+
+        if (waitTime > 0)
+        {
+            waitTime -= Time.deltaTime;
+        }
     }
     void Attack()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0)
         {
             coll.enabled = true;
-            //anim.SetTrigger("testAtt");
-            //Debug.Log("123");
+            anim.SetTrigger("Attack");
             StartCoroutine(disableHitBox());
+            waitTime = AttackwaitTime;
+
         }
     }
     IEnumerator disableHitBox()
