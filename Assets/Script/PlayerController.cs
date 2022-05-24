@@ -45,7 +45,9 @@ public class PlayerController : MonoBehaviour
 
     void Run()
     {
-        // Input.GetAxis是Unity內建偵測輸入的函式 | Horizontal = 水平 | 偵測玩家按的按鍵取的方向
+        if (PlayerState.IsDefense == false)
+        {
+            // Input.GetAxis是Unity內建偵測輸入的函式 | Horizontal = 水平 | 偵測玩家按的按鍵取的方向
         float moveDir = Input.GetAxis("Horizontal");
 
         // Vector2 = 2D向量和點的表示形式，用於表示2D位置，只有兩個軸x＆y | 將取得的方向乘上玩家的速度進行移動
@@ -57,6 +59,15 @@ public class PlayerController : MonoBehaviour
         bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
 
         myAnim.SetBool("Run", playerHasXAxisSpeed);
+        }
+        else
+        {
+            float moveDir = Input.GetAxis("Horizontal");
+            Vector2 playerVal = new Vector2(moveDir * 0, myRigidbody.velocity.y);
+            myRigidbody.velocity = playerVal;
+
+        }
+        
     }
 
     void Flip()

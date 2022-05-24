@@ -63,15 +63,35 @@ public class PlayerHealth : MonoBehaviour
 
         if(Face.Equals(0) )
         {
-            Vector3 move = gameObject.transform.position;
-            move = new Vector2(move.x - 0.5f, move.y + 0.3f);
-            gameObject.transform.position = move;
+
+            if (PlayerState.IsDefense == true)
+            {
+                Vector3 move = gameObject.transform.position;
+                move = new Vector2(move.x + 0.5f, move.y + 0.3f);
+                gameObject.transform.position = move;
+            }
+            else
+            {
+                Vector3 move = gameObject.transform.position;
+                move = new Vector2(move.x - 0.5f, move.y + 0.3f);
+                gameObject.transform.position = move;
+            }
         }
         else
         {
-            Vector3 move = gameObject.transform.position;
-            move = new Vector2(move.x + 0.5f, move.y + 0.3f);
-            gameObject.transform.position = move;
+            
+            if (PlayerState.IsDefense == true)
+            {
+                Vector3 move = gameObject.transform.position;
+                move = new Vector2(move.x - 0.5f, move.y + 0.3f);
+                gameObject.transform.position = move;
+            }
+            else
+            {
+                Vector3 move = gameObject.transform.position;
+                move = new Vector2(move.x + 0.5f, move.y + 0.3f);
+                gameObject.transform.position = move;
+            }
         }
 
     }

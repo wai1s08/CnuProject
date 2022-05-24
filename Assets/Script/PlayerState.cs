@@ -34,6 +34,7 @@ public class PlayerState : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse1))
         {
             IsDefense = true;
+            
         }
         else
         {
