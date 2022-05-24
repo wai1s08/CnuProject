@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
         Jump();
         checkGround();
         OpenMyBag();
+        //Defense();
     }
 
     void checkGround()
@@ -83,6 +84,16 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = Vector2.up * jumpVal;
         }
     }
+
+    //void Defense()
+    //{
+
+    //    if (Input.GetKey(KeyCode.Mouse1))
+    //    {
+    //        myAnim.SetTrigger("Defense");
+    //    }
+        
+    //}
 
     void OpenMyBag()
     {

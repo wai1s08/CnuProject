@@ -15,6 +15,8 @@ public abstract class Enemy : MonoBehaviour
 
     private Collider2D PlayerCollider;
 
+    public static bool IsSuperTime = false;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -34,36 +36,42 @@ public abstract class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        superTime -= Time.deltaTime;
+
+        if (IsSuperTime == true)
+        {
+            superTime -= Time.deltaTime;
+        }
+
+
+        Debug.Log(superTime);
+
 
         if (superTime <= 0.5f)
         {
-            PlayerCollider.enabled = true;
+            IsSuperTime = false;
         }
-
-        if (superTime <= 0)
-        {
-            superTime = 0;
-        }
-
     }
 
-    
+
     // 玩家碰到怪物
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Defense"))
         {
-            //Debug.Log("touch");
-            if (playerHealth != null)
+            if(other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
             {
-                playerHealth.DamagePlayer(damage);
-                Debug.Log(damage);
-                PlayerCollider.enabled = false;
-                superTime = playerHealth.SuperTime;
-                
+                if (playerHealth != null)
+                {
+                    playerHealth.DamagePlayer(damage);
+                    Debug.Log(damage);
+
+                    superTime = playerHealth.SuperTime;
+
+                    IsSuperTime = true;
+
+                }
             }
-            
+                 
         }
         
     }
