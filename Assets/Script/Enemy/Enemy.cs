@@ -7,21 +7,28 @@ public abstract class Enemy : MonoBehaviour
     public int damage;
     public int health;
     public float speed;
-    public float superTime ;
+
+    public float DeathDelay;
 
     public GameObject FloatPoint;
 
+    private float superTime;
     private PlayerHealth playerHealth;
 
     private Collider2D PlayerCollider;
 
     public static bool IsSuperTime = false;
+    private Animator anim;
+
+    private BoxCollider2D box2D;
 
     // Start is called before the first frame update
     public void Start()
     {
         PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        anim = this.GetComponent<Animator>();
+        box2D = GetComponent<BoxCollider2D>();
 
     }
 
@@ -34,7 +41,8 @@ public abstract class Enemy : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject, DeathDelay);
+
         }
 
         if (IsSuperTime == true)

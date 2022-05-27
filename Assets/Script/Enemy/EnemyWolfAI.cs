@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyWolfAI : Enemy
 {
-    public enum Status { idle, walk, patrol };
+    public enum Status { idle, walk, patrol , Death};
 
     public Status status;
 
@@ -22,6 +22,9 @@ public class EnemyWolfAI : Enemy
     private float wait;
     public float waitTime = 5;
     private bool movingRight = true;
+    private BoxCollider2D box2D;
+
+    private Animator anim;
 
 
     public enum Face { Right, Left }
@@ -34,6 +37,10 @@ public class EnemyWolfAI : Enemy
         status = Status.idle;
 
         spr = this.transform.GetComponent<SpriteRenderer>();
+
+        anim = this.GetComponent<Animator>();
+
+        box2D = GetComponent<BoxCollider2D>();
 
         wait = waitTime;
         if (spr.flipX)
@@ -58,6 +65,10 @@ public class EnemyWolfAI : Enemy
     {
         base.Update();
 
+        if (health <= 0)
+        {
+            status = Status.Death;
+        }
         //Debug.Log(status);
 
         switch (status)
@@ -77,6 +88,9 @@ public class EnemyWolfAI : Enemy
                     {
                         status = Status.idle;
                     }
+
+
+
                 }
                 break;
 
@@ -122,6 +136,8 @@ public class EnemyWolfAI : Enemy
                     status = Status.idle;
                 }
 
+ 
+
                 break;
 
             case Status.patrol:
@@ -164,9 +180,16 @@ public class EnemyWolfAI : Enemy
                     {
                         status = Status.walk;
                     }
+
+                    
                 }
 
 
+                break;
+
+            case Status.Death:
+                box2D.enabled = false;
+                anim.SetTrigger("Death");
                 break;
         }
 
