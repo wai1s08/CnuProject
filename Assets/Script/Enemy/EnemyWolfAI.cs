@@ -95,6 +95,8 @@ public class EnemyWolfAI : Enemy
                 break;
 
             case Status.walk:
+                anim.SetBool("Run", true);
+
                 if (PlayerTransform)
                 {
                     if (myTransform.position.x >= PlayerTransform.position.x)
@@ -117,6 +119,7 @@ public class EnemyWolfAI : Enemy
                         myTransform.position -= new Vector3(speed * Time.deltaTime, 0, 0);
                         break;
                 }
+
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) > Distance)
                 {
                     status = Status.patrol;
@@ -142,12 +145,13 @@ public class EnemyWolfAI : Enemy
 
             case Status.patrol:
                 transform.position = Vector2.MoveTowards(transform.position, moveSpots[i].position, speed * Time.deltaTime);
-
+                anim.SetBool("Run", true);
 
                 if (Vector2.Distance(transform.position, moveSpots[i].position) < 0.1f)
                 {
                     if (waitTime <= 0)
                     {
+                        
                         if (movingRight == true)
                         {
                             spr.flipX = false;
@@ -174,6 +178,7 @@ public class EnemyWolfAI : Enemy
                     }
                     else
                     {
+                        anim.SetBool("Run", false);
                         waitTime -= Time.deltaTime;
                     }
                     if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
