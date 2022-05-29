@@ -43,7 +43,7 @@ public class PlayerState : MonoBehaviour
 
         
 
-        Debug.Log(status);
+        //Debug.Log(status);
         switch (status)
         {
             case Status.Normal:

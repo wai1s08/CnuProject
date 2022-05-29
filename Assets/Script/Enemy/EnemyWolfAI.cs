@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyWolfAI : Enemy
 {
-    public enum Status { idle, walk, patrol , Death};
+    public enum Status { idle, walk, patrol , Death , Attack};
 
     public Status status;
 
@@ -26,6 +26,10 @@ public class EnemyWolfAI : Enemy
 
     private Animator anim;
 
+    private PolygonCollider2D AttackColl;
+
+    public float time;
+
 
     public enum Face { Right, Left }
     public Face face;
@@ -41,6 +45,8 @@ public class EnemyWolfAI : Enemy
         anim = this.GetComponent<Animator>();
 
         box2D = GetComponent<BoxCollider2D>();
+
+        AttackColl = GetComponent<PolygonCollider2D>();
 
         wait = waitTime;
         if (spr.flipX)
@@ -89,6 +95,8 @@ public class EnemyWolfAI : Enemy
                         status = Status.idle;
                     }
 
+                    AttackColl.enabled = false;
+
 
 
                 }
@@ -134,9 +142,9 @@ public class EnemyWolfAI : Enemy
                        // movingRight = false;
                     }
                 }
-                if(Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.2)
+                if(Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.3)
                 {
-                    status = Status.idle;
+                    status = Status.Attack;
                 }
 
  
@@ -196,7 +204,26 @@ public class EnemyWolfAI : Enemy
                 box2D.enabled = false;
                 anim.SetTrigger("Death");
                 break;
+
+            case Status.Attack:
+                anim.SetBool("Attack", true);
+
+                AnimatorStateInfo animatorInfo;
+                animatorInfo = anim.GetCurrentAnimatorStateInfo(0);
+                if ((animatorInfo.normalizedTime > 0.6f) && (animatorInfo.IsName("Wolf_Attack")))//normalizedTime: 範圍0 -- 1,  0是動作開始，1是動作結束
+                {
+                    AttackColl.enabled = true;
+                }
+
+                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 1.3)
+                {
+                    anim.SetBool("Attack", false);
+                    status = Status.idle;
+                }
+                break;
         }
 
     }
+
+    
 }

@@ -19,8 +19,7 @@ public abstract class Enemy : MonoBehaviour
 
     public static bool IsSuperTime = false;
     private Animator anim;
-
-    private BoxCollider2D box2D;
+    public float AttackwaitTime;
 
     // Start is called before the first frame update
     public void Start()
@@ -28,7 +27,7 @@ public abstract class Enemy : MonoBehaviour
         PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         anim = this.GetComponent<Animator>();
-        box2D = GetComponent<BoxCollider2D>();
+        
 
     }
 
@@ -51,7 +50,7 @@ public abstract class Enemy : MonoBehaviour
         }
 
 
-        Debug.Log(superTime);
+        //Debug.Log(superTime);
 
 
         if (superTime <= 0.5f)
