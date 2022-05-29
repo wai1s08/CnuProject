@@ -35,7 +35,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0)
+        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense ==false )
         {
             coll.enabled = true;
             anim.SetTrigger("Attack");
