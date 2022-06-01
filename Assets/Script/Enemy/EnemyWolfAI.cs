@@ -109,12 +109,14 @@ public class EnemyWolfAI : Enemy
                 {
                     if (myTransform.position.x >= PlayerTransform.position.x)
                     {
-                        spr.flipX = true;
+                        //spr.flipX = true;
+                        transform.localRotation = Quaternion.Euler(0, 0, 0);
                         face = Face.Left;
                     }
                     else
                     {
-                        spr.flipX = false;
+                        //spr.flipX = false;
+                        transform.localRotation = Quaternion.Euler(0, 180, 0);
                         face = Face.Right;
                     }
                 }
@@ -162,12 +164,14 @@ public class EnemyWolfAI : Enemy
                         
                         if (movingRight == true)
                         {
-                            spr.flipX = false;
+                            //spr.flipX = false;
+                            transform.localRotation = Quaternion.Euler(0, 180, 0);
                             movingRight = false;
                         }
                         else
                         {
-                            spr.flipX = true;
+                            //spr.flipX = true;
+                            transform.localRotation = Quaternion.Euler(0, 0, 0);
                             movingRight = true;
                         }
 

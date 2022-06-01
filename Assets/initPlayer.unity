@@ -672,6 +672,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 293239685}
     m_Modifications:
+    - target: {fileID: 4760902241535245225, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760902241535245225, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4138638658174666313, guid: cdc55186ba4ad7141b596b4bf6ca6506,
+        type: 3}
+    - target: {fileID: 4760902241535245225, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4760902241791194514, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
         type: 3}
       propertyPath: m_Name
@@ -1555,7 +1571,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1483594613
 MonoBehaviour:
   m_ObjectHideFlags: 0
