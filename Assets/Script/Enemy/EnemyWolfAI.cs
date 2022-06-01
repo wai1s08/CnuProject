@@ -49,15 +49,15 @@ public class EnemyWolfAI : Enemy
         AttackColl = GetComponent<PolygonCollider2D>();
 
         wait = waitTime;
-        if (spr.flipX)
-        {
-            face = Face.Left;
-        }
-        else
-        {
-            face = Face.Right;
+        //if (spr.flipX)
+        //{
+        //    face = Face.Left;
+        //}
+        //else
+        //{
+        //    face = Face.Right;
 
-        }
+        //}
         myTransform = this.transform;
         if (GameObject.Find("player") != null)
         {
