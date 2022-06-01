@@ -110,19 +110,5 @@ public class PlayerHealth : MonoBehaviour
         }
         myRenderer.enabled = true;
     }
-
-    void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Portal"))
-        {
-            //Debug.Log("123");
-            collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
-            Vector3 move = gameObject.transform.position;
-            move = new Vector2(move.x = -10, move.y = -4);
-            gameObject.transform.position = move;
-
-
-        }
-
-    }
 }
+

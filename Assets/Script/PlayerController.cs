@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
     void checkGround()
     {
         isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
-        
+
     }
 
     void Run()
@@ -48,17 +48,17 @@ public class PlayerController : MonoBehaviour
         if (PlayerState.IsDefense == false)
         {
             // Input.GetAxis是Unity內建偵測輸入的函式 | Horizontal = 水平 | 偵測玩家按的按鍵取的方向
-        float moveDir = Input.GetAxis("Horizontal");
+            float moveDir = Input.GetAxis("Horizontal");
 
-        // Vector2 = 2D向量和點的表示形式，用於表示2D位置，只有兩個軸x＆y | 將取得的方向乘上玩家的速度進行移動
-        Vector2 playerVal = new Vector2(moveDir * runSpeed, myRigidbody.velocity.y);
+            // Vector2 = 2D向量和點的表示形式，用於表示2D位置，只有兩個軸x＆y | 將取得的方向乘上玩家的速度進行移動
+            Vector2 playerVal = new Vector2(moveDir * runSpeed, myRigidbody.velocity.y);
 
-        // 回傳結果
-        myRigidbody.velocity = playerVal;
+            // 回傳結果
+            myRigidbody.velocity = playerVal;
 
-        bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
+            bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
 
-        myAnim.SetBool("Run", playerHasXAxisSpeed);
+            myAnim.SetBool("Run", playerHasXAxisSpeed);
         }
         else
         {
@@ -67,7 +67,7 @@ public class PlayerController : MonoBehaviour
             myRigidbody.velocity = playerVal;
 
         }
-        
+
     }
 
     void Flip()
@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
         bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
         if (playerHasXAxisSpeed)
         {
-            if(myRigidbody.velocity.x > 0.1f)
+            if (myRigidbody.velocity.x > 0.1f)
             {
                 transform.localRotation = Quaternion.Euler(0, 0, 0);
             }
@@ -96,22 +96,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    //void Defense()
-    //{
-
-    //    if (Input.GetKey(KeyCode.Mouse1))
-    //    {
-    //        myAnim.SetTrigger("Defense");
-    //    }
-        
-    //}
-
     void OpenMyBag()
     {
         if (Input.GetKeyDown(KeyCode.B))
         {
             isOpen = !isOpen;
             MyBag.SetActive(isOpen);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal"))
+        {
+            Debug.Log("Portal");
+            collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
+            //Vector3 move = gameObject.transform.position;
+            //move = new Vector2(move.x = -10, move.y = -4);
+
+            //move = new Vector2(move.x = Portal.moveX, move.y = Portal.moveY);
+            //gameObject.transform.position = move;
+
+
         }
     }
 }
