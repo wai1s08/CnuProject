@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject MyBag;
     private bool isOpen;
+    private bool IsPortal;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class PlayerController : MonoBehaviour
         Jump();
         checkGround();
         OpenMyBag();
+        Portal();
         //Defense();
     }
 
@@ -105,11 +107,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void Portal()
     {
-        if (collision.gameObject.CompareTag("Portal"))
+        //Debug.Log(IsPortal);
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Debug.Log("Portal");
+            IsPortal = true;
+        }
+        else
+        {
+            IsPortal = false;
+        }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Portal") && IsPortal == true)
+        {
+            //Debug.Log("Portal");
             collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
             //Vector3 move = gameObject.transform.position;
             //move = new Vector2(move.x = -10, move.y = -4);
@@ -120,4 +135,7 @@ public class PlayerController : MonoBehaviour
 
         }
     }
+
+
+
 }

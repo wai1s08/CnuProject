@@ -61,7 +61,7 @@ public class PlayerHealth : MonoBehaviour
 
         BlinkPlayer(Blinks, BlinksTime);
 
-        if(Face.Equals(0) )
+        if (Face.Equals(0))
         {
 
             if (PlayerState.IsDefense == true)
@@ -79,7 +79,7 @@ public class PlayerHealth : MonoBehaviour
         }
         else
         {
-            
+
             if (PlayerState.IsDefense == true)
             {
                 Vector3 move = gameObject.transform.position;

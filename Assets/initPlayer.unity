@@ -1310,6 +1310,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6759908723827728610, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7210625611310900383, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
       propertyPath: PlayerDamage
@@ -1345,6 +1350,11 @@ PrefabInstance:
       propertyPath: MyBag
       value: 
       objectReference: {fileID: 936743761}
+    - target: {fileID: 8746156515766923744, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1843179145}
     - target: {fileID: 8746156515766923744, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
       propertyPath: runSpeed
