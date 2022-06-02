@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyWolfAI : Enemy
 {
-    public enum Status { idle, walk, patrol , Death , Attack};
+    public enum Status { idle, walk, /*patrol ,*/ Death , Attack};
 
     public Status status;
 
@@ -29,6 +29,7 @@ public class EnemyWolfAI : Enemy
     private PolygonCollider2D AttackColl;
 
     public float time;
+
 
 
     public enum Face { Right, Left }
@@ -88,15 +89,14 @@ public class EnemyWolfAI : Enemy
                     }
                     else
                     {
-                        status = Status.patrol;
+                       // status = Status.patrol;
                     }
                     if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.2)
                     {
                         status = Status.idle;
                     }
-
                     AttackColl.enabled = false;
-
+                    anim.SetBool("Run", false);
 
 
                 }
@@ -132,19 +132,19 @@ public class EnemyWolfAI : Enemy
 
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) > Distance)
                 {
-                    status = Status.patrol;
-                    if (movingRight == true)
-                    {
-                        spr.flipX = false;
-                        //movingRight = true;
-                    }
-                    else
-                    {
-                        spr.flipX = true;
-                       // movingRight = false;
-                    }
+                    status = Status.idle;
+                    //if (movingRight == true)
+                    //{
+                    //    spr.flipX = false;
+                    //    //movingRight = true;
+                    //}
+                    //else
+                    //{
+                    //    spr.flipX = true;
+                    //    // movingRight = false;
+                    //}
                 }
-                if(Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.3)
+                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.3)
                 {
                     status = Status.Attack;
                 }
@@ -153,56 +153,56 @@ public class EnemyWolfAI : Enemy
 
                 break;
 
-            case Status.patrol:
-                transform.position = Vector2.MoveTowards(transform.position, moveSpots[i].position, speed * Time.deltaTime);
-                anim.SetBool("Run", true);
+            //case Status.patrol:
+            //    transform.position = Vector2.MoveTowards(transform.position, moveSpots[i].position, speed * Time.deltaTime);
+            //    anim.SetBool("Run", true);
 
-                if (Vector2.Distance(transform.position, moveSpots[i].position) < 0.1f)
-                {
-                    if (waitTime <= 0)
-                    {
+            //    if (Vector2.Distance(transform.position, moveSpots[i].position) < 0.1f)
+            //    {
+            //        if (waitTime <= 0)
+            //        {
                         
-                        if (movingRight == true)
-                        {
-                            //spr.flipX = false;
-                            transform.localRotation = Quaternion.Euler(0, 180, 0);
-                            movingRight = false;
-                        }
-                        else
-                        {
-                            //spr.flipX = true;
-                            transform.localRotation = Quaternion.Euler(0, 0, 0);
-                            movingRight = true;
-                        }
+            //            if (movingRight == true)
+            //            {
+            //                //spr.flipX = false;
+            //                transform.localRotation = Quaternion.Euler(0, 180, 0);
+            //                movingRight = false;
+            //            }
+            //            else
+            //            {
+            //                //spr.flipX = true;
+            //                transform.localRotation = Quaternion.Euler(0, 0, 0);
+            //                movingRight = true;
+            //            }
 
-                        if (i == 0)
-                        {
+            //            if (i == 0)
+            //            {
 
-                            i = 1;
-                        }
-                        else
-                        {
+            //                i = 1;
+            //            }
+            //            else
+            //            {
 
-                            i = 0;
-                        }
+            //                i = 0;
+            //            }
 
-                        waitTime = wait;
-                    }
-                    else
-                    {
-                        anim.SetBool("Run", false);
-                        waitTime -= Time.deltaTime;
-                    }
-                    if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
-                    {
-                        status = Status.walk;
-                    }
+            //            waitTime = wait;
+            //        }
+            //        else
+            //        {
+            //            anim.SetBool("Run", false);
+            //            waitTime -= Time.deltaTime;
+            //        }
+            //        if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
+            //        {
+            //            status = Status.walk;
+            //        }
 
                     
-                }
+            //    }
 
 
-                break;
+            //    break;
 
             case Status.Death:
                 box2D.enabled = false;
