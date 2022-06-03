@@ -12,6 +12,8 @@ public class EnemySkeletonAi : Enemy
 
     public GameObject Arrow;
     public Transform ArrowPoint;
+
+    private float AttackWaitTime = 3;
     // Start is called before the first frame update
     new void Start()
     {
@@ -105,7 +107,14 @@ public class EnemySkeletonAi : Enemy
 
             case Status.Attack:
 
-                anim.SetBool("Attack", true);
+                    anim.SetBool("Attack", true);
+
+                AnimatorStateInfo animatorInfo;
+                animatorInfo = anim.GetCurrentAnimatorStateInfo(0);
+                if ((animatorInfo.normalizedTime > 1f) && (animatorInfo.IsName("Skeleton_Attack")))//normalizedTime: 範圍0 -- 1,  0是動作開始，1是動作結束
+                {
+                    anim.SetBool("Attack", false);
+                }
 
                 //Attack();
 
@@ -127,5 +136,7 @@ public class EnemySkeletonAi : Enemy
     void Attack()
     {
         Instantiate(Arrow, ArrowPoint.position, ArrowPoint.rotation);
+
+
     }
 }
