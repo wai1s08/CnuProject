@@ -11,7 +11,6 @@ public class EnemyWolfAI : Enemy
     private Transform myTransform;
 
     public Transform PlayerTransform;
-    private SpriteRenderer spr;
 
     public Transform[] moveSpots;
 
@@ -20,8 +19,9 @@ public class EnemyWolfAI : Enemy
     public float Distance;
 
     private float wait;
+
     public float waitTime = 5;
-    private bool movingRight = true;
+
     private BoxCollider2D box2D;
 
     private Animator anim;
@@ -29,8 +29,6 @@ public class EnemyWolfAI : Enemy
     private PolygonCollider2D AttackColl;
 
     public float time;
-
-    private Quaternion targetRotation;
 
     public float turnSpeed = 0.1f;
 
@@ -44,8 +42,6 @@ public class EnemyWolfAI : Enemy
         base.Start();
 
         status = Status.Walk;
-
-        spr = this.transform.GetComponent<SpriteRenderer>();
 
         anim = this.GetComponent<Animator>();
 
@@ -172,7 +168,7 @@ public class EnemyWolfAI : Enemy
 
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) > Distance)
                 {
-                    if (myTransform.position.x == moveSpots[i].position.x)
+                    if (myTransform.position.x == moveSpots[0].position.x)
                     {
                         transform.localRotation = Quaternion.Euler(0, 180, 0);
                     }
@@ -180,6 +176,9 @@ public class EnemyWolfAI : Enemy
                     {
                         transform.localRotation = Quaternion.Euler(0, 0, 0);
                     }
+
+
+
                     status = Status.idle;
                 }
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.3)

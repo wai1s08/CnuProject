@@ -16,6 +16,8 @@ public class PlayerState : MonoBehaviour
 
     private CapsuleCollider2D DefenseCollider;
 
+    private BoxCollider2D shieldCollider;
+
     private float SuperTime;
 
 
@@ -26,6 +28,8 @@ public class PlayerState : MonoBehaviour
         myAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
         DefenseCollider = GameObject.FindGameObjectWithTag("Defense").GetComponent<CapsuleCollider2D>();
+        shieldCollider = GameObject.FindGameObjectWithTag("Defense").GetComponent<BoxCollider2D>();
+
     }
 
     // Update is called once per frame
@@ -87,7 +91,9 @@ public class PlayerState : MonoBehaviour
                 {
                     myAnim.SetTrigger("Defense");
                     PlayerCollider.enabled = false;
+                    shieldCollider.enabled = true;
                     DefenseCollider.enabled = true;
+
                     if (Enemy.IsSuperTime == true)
                     {
                         DefenseCollider.enabled = false;
@@ -101,6 +107,7 @@ public class PlayerState : MonoBehaviour
                 {
                     status = Status.Normal;
                     PlayerCollider.enabled = true;
+                    shieldCollider.enabled = false;
                     DefenseCollider.enabled = false;
                 }
 

@@ -4,66 +4,37 @@ using UnityEngine;
 
 public class PlayerDefense : MonoBehaviour
 {
-    public enum Status { Normal, SuperTime, Defense };
-
-    public Status status;
-
     private Animator myAnim;
 
-    private bool IsDefense = false;
+    public static bool DefenseS;
 
-    private CapsuleCollider2D PlayerCollider;
+    private float waitTime;
 
-    // Start is called before the first frame update
     void Start()
     {
-        status = Status.Normal;
-
         myAnim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
-        // DefenseCapsuleCollider = gameObject.GetComponent<CapsuleCollider2D>();
+        DefenseS = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse1))
+        if(DefenseS == true)
         {
-            IsDefense = true;
+            if(waitTime <= 0f)
+            {
+                DefenseS = false;
+                waitTime = 1f;
+            }
+            waitTime -= Time.deltaTime;
         }
-        else
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            IsDefense = false;
-        }
+            myAnim.SetTrigger("DefenseS");
+            DefenseS = true;
 
-        Debug.Log(status);
-        switch (status)
-        {
-            case Status.Normal:
-
-                if (IsDefense == true)
-                {
-                    status = Status.Defense;
-                }
-
-                break;
-
-            case Status.SuperTime:
-
-                break;
-
-            case Status.Defense:
-
-                if (IsDefense == true)
-                {
-                    myAnim.SetTrigger("Defense");
-                }
-                else
-                {
-                    status = Status.Normal;
-                }
-
-                break;
         }
     }
 
