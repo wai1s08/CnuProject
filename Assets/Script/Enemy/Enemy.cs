@@ -14,17 +14,18 @@ public abstract class Enemy : MonoBehaviour
 
     public  static float superTime;
 
-    private PlayerHealth playerHealth;
+    public PlayerHealth playerHealth;
 
     private Collider2D PlayerCollider;
 
     public static bool IsSuperTime = false;
     //private Animator anim;
-    public float AttackwaitTime;
+    //public float AttackwaitTime;
 
     public Transform myTransform;
     public Transform PlayerTransform;
 
+    [Header("怪物視野距離")]
     public float Distance;
 
     public enum Face { Right, Left }

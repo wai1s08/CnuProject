@@ -9,6 +9,9 @@ public class EnemySkeletonAi : Enemy
     public Status status;
 
     private BoxCollider2D box2D;
+
+    public GameObject Arrow;
+    public Transform ArrowPoint;
     // Start is called before the first frame update
     new void Start()
     {
@@ -42,6 +45,9 @@ public class EnemySkeletonAi : Enemy
         switch (status)
         {
             case Status.idle:
+
+                anim.SetBool("Run", false);
+                //anim.SetBool("Attack", false);
                 if (myTransform)
                 {
                     if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
@@ -52,17 +58,16 @@ public class EnemySkeletonAi : Enemy
                     break;
 
             case Status.Chase:
+                anim.SetBool("Run", true);
                 if (PlayerTransform)
                 {
                     if (myTransform.position.x >= PlayerTransform.position.x)
                     {
-                        //spr.flipX = true;
                         transform.localRotation = Quaternion.Euler(0, 180, 0);
                         face = Face.Left;
                     }
                     else
                     {
-                        //spr.flipX = false;
                         transform.localRotation = Quaternion.Euler(0, 0, 0);
                         face = Face.Right;
                     }
@@ -92,7 +97,7 @@ public class EnemySkeletonAi : Enemy
 
                     status = Status.idle;
                 }
-                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 1.3)
+                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 7)
                 {
                     status = Status.Attack;
                 }
@@ -100,9 +105,13 @@ public class EnemySkeletonAi : Enemy
 
             case Status.Attack:
 
-                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 1.3)
+                anim.SetBool("Attack", true);
+
+                //Attack();
+
+                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 7)
                 {
-                    //anim.SetBool("Attack", false);
+                    anim.SetBool("Attack", false);
                     status = Status.idle;
                 }
 
@@ -113,5 +122,10 @@ public class EnemySkeletonAi : Enemy
                 anim.SetTrigger("Death");
                 break;
         }
+    }
+
+    void Attack()
+    {
+        Instantiate(Arrow, ArrowPoint.position, ArrowPoint.rotation);
     }
 }
