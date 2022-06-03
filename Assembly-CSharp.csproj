@@ -59,10 +59,11 @@
     <Compile Include="Assets\Inevntory\InevntoryScripts\Inevntory.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\Item.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\ItemOnWorld.cs" />
-    <Compile Include="Assets\Script\Arrow.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\CheckInit.cs" />
     <Compile Include="Assets\Script\DoNotDestroy.cs" />
+    <Compile Include="Assets\Script\Enemy\Arrow.cs" />
+    <Compile Include="Assets\Script\Enemy\ArrowBoss.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
     <Compile Include="Assets\Script\Enemy\EnemySkeletonAi.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyWolfAI.cs" />

@@ -324,6 +324,7 @@ GameObject:
   - component: {fileID: 4846823688158194968}
   - component: {fileID: 7256283454589635159}
   - component: {fileID: 5212423332120867427}
+  - component: {fileID: 7602142976140939528}
   m_Layer: 0
   m_Name: PlayerDefense
   m_TagString: Defense
@@ -387,3 +388,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.10731891, y: 0.15266633}
   m_EdgeRadius: 0
+--- !u!114 &7602142976140939528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6962505875630015881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18fc38fef390ad24d9fe2a567eeed539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

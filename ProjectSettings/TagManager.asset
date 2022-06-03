@@ -9,6 +9,7 @@ TagManager:
   - Hp
   - cine
   - Defense
+  - Arrow
   layers:
   - Default
   - TransparentFX
