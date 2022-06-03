@@ -8,15 +8,13 @@ public class EnemyWolfAI : Enemy
 
     public Status status;
 
-    private Transform myTransform;
+    
 
-    public Transform PlayerTransform;
+    
 
-    public Transform[] moveSpots;
+    
 
-    public int i = 0;
-
-    public float Distance;
+    
 
     private float wait;
 
@@ -24,7 +22,7 @@ public class EnemyWolfAI : Enemy
 
     private BoxCollider2D box2D;
 
-    private Animator anim;
+    
 
     private PolygonCollider2D AttackColl;
 
@@ -34,16 +32,15 @@ public class EnemyWolfAI : Enemy
 
 
 
-    public enum Face { Right, Left }
-    public Face face;
+    
     // Start is called before the first frame update
     public new void Start()
     {
         base.Start();
 
-        status = Status.Walk;
+        status = Status.idle;
 
-        anim = this.GetComponent<Animator>();
+        
 
         box2D = GetComponent<BoxCollider2D>();
 
@@ -53,17 +50,28 @@ public class EnemyWolfAI : Enemy
 
         transform.localRotation = Quaternion.Euler(0, 180, 0);
 
-        myTransform = this.transform;
-        if (GameObject.Find("player") != null)
-        {
-            PlayerTransform = GameObject.Find("player").transform;
-        }
+        
+        
 
     }
 
     // Update is called once per frame
     public new void Update()
     {
+        if (IsSuperTime == true)
+        {
+            superTime -= Time.deltaTime;
+        }
+
+
+        //Debug.Log(superTime);
+
+
+        if (superTime <= 0.5f)
+        {
+            IsSuperTime = false;
+        }
+
         base.Update();
 
         if (health <= 0)

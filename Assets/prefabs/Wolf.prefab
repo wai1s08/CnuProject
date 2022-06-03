@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8547368576011972054}
   - component: {fileID: 8547368576011972055}
   - component: {fileID: 8547368576011972049}
-  - component: {fileID: 8547368576011972053}
   - component: {fileID: 8547368576011972048}
+  - component: {fileID: 8547368576011972053}
   - component: {fileID: 8547368576011972052}
   - component: {fileID: 5972431270585999322}
   m_Layer: 9
@@ -107,36 +107,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &8547368576011972053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8547368576011972050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b9fccd9c6c4dc941840fc309ebdd1d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  health: 10
-  speed: 2
-  DeathDelay: 0
-  FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
-    type: 3}
-  AttackwaitTime: 0
-  status: 0
-  PlayerTransform: {fileID: 0}
-  moveSpots:
-  - {fileID: 0}
-  - {fileID: 0}
-  i: 0
-  Distance: 5
-  waitTime: 5
-  time: 0
-  turnSpeed: 0.1
-  face: 0
 --- !u!61 &8547368576011972048
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -163,6 +133,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.34511963, y: 0.27502108}
   m_EdgeRadius: 0
+--- !u!114 &8547368576011972053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8547368576011972050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b9fccd9c6c4dc941840fc309ebdd1d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  health: 10
+  speed: 2
+  DeathDelay: 0
+  FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
+    type: 3}
+  AttackwaitTime: 0
+  myTransform: {fileID: 0}
+  PlayerTransform: {fileID: 0}
+  Distance: 5
+  face: 0
+  moveSpots:
+  - {fileID: 0}
+  - {fileID: 0}
+  i: 0
+  status: 0
+  Distance: 5
+  waitTime: 5
+  time: 0
+  turnSpeed: 0.1
 --- !u!95 &8547368576011972052
 Animator:
   serializedVersion: 3

@@ -63,6 +63,7 @@
     <Compile Include="Assets\Script\CheckInit.cs" />
     <Compile Include="Assets\Script\DoNotDestroy.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Script\Enemy\EnemySkeletonAi.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyWolfAI.cs" />
     <Compile Include="Assets\Script\Enemy\test.cs" />
     <Compile Include="Assets\Script\FloatPointBase.cs" />

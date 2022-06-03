@@ -12,7 +12,8 @@ public abstract class Enemy : MonoBehaviour
 
     public GameObject FloatPoint;
 
-    private float superTime;
+    public  static float superTime;
+
     private PlayerHealth playerHealth;
 
     private Collider2D PlayerCollider;
@@ -21,13 +22,35 @@ public abstract class Enemy : MonoBehaviour
     //private Animator anim;
     public float AttackwaitTime;
 
+    public Transform myTransform;
+    public Transform PlayerTransform;
+
+    public float Distance;
+
+    public enum Face { Right, Left }
+    public Face face;
+
+    public Transform[] moveSpots;
+
+    public int i = 0;
+
+    public Animator anim;
+
     // Start is called before the first frame update
     public void Start()
     {
         PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         // anim = this.GetComponent<Animator>();
-        
+
+        myTransform = this.transform;
+
+        anim = GetComponent<Animator>();
+
+        if (GameObject.Find("player") != null)
+        {
+            PlayerTransform = GameObject.Find("player").transform;
+        }
 
     }
 
@@ -44,19 +67,7 @@ public abstract class Enemy : MonoBehaviour
 
         }
 
-        if (IsSuperTime == true)
-        {
-            superTime -= Time.deltaTime;
-        }
-
-
-        //Debug.Log(superTime);
-
-
-        if (superTime <= 0.5f)
-        {
-            IsSuperTime = false;
-        }
+        
     }
 
 
