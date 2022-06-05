@@ -109,12 +109,7 @@ public class EnemySkeletonAi : Enemy
 
                     anim.SetBool("Attack", true);
 
-                AnimatorStateInfo animatorInfo;
-                animatorInfo = anim.GetCurrentAnimatorStateInfo(0);
-                if ((animatorInfo.normalizedTime > 1f) && (animatorInfo.IsName("Skeleton_Attack")))//normalizedTime: 範圍0 -- 1,  0是動作開始，1是動作結束
-                {
-                    anim.SetBool("Attack", false);
-                }
+
 
                 //Attack();
 
