@@ -51,4 +51,13 @@ public class OpenBox : MonoBehaviour
             //warn.SetActive(true);       
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && collision.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
+        {
+            isPlayerInBox = false;
+            //warn.SetActive(true);       
+        }
+    }
 }

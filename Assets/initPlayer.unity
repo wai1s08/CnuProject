@@ -330,7 +330,7 @@ GameObject:
   - component: {fileID: 240491532}
   - component: {fileID: 240491531}
   - component: {fileID: 240491530}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: CloseButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 376928271}
   - component: {fileID: 376928273}
   - component: {fileID: 376928272}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,6 +672,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 293239685}
     m_Modifications:
+    - target: {fileID: 4760902241366305097, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4760902241535245225, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
         type: 3}
       propertyPath: m_Type
@@ -688,10 +693,20 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4760902241535245227, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4760902241791194514, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760902241791194514, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4760902241791194517, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
         type: 3}
@@ -803,6 +818,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4760902242193206779, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4760902241791194517, guid: 3d158ad2e7d5f654ebcd01ff62bc1990, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3d158ad2e7d5f654ebcd01ff62bc1990, type: 3}
@@ -891,7 +911,7 @@ GameObject:
   - component: {fileID: 839724935}
   - component: {fileID: 839724937}
   - component: {fileID: 839724936}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -978,7 +998,7 @@ GameObject:
   - component: {fileID: 922930810}
   - component: {fileID: 922930809}
   - component: {fileID: 922930808}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1076,7 +1096,7 @@ GameObject:
   - component: {fileID: 936743762}
   - component: {fileID: 936743764}
   - component: {fileID: 936743763}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: bag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1202,6 +1222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 320230839400356844, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 320230839400356844, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1209,6 +1234,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3248099340498301435, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3248099340498301435, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
@@ -1320,6 +1350,11 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6962505875630015881, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 7210625611310900383, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
       propertyPath: PlayerDamage
@@ -1365,6 +1400,11 @@ PrefabInstance:
       propertyPath: runSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8746156515766923744, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: climbSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3648006846203399217, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
     - {fileID: 7256283454589635159, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
@@ -1380,7 +1420,7 @@ GameObject:
   - component: {fileID: 1120343507}
   - component: {fileID: 1120343509}
   - component: {fileID: 1120343508}
-  m_Layer: 5
+  m_Layer: 12
   m_Name: tem description
   m_TagString: Untagged
   m_Icon: {fileID: 0}

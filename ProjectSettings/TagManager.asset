@@ -23,8 +23,8 @@ TagManager:
   - Enemy
   - confiner
   - 
-  - 
-  - 
+  - Player
+  - Ladder
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: ForeGround
     uniqueID: 3348050249
+    locked: 0
+  - name: Ladder
+    uniqueID: 1120143607
     locked: 0
   - name: ItemGround
     uniqueID: 4279586703

@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: {fileID: 4760902241791194514, guid: 3d158ad2e7d5f654ebcd01ff62bc1990, type: 3}
+  character: {fileID: 0}
   spawn: {fileID: 0}
 --- !u!1 &285563356
 GameObject:
@@ -484,7 +485,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 'Start
+
+'
 --- !u!222 &1926714440
 CanvasRenderer:
   m_ObjectHideFlags: 0

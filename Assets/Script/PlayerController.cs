@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float runSpeed;
     public float jumpspeed;
+    public float climbSpeed;
 
     private Rigidbody2D myRigidbody;
     private Animator myAnim;
@@ -16,6 +17,14 @@ public class PlayerController : MonoBehaviour
     public GameObject MyBag;
     private bool isOpen;
     private bool IsPortal;
+
+    private bool isLadder;
+    private bool isClimbing;
+    private bool isJumping;
+
+    private float playerGravity;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,16 +33,22 @@ public class PlayerController : MonoBehaviour
         myAnim = GetComponent<Animator>();
 
         myFeet = GetComponent<BoxCollider2D>();
+
+        playerGravity = myRigidbody.gravityScale;
     }
 
     // Update is called once per frame
     void Update()
     {
         // 在遊戲進行當中不斷取得Run的數值
+
+        CheckAirStatus();
         Run();
         Flip();
         Jump();
+        Climb();
         checkGround();
+        CheckLadder();
         OpenMyBag();
         Portal();
         //Defense();
@@ -42,7 +57,12 @@ public class PlayerController : MonoBehaviour
     void checkGround()
     {
         isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
+    }
 
+    void CheckLadder()
+    {
+        isLadder = myFeet.IsTouchingLayers(LayerMask.GetMask("Ladder"));
+        Debug.Log("isLadder:" + isLadder);
     }
 
     void Run()
@@ -96,6 +116,58 @@ public class PlayerController : MonoBehaviour
             Vector2 jumpVal = new Vector2(0, jumpspeed);
             myRigidbody.velocity = Vector2.up * jumpVal;
         }
+    }
+
+    void Climb()
+    {
+        float moveY = Input.GetAxis("Vertical");
+
+        if (isClimbing)
+        {
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, moveY * climbSpeed);
+        }
+
+        if (isLadder)
+        {
+            if (moveY > 0.5f || moveY < -0.5f)
+            {
+               // myAnim.SetBool("Jump", false);
+               // myAnim.SetBool("DoubleJump", false);
+               // myAnim.SetBool("Climbing", true);
+                myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, moveY * climbSpeed);
+                myRigidbody.gravityScale = 0.0f;
+            }
+            else
+            {
+                if (isJumping)
+                {
+                    //myanim.setbool("climbing", false);
+                }
+                else
+                {
+                    //myanim.setbool("climbing", false);
+                    myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0.0f);
+
+                }
+            }
+        }
+        else
+        {
+            //myAnim.SetBool("Climbing", false);
+            myRigidbody.gravityScale = playerGravity;
+        }
+
+        if (isLadder && isGround)
+        {
+            myRigidbody.gravityScale = playerGravity;
+        }
+
+        //Debug.Log("myRigidbody.gravityScale:"+ myRigidbody.gravityScale);
+    }
+
+    void CheckAirStatus()
+    {
+
     }
 
     void OpenMyBag()
