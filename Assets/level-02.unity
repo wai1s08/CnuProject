@@ -1163,6 +1163,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4617150595768486392, guid: d52d5ca5724b0874193c2de6d66515c3,
+        type: 3}
+      propertyPath: Scene
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617150595768486392, guid: d52d5ca5724b0874193c2de6d66515c3,
+        type: 3}
+      propertyPath: PlayerScene
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4617150595768486392, guid: d52d5ca5724b0874193c2de6d66515c3,
+        type: 3}
+      propertyPath: PortalNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4617150596703730443, guid: d52d5ca5724b0874193c2de6d66515c3,
         type: 3}
       propertyPath: m_Name
