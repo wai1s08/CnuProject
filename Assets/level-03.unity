@@ -3486,7 +3486,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 298131622}
-  - component: {fileID: 298131624}
   - component: {fileID: 298131623}
   m_Layer: 0
   m_Name: "\u5E73\u53F02"
@@ -3541,32 +3540,6 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
---- !u!61 &298131624
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 298131621}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
-  m_UsedByComposite: 0
-  m_Offset: {x: 7.1826935, y: 7.096412}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 10.44751, y: 1.3882532}
-  m_EdgeRadius: 0
 --- !u!1 &299676147
 GameObject:
   m_ObjectHideFlags: 0
@@ -24794,20 +24767,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 594200774}
     m_ColliderPaths:
-    - - X: 887916672
-        Y: 50416664
-      - X: 774583360
-        Y: 50416664
-      - X: 774583360
-        Y: 49583336
-      - X: 887916672
-        Y: 49583336
+    - - X: 887916772
+        Y: 49583295
+      - X: 887916772
+        Y: 50416705
+      - X: 887916713
+        Y: 50416764
+      - X: 774583319
+        Y: 50416764
+      - X: 774583260
+        Y: 50416705
+      - X: 774583260
+        Y: 49583295
+      - X: 774583319
+        Y: 49583236
+      - X: 887916713
+        Y: 49583236
   m_CompositePaths:
     m_Paths:
-    - - {x: 88.79163, y: 4.9583335}
-      - {x: 88.79163, y: 5.0416665}
-      - {x: 77.458336, y: 5.0416374}
-      - {x: 77.45837, y: 4.9583335}
+    - - {x: 88.79164, y: 4.9583235}
+      - {x: 88.79164, y: 5.0416765}
+      - {x: 77.45832, y: 5.041641}
+      - {x: 77.45836, y: 4.9583235}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &594200773
@@ -24996,7 +24977,7 @@ Tilemap:
   m_AnimatedTiles: {}
   m_TileAssetArray:
   - m_RefCount: 9
-    m_Data: {fileID: 11400000, guid: 1a88a0ba26bd2b84f92e8a2dd570c978, type: 2}
+    m_Data: {fileID: 11400000, guid: a62c987695a598843becb7e3506aeb19, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 9
     m_Data: {fileID: 17177297462669212, guid: 7d38318bded7f2145bebd874e47b2629, type: 3}
@@ -25025,8 +25006,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -12, y: 0, z: 0}
-  m_Size: {x: 83, y: 4, z: 1}
+  m_Origin: {x: -12, y: -1, z: 0}
+  m_Size: {x: 83, y: 5, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -29739,20 +29720,28 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1318768951}
     m_ColliderPaths:
-    - - X: 883249984
-        Y: 50750000
-      - X: 880249984
-        Y: 50750000
-      - X: 880249984
-        Y: -50750000
-      - X: 883249984
-        Y: -50750000
+    - - X: 883250084
+        Y: -50750041
+      - X: 883250084
+        Y: 50750041
+      - X: 883250025
+        Y: 50750100
+      - X: 880249943
+        Y: 50750100
+      - X: 880249884
+        Y: 50750041
+      - X: 880249884
+        Y: -50750041
+      - X: 880249943
+        Y: -50750100
+      - X: 883250025
+        Y: -50750100
   m_CompositePaths:
     m_Paths:
-    - - {x: 88.32497, y: -5.0750003}
-      - {x: 88.32497, y: 5.0750003}
-      - {x: 88.025, y: 5.0749707}
-      - {x: 88.02503, y: -5.0750003}
+    - - {x: 88.324974, y: -5.07501}
+      - {x: 88.324974, y: 5.07501}
+      - {x: 88.02499, y: 5.074975}
+      - {x: 88.025024, y: -5.07501}
   m_VertexDistance: 0.0005
   m_OffsetDistance: 0.00005
 --- !u!50 &1318768950
