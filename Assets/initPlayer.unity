@@ -1405,6 +1405,11 @@ PrefabInstance:
       propertyPath: climbSpeed
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8746156515766923744, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: restoreTime
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -3648006846203399217, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
     - {fileID: 7256283454589635159, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}

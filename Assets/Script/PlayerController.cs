@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("玩家速度")]
     public float runSpeed;
+
+    [Header("跳躍力道")]
     public float jumpspeed;
+
+    [Header("爬梯子速度")]
     public float climbSpeed;
+
+    [Header("單向平台恢復速住")]
+    public float restoreTime;
 
     private Rigidbody2D myRigidbody;
     private Animator myAnim;
@@ -23,6 +31,8 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
 
     private float playerGravity;
+
+    private bool isOneWayPlatform;
 
 
     // Start is called before the first frame update
@@ -52,17 +62,21 @@ public class PlayerController : MonoBehaviour
         OpenMyBag();
         Portal();
         //Defense();
+
+        OneWayPlatformCheck();
     }
 
     void checkGround()
     {
-        isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground"));
+        isGround = myFeet.IsTouchingLayers(LayerMask.GetMask("Ground")) ||
+                   myFeet.IsTouchingLayers(LayerMask.GetMask("OneWayPlatform"));
+        isOneWayPlatform = myFeet.IsTouchingLayers(LayerMask.GetMask("OneWayPlatform"));
     }
 
     void CheckLadder()
     {
         isLadder = myFeet.IsTouchingLayers(LayerMask.GetMask("Ladder"));
-        Debug.Log("isLadder:" + isLadder);
+        //Debug.Log("isLadder:" + isLadder);
     }
 
     void Run()
@@ -208,6 +222,32 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void OneWayPlatformCheck()
+    {
+        if (isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
+        }
+   
 
+        float moveY = Input.GetAxis("Vertical");
+        //Debug.Log(moveY);
+        if (isOneWayPlatform && moveY < -0.1f)
+        {
+            gameObject.layer = LayerMask.NameToLayer("OneWayPlatform");
+
+            Invoke("RestorePlayerLayer", restoreTime);
+        }
+
+
+    }
+
+    void RestorePlayerLayer()
+    {
+        if (!isGround && gameObject.layer != LayerMask.NameToLayer("Player"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Player");
+        }
+    }
 
 }
