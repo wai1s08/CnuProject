@@ -20,7 +20,6 @@ public class Level03BGM : MonoBehaviour
     void Update()
     {
         FindBoss();
-        BGMfadin();
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -43,11 +42,5 @@ public class Level03BGM : MonoBehaviour
         }
     }
 
-    void BGMfadin()
-    {
-        if (GetComponent<AudioSource>().volume <= 0.4f)
-        {
-            GetComponent<AudioSource>().volume += 0.1f;
-        }
-    }
+    
 }
