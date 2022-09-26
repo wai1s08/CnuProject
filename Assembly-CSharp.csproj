@@ -59,6 +59,7 @@
     <Compile Include="Assets\Inevntory\InevntoryScripts\Inevntory.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\Item.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\ItemOnWorld.cs" />
+    <Compile Include="Assets\Script\BGMfadin.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\CheckInit.cs" />
     <Compile Include="Assets\Script\DoNotDestroy.cs" />
@@ -73,6 +74,8 @@
     <Compile Include="Assets\Script\GameManger.cs" />
     <Compile Include="Assets\Script\GameStart.cs" />
     <Compile Include="Assets\Script\HealthBar.cs" />
+    <Compile Include="Assets\Script\HideWall.cs" />
+    <Compile Include="Assets\Script\Level03BGM.cs" />
     <Compile Include="Assets\Script\Menu.cs" />
     <Compile Include="Assets\Script\MeshRendererSortingEditor.cs" />
     <Compile Include="Assets\Script\OpenBox.cs" />

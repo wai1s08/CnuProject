@@ -17,10 +17,12 @@ public class Boss01AI : Enemy
 
     public GameObject Arrow;
     public Transform ArrowPoint;
+
     // Start is called before the first frame update
     new void Start()
     {
         base.Start();
+
 
         box2D = GetComponent<BoxCollider2D>();
 
