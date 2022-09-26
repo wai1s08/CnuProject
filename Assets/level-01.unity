@@ -310,7 +310,7 @@ Transform:
   m_LocalScale: {x: 4.5364, y: 4.5364, z: 4.5364}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &280265333
 GameObject:
@@ -421,7 +421,7 @@ Transform:
   m_LocalScale: {x: 4.5364, y: 4.5364, z: 4.5364}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &470592482
 GameObject:
@@ -4580,7 +4580,7 @@ Transform:
   m_LocalScale: {x: 84.52993, y: 29.151808, z: 8.9706}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1257540093
 GameObject:
@@ -6037,9 +6037,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 14091543094988435, guid: 389b9da092a3c4c4a8b1ec88877cebfc,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 14091543094988435, guid: 389b9da092a3c4c4a8b1ec88877cebfc,
+        type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 364374da00ad12146828d5e9ab258a97, type: 3}
+    - target: {fileID: 14091543094988435, guid: 389b9da092a3c4c4a8b1ec88877cebfc,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5334694999582714176, guid: 389b9da092a3c4c4a8b1ec88877cebfc,
         type: 3}
       propertyPath: m_Name
