@@ -152,10 +152,10 @@ public class PlayerController : MonoBehaviour
             if (moveY > 0.5f || moveY < -0.5f)
             {
                 myAnim.SetBool("Jump", false);
-               // myAnim.SetBool("DoubleJump", false);
                 myAnim.SetBool("Climb", true);
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, moveY * climbSpeed);
                 myRigidbody.gravityScale = 0.0f;
+                myAnim.enabled = true;
             }
             else
             {
@@ -165,15 +165,23 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    myAnim.SetBool("Climb", false);
+                    //myAnim.SetBool("Climb", false);
                     myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0.0f);
+                    if(myRigidbody.velocity.x == 0.0f && isClimbing)
+                    {
+                        myAnim.enabled = false;
+                    }
+                    else
+                    {
+                        myAnim.enabled = true;
+                    }
 
                 }
             }
         }
         else
         {
-            //myAnim.SetBool("Climbing", false);
+            myAnim.SetBool("Climb", false);
             myRigidbody.gravityScale = playerGravity;
         }
 
@@ -187,7 +195,8 @@ public class PlayerController : MonoBehaviour
 
     void CheckAirStatus()
     {
-
+        isJumping = myAnim.GetBool("Jump");
+        isClimbing = myAnim.GetBool("Climb");
     }
 
     void OpenMyBag()
@@ -255,5 +264,6 @@ public class PlayerController : MonoBehaviour
             gameObject.layer = LayerMask.NameToLayer("Player");
         }
     }
+
 
 }
