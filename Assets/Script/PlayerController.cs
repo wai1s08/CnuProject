@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     private Animator myAnim;
 
     private BoxCollider2D myFeet;
-    private bool isGround;
+    public bool isGround;
 
     public GameObject MyBag;
     private bool isOpen;
@@ -129,6 +129,12 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 jumpVal = new Vector2(0, jumpspeed);
             myRigidbody.velocity = Vector2.up * jumpVal;
+
+            myAnim.SetBool("Jump",true);
+        }
+        else
+        {
+            myAnim.SetBool("Jump", false);
         }
     }
 
@@ -145,9 +151,9 @@ public class PlayerController : MonoBehaviour
         {
             if (moveY > 0.5f || moveY < -0.5f)
             {
-               // myAnim.SetBool("Jump", false);
+                myAnim.SetBool("Jump", false);
                // myAnim.SetBool("DoubleJump", false);
-               // myAnim.SetBool("Climbing", true);
+                myAnim.SetBool("Climb", true);
                 myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, moveY * climbSpeed);
                 myRigidbody.gravityScale = 0.0f;
             }
@@ -155,11 +161,11 @@ public class PlayerController : MonoBehaviour
             {
                 if (isJumping)
                 {
-                    //myanim.setbool("climbing", false);
+                    myAnim.SetBool("Climb", false);
                 }
                 else
                 {
-                    //myanim.setbool("climbing", false);
+                    myAnim.SetBool("Climb", false);
                     myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0.0f);
 
                 }

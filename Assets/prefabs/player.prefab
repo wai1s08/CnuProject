@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3248099340498301435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.099, y: -0.033, z: 0}
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_Children:
   - {fileID: 3755234376404375431}
@@ -158,9 +158,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 816238483
-  m_SortingLayer: 5
+  m_SortingLayer: 6
   m_SortingOrder: 2
-  m_Sprite: {fileID: -6540331119157491202, guid: 9bb7b810b96ff01469e865f950d6ff61,
+  m_Sprite: {fileID: -2311659948842064771, guid: 92f70e69e718c974babbec16025ae263,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -186,6 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   runSpeed: 5
   jumpspeed: 6
+  climbSpeed: 0
+  restoreTime: 0
   MyBag: {fileID: 0}
 --- !u!114 &-8719754310887502603
 MonoBehaviour:
@@ -265,8 +267,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00067570934, y: 0.009298107}
-  m_Size: {x: 0.1640338, y: 0.35086483}
+  m_Offset: {x: 0.057814635, y: -0.045815572}
+  m_Size: {x: 0.15294787, y: 0.32975763}
   m_Direction: 0
 --- !u!61 &-3207227980305699701
 BoxCollider2D:
@@ -281,18 +283,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.002429098, y: -0.15666793}
+  m_Offset: {x: 0.049062155, y: -0.21172467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.35}
+    oldSize: {x: 0.71, y: 0.45}
     newSize: {x: 0.22, y: 0.35}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.118815884, y: 0.021255285}
+  m_Size: {x: 0.12282814, y: 0.021698952}
   m_EdgeRadius: 0
 --- !u!95 &-3648006846203399217
 Animator:
@@ -304,7 +306,7 @@ Animator:
   m_GameObject: {fileID: 3248099340498301435}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d8acf4255b2f1a54298ce8c923e76266, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
