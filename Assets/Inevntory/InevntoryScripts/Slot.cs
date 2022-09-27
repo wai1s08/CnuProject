@@ -8,4 +8,9 @@ public class Slot : MonoBehaviour
     public Item slotItem;
     public Image slotImage;
     public Text slotNum;
+
+    public void ItemOnClicker()
+    {
+        InevntoryManager.UpdateItemInfo(slotItem.itemInfo);
+    }
 }

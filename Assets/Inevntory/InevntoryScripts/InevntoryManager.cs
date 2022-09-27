@@ -21,6 +21,12 @@ public class InevntoryManager : MonoBehaviour
     private void OnEnable()
     {
         RefreshItem();
+        instance.itemfromation.text = "";
+    }
+
+    public static void UpdateItemInfo(string itemDescription)
+    {
+        instance.itemfromation.text = itemDescription;
     }
 
     public static void CreateNewItem(Item item)
