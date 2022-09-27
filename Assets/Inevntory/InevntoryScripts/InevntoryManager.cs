@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class InevntoryManager : MonoBehaviour
+public class InevntoryManager : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     static InevntoryManager instance;
 
@@ -11,6 +12,9 @@ public class InevntoryManager : MonoBehaviour
     public GameObject slotGrid;
     public Slot slotPrefab;
     public Text itemfromation;
+
+    [SerializeField] private GameObject InventoryPanel;
+    private RectTransform panel_rect_transform;
     private void Awake()
     {
         if (instance != null)
@@ -51,5 +55,20 @@ public class InevntoryManager : MonoBehaviour
         {
             CreateNewItem(instance.myBag.itemList[i]);
         }
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        panel_rect_transform = InventoryPanel.GetComponent<RectTransform>();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        panel_rect_transform.anchoredPosition += eventData.delta;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+
     }
 }
