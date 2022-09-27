@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -844,6 +844,7 @@ MonoBehaviour:
   slotPrefab: {fileID: 5810312436740519517, guid: 12ccba21d2b57b340ab1045e29ef4f4a,
     type: 3}
   itemfromation: {fileID: 1860151441}
+  InventoryPanel: {fileID: 1219445057}
 --- !u!1001 &744194549
 PrefabInstance:
   m_ObjectHideFlags: 0
