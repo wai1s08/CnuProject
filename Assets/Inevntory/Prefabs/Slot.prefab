@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1263350985762236048}
   - component: {fileID: 9173324630636261132}
   - component: {fileID: 7037175878143779694}
+  - component: {fileID: 5810312436740519517}
   m_Layer: 12
   m_Name: Slot
   m_TagString: Untagged
@@ -108,7 +109,7 @@ RectTransform:
   m_GameObject: {fileID: 6855211438976316747}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 8072328390452402395}
   m_Father: {fileID: 0}
@@ -199,3 +200,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5810312436740519517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6855211438976316747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf70eada3f5624241bf3aba4b804f4f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slotItem: {fileID: 0}
+  slotImage: {fileID: 9173324630636261132}
+  slotNum: {fileID: 6048715147299856708}

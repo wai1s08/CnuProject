@@ -57,8 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Inevntory\InevntoryScripts\Inevntory.cs" />
+    <Compile Include="Assets\Inevntory\InevntoryScripts\InevntoryManager.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\Item.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\ItemOnWorld.cs" />
+    <Compile Include="Assets\Inevntory\InevntoryScripts\Slot.cs" />
     <Compile Include="Assets\Script\BGMfadin.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\CheckInit.cs" />
