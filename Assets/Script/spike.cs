@@ -36,7 +36,7 @@ public class spike : Enemy
     void OnTriggerEnter2D(Collider2D other)
     {
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             if (other.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
             {
