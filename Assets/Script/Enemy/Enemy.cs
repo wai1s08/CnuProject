@@ -4,46 +4,60 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    [Header("怪物傷害")]
     public int damage;
+    [Header("怪物血量")]
     public int health;
+    [Header("怪物速度")]
     public float speed;
 
+    [Header("死亡延遲")]
     public float DeathDelay;
 
+    [Header("傷害顯示")]
     public GameObject FloatPoint;
+
 
     public  static float superTime;
 
-    public PlayerHealth playerHealth;
+    private PlayerHealth playerHealth;
 
     private Collider2D PlayerCollider;
 
     public static bool IsSuperTime = false;
-    //private Animator anim;
-    //public float AttackwaitTime;
 
+    [Header("怪物的位子(不用放)")]
     public Transform myTransform;
+
+    [Header("玩家的位子(不用放)")]
     public Transform PlayerTransform;
+
+    [Header("怪物巡邏(不用改)")]
+    public int i = 0;
 
     [Header("怪物視野距離")]
     public float Distance;
 
     public enum Face { Right, Left }
+
+    [Header("怪物面向")]
     public Face face;
 
+    [Header("怪物巡邏點")]
     public Transform[] moveSpots;
-
-    public int i = 0;
 
     public Animator anim;
 
+    [Header("怪物金錢物件")]
     public GameObject Money;
 
+    [Header("把自己拉進來")]
     public Transform Monster;
 
-    [Header("怪物金錢")]
+    
     public static int money;
 
+    [Header("怪物掉多少錢")]
     public int Moeneyint;
 
     // Start is called before the first frame update
