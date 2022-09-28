@@ -21,6 +21,7 @@ public class PlayerAttack : MonoBehaviour
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         coll = GetComponent<PolygonCollider2D>();
 
+
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense ==false )
+        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense ==false && !PlayerController.isOpen)
         {
             coll.enabled = true;
             anim.SetTrigger("Attack");
