@@ -7,7 +7,7 @@ public class Money : MonoBehaviour
 {
     private Transform player;
 
-    public float destroyDistance;
+    //public float destroyDistance;
 
     private Vector3 startPos;
 
