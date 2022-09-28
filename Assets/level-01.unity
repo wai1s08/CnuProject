@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4082,6 +4082,12 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 243448729227648320, guid: 50cb1a82f482ca44fb2cc0df790f35ab, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 50cb1a82f482ca44fb2cc0df790f35ab, type: 3}
+--- !u!4 &1151358551 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8547368576011972054, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
+    type: 3}
+  m_PrefabInstance: {fileID: 8547368576942534755}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1180188783
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6293,22 @@ PrefabInstance:
         type: 3}
       propertyPath: time
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547368576011972053, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
+        type: 3}
+      propertyPath: Money
+      value: 
+      objectReference: {fileID: 104891876722689394, guid: 7fe24de17aa8a70438ef43239ee95934,
+        type: 3}
+    - target: {fileID: 8547368576011972053, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
+        type: 3}
+      propertyPath: Monster
+      value: 
+      objectReference: {fileID: 1151358551}
+    - target: {fileID: 8547368576011972053, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
+        type: 3}
+      propertyPath: Moeneyint
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8547368576011972053, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
         type: 3}
