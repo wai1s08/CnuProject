@@ -8,14 +8,6 @@ public class EnemyWolfAI : Enemy
 
     public Status status;
 
-    
-
-    
-
-    
-
-    
-
     private float wait;
 
     public float waitTime = 5;
@@ -29,6 +21,8 @@ public class EnemyWolfAI : Enemy
     public float time;
 
     public float turnSpeed = 0.1f;
+
+    
 
 
 

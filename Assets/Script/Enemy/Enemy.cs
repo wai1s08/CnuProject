@@ -37,6 +37,15 @@ public abstract class Enemy : MonoBehaviour
 
     public Animator anim;
 
+    public GameObject Money;
+
+    public Transform Monster;
+
+    [Header("怪物金錢")]
+    public static int money;
+
+    public int Moeneyint;
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -53,6 +62,8 @@ public abstract class Enemy : MonoBehaviour
             PlayerTransform = GameObject.Find("player").transform;
         }
 
+        money = Moeneyint;
+
     }
 
     // Update is called once per frame
@@ -65,6 +76,7 @@ public abstract class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject, DeathDelay);
+            Instantiate(Money, Monster.position  , Monster.rotation);
 
         }
 
