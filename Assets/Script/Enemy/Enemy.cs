@@ -94,7 +94,21 @@ public abstract class Enemy : MonoBehaviour
 
         }
 
-        
+        if (IsSuperTime == true)
+        {
+            superTime -= Time.deltaTime;
+        }
+
+
+        //Debug.Log(superTime);
+
+
+        if (superTime <= 0.5f)
+        {
+            IsSuperTime = false;
+        }
+
+
     }
 
 

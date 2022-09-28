@@ -37,15 +37,15 @@ public class Boss01AI : Enemy
     {
         base.Update();
 
-        if (IsSuperTime == true)
-        {
-            superTime -= Time.deltaTime;
-        }
+        //if (IsSuperTime == true)
+        //{
+        //    superTime -= Time.deltaTime;
+        //}
 
-        if (superTime <= 0.5f)
-        {
-            IsSuperTime = false;
-        }
+        //if (superTime <= 0.5f)
+        //{
+        //    IsSuperTime = false;
+        //}
 
         if (health <= 0)
         {
