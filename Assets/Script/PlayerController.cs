@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public bool isGround;
 
     public GameObject MyBag;
-    private bool isOpen;
+    public static bool isOpen;
     private bool IsPortal;
 
     private bool isLadder;
@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
 
     void Run()
     {
-        if (PlayerState.IsDefense == false)
+        if (PlayerState.IsDefense == false && !isOpen )
         {
             // Input.GetAxis是Unity內建偵測輸入的函式 | Horizontal = 水平 | 偵測玩家按的按鍵取的方向
             float moveDir = Input.GetAxis("Horizontal");
@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGround == true)
+        if (Input.GetButtonDown("Jump") && isGround == true && !isOpen)
         {
             Vector2 jumpVal = new Vector2(0, jumpspeed);
             myRigidbody.velocity = Vector2.up * jumpVal;
@@ -205,6 +205,7 @@ public class PlayerController : MonoBehaviour
         {
             isOpen = !isOpen;
             MyBag.SetActive(isOpen);
+            myAnim.SetBool("Run", false);
         }
     }
 
