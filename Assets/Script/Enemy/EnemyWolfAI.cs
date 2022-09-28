@@ -52,19 +52,7 @@ public class EnemyWolfAI : Enemy
     // Update is called once per frame
     public new void Update()
     {
-        if (IsSuperTime == true)
-        {
-            superTime -= Time.deltaTime;
-        }
-
-
-        //Debug.Log(superTime);
-
-
-        if (superTime <= 0.5f)
-        {
-            IsSuperTime = false;
-        }
+       
 
         base.Update();
 
