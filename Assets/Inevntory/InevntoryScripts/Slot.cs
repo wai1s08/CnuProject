@@ -13,8 +13,25 @@ public class Slot : MonoBehaviour
     public Image slotImage;
     public Text slotNum;
 
+    public GameObject itemInSlot;
+
+    public string slotInfo;
+
     public void ItemOnClicker()
     {
-        InevntoryManager.UpdateItemInfo(slotItem.itemInfo);
+        InevntoryManager.UpdateItemInfo(slotInfo);
+    }
+
+    public void SetupSlot(Item item)
+    {
+        if(item == null)
+        {
+            itemInSlot.SetActive(false);
+            return;
+        }
+
+        slotImage.sprite = item.itemimage;
+        slotNum.text = item.itemHeld.ToString();
+        slotInfo = item.itemInfo;
     }
 }

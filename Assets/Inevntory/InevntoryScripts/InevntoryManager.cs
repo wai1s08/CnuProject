@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 //Inevntory管理器
-public class InevntoryManager : MonoBehaviour//, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InevntoryManager : MonoBehaviour
 {
     //背包管理器的靜態變數
     static InevntoryManager instance;
@@ -16,14 +16,13 @@ public class InevntoryManager : MonoBehaviour//, IBeginDragHandler, IDragHandler
     [Header("背包裡的網格")]//將物品依照這個格式排序生成
     public GameObject slotGrid;
 
-    [Header("slot預製物")]
-    public Slot slotPrefab;
+    [Header("Slot預製物")]
+    public GameObject emptySlot;
 
     [Header("背包裡物品的說明欄")]
     public Text itemfromation;
 
-    [SerializeField] private GameObject InventoryPanel;
-    private RectTransform panel_rect_transform;
+    public List<GameObject> slots = new List<GameObject>();
     private void Awake()
     {
         if (instance != null)
@@ -46,20 +45,20 @@ public class InevntoryManager : MonoBehaviour//, IBeginDragHandler, IDragHandler
         instance.itemfromation.text = itemDescription;
     }
 
-    //創建新物品的方法 | 獲取item.cs裡的所有訊息，將訊息傳輸給slot.cs
-    public static void CreateNewItem(Item item)
-    {
-        //生成一個Slot類的物品
-        Slot newItme = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
+    ////創建新物品的方法 | 獲取item.cs裡的所有訊息，將訊息傳輸給slot.cs
+    //public static void CreateNewItem(Item item)
+    //{
+    //    //生成一個Slot類的物品
+    //    Slot newItme = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
 
-        // SetParent 設置父級 | 將物品生成於instance.slotGrid的子級
-        newItme.gameObject.transform.SetParent(instance.slotGrid.transform);
+    //    // SetParent 設置父級 | 將物品生成於instance.slotGrid的子級
+    //    newItme.gameObject.transform.SetParent(instance.slotGrid.transform);
 
-        //傳輸數據
-        newItme.slotItem = item;
-        newItme.slotImage.sprite = item.itemimage;
-        newItme.slotNum.text = item.itemHeld.ToString();
-    }
+    //    //傳輸數據
+    //    newItme.slotItem = item;
+    //    newItme.slotImage.sprite = item.itemimage;
+    //    newItme.slotNum.text = item.itemHeld.ToString();
+    //}
 
     //刷新物品的方法
     public static void RefreshItem()
@@ -73,28 +72,18 @@ public class InevntoryManager : MonoBehaviour//, IBeginDragHandler, IDragHandler
 
             //銷毀gameObject
             Destroy(instance.slotGrid.transform.GetChild(i).gameObject);
+            instance.slots.Clear();
         }
 
         //重新生成物品 | 檢查myBag.itemList裡有多少物品就生成幾次
         for (int i = 0; i < instance.myBag.itemList.Count; i++)
         {
             // 生成myBag.itemList的所有數據
-            CreateNewItem(instance.myBag.itemList[i]);
+            //CreateNewItem(instance.myBag.itemList[i]);
+
+            instance.slots.Add(Instantiate(instance.emptySlot));
+            instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+            instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
         }
     }
-
-    //public void OnBeginDrag(PointerEventData eventData)
-    //{
-    //    panel_rect_transform = InventoryPanel.GetComponent<RectTransform>();
-    //}
-
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    panel_rect_transform.anchoredPosition += eventData.delta;
-    //}
-
-    //public void OnEndDrag(PointerEventData eventData)
-    //{
-
-    //}
 }

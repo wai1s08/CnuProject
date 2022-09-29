@@ -32,7 +32,15 @@ public class ItemOnWorld : MonoBehaviour
         if (!playerInevntory.itemList.Contains(thisItem))
         {
             //將物品添加到這個背包裡
-            playerInevntory.itemList.Add(thisItem);
+            //playerInevntory.itemList.Add(thisItem);
+            for (int i = 0; i < playerInevntory.itemList.Count; i++)
+            {
+                if (playerInevntory.itemList[i] == null)
+                {
+                    playerInevntory.itemList[i] = thisItem;
+                    break;
+                }
+            }
         }
         else //如果背包裡有經有這個物品，將物品數量+1
         {
