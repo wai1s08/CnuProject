@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db45ceebe46dabf44abe6c91ee4d3791, type: 3}
-  m_Name: Sword
+  m_Script: {fileID: 11500000, guid: 238c93e341ec9cc42b260f0a195b009b, type: 3}
+  m_Name: MyEquip
   m_EditorClassIdentifier: 
-  itemName: Sword
-  itemimage: {fileID: 21300000, guid: af50dc4fa7b6d314895d0f8c79adb4a5, type: 3}
-  itemHeld: 21
-  itemInfo: "\u6E2C\u8A66"
-  equip: 1
+  itemList: []
