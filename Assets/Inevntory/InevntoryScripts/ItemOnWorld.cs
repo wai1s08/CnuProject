@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 //物品與遊戲中的互動，掛在每個物品上
 
@@ -50,4 +51,5 @@ public class ItemOnWorld : MonoBehaviour
         //刷新背包
         InevntoryManager.RefreshItem();
     }
+
 }
