@@ -973,6 +973,36 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 4760902241791194517, guid: 3d158ad2e7d5f654ebcd01ff62bc1990, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3d158ad2e7d5f654ebcd01ff62bc1990, type: 3}
+--- !u!1 &821958489 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4760902241791194514, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+    type: 3}
+  m_PrefabInstance: {fileID: 744194549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!223 &821958492 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 4760902241791194519, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
+    type: 3}
+  m_PrefabInstance: {fileID: 744194549}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &821958493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821958489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88be11f8bc90588478107d05be5a1361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myBag: {fileID: 11400000, guid: 44b4ee4c0e71da04eb40dbd0b6596e6e, type: 2}
+  slotGrid: {fileID: 1533302730}
+  emptySlot: {fileID: 6855211438976316747, guid: 12ccba21d2b57b340ab1045e29ef4f4a,
+    type: 3}
+  itemfromation: {fileID: 1860151441}
+  slots: []
 --- !u!224 &875854215 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4760902241791194518, guid: 3d158ad2e7d5f654ebcd01ff62bc1990,
@@ -1700,7 +1730,7 @@ GameObject:
   - component: {fileID: 1219445058}
   - component: {fileID: 1219445060}
   - component: {fileID: 1219445059}
-  - component: {fileID: 1219445061}
+  - component: {fileID: 1219445062}
   m_Layer: 12
   m_Name: Bag
   m_TagString: Untagged
@@ -1772,7 +1802,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1219445057}
   m_CullTransparentMesh: 0
---- !u!114 &1219445061
+--- !u!114 &1219445062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1781,15 +1811,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219445057}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88be11f8bc90588478107d05be5a1361, type: 3}
+  m_Script: {fileID: 11500000, guid: bf82d659d6b6dee49abebba11025e4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myBag: {fileID: 11400000, guid: 44b4ee4c0e71da04eb40dbd0b6596e6e, type: 2}
-  slotGrid: {fileID: 1533302730}
-  emptySlot: {fileID: 6855211438976316747, guid: 12ccba21d2b57b340ab1045e29ef4f4a,
-    type: 3}
-  itemfromation: {fileID: 1860151441}
-  slots: []
+  canvas: {fileID: 821958492}
 --- !u!1 &1238928791 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6962505875630015881, guid: 078115c0a1453b644aec700dcb75bfe9,
@@ -3239,7 +3264,7 @@ GameObject:
   - component: {fileID: 2089805157}
   - component: {fileID: 2089805156}
   m_Layer: 12
-  m_Name: "\u6C92\u529F\u80FD"
+  m_Name: Equip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
