@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 618700845060577651}
   - component: {fileID: 3432570755446929818}
   - component: {fileID: 8197759664263446713}
+  - component: {fileID: 1071461244468889605}
   m_Layer: 12
   m_Name: item
   m_TagString: Untagged
@@ -281,7 +282,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ca7a63a288d01c4da8a0e9d7a9d31fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myBag: {fileID: 11400000, guid: 44b4ee4c0e71da04eb40dbd0b6596e6e, type: 2}
+  currentItemID: 0
   originalParent: {fileID: 0}
+--- !u!114 &1071461244468889605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5298742362843553876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 1
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &6855211438976316747
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,6 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf70eada3f5624241bf3aba4b804f4f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slotID: 0
   slotItem: {fileID: 0}
   slotImage: {fileID: 624598619091867730}
   slotNum: {fileID: 6048715147299856708}

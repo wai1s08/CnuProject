@@ -45,21 +45,6 @@ public class InevntoryManager : MonoBehaviour
         instance.itemfromation.text = itemDescription;
     }
 
-    ////創建新物品的方法 | 獲取item.cs裡的所有訊息，將訊息傳輸給slot.cs
-    //public static void CreateNewItem(Item item)
-    //{
-    //    //生成一個Slot類的物品
-    //    Slot newItme = Instantiate(instance.slotPrefab, instance.slotGrid.transform.position, Quaternion.identity);
-
-    //    // SetParent 設置父級 | 將物品生成於instance.slotGrid的子級
-    //    newItme.gameObject.transform.SetParent(instance.slotGrid.transform);
-
-    //    //傳輸數據
-    //    newItme.slotItem = item;
-    //    newItme.slotImage.sprite = item.itemimage;
-    //    newItme.slotNum.text = item.itemHeld.ToString();
-    //}
-
     //刷新物品的方法
     public static void RefreshItem()
     {
@@ -83,6 +68,8 @@ public class InevntoryManager : MonoBehaviour
 
             instance.slots.Add(Instantiate(instance.emptySlot));
             instance.slots[i].transform.SetParent(instance.slotGrid.transform);
+
+            instance.slots[i].GetComponent<Slot>().slotID = i;
             instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
         }
     }

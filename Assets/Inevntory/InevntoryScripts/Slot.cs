@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class Slot : MonoBehaviour
 {
     //宣告一個類的變數，就可以直接使用裡面的數據
+    public int slotID;// 空格ID = 物品ID
+
     public Item slotItem;
 
 
