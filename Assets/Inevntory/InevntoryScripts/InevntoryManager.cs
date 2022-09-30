@@ -13,8 +13,12 @@ public class InevntoryManager : MonoBehaviour
     [Header("背包")]//要將物品生成至哪個背包
     public Inevntory myBag;
 
+    public Inevntory myEquip;
+
     [Header("背包裡的網格")]//將物品依照這個格式排序生成
     public GameObject slotGrid;
+
+    public GameObject EquipGrid;
 
     [Header("Slot預製物")]
     public GameObject emptySlot;
@@ -23,6 +27,11 @@ public class InevntoryManager : MonoBehaviour
     public Text itemfromation;
 
     public List<GameObject> slots = new List<GameObject>();
+
+    public List<GameObject> Equipslots = new List<GameObject>();
+
+    public static bool EquipTrue;
+
     private void Awake()
     {
         if (instance != null)
@@ -40,10 +49,14 @@ public class InevntoryManager : MonoBehaviour
         instance.itemfromation.text = "";
     }
 
+
     public static void UpdateItemInfo(string itemDescription)
     {
         instance.itemfromation.text = itemDescription;
     }
+
+   
+
 
     //刷新物品的方法
     public static void RefreshItem()
@@ -71,6 +84,38 @@ public class InevntoryManager : MonoBehaviour
 
             instance.slots[i].GetComponent<Slot>().slotID = i;
             instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
+
+            EquipTrue = false;
+        }
+
+
+        //裝備
+        for (int i = 0; i < instance.emptySlot.transform.childCount; i++)
+        {
+            //如果子級數量為0 結束這個方法
+            if (instance.EquipGrid.transform.childCount == 0)
+                break;
+
+            //銷毀gameObject
+            Destroy(instance.EquipGrid.transform.GetChild(i).gameObject);
+            instance.slots.Clear();
+        }
+
+        for (int i = 0; i < instance.myEquip.itemList.Count; i++)
+        {
+            // 生成myBag.itemList的所有數據
+            //CreateNewItem(instance.myBag.itemList[i]);
+
+            instance.Equipslots.Add(Instantiate(instance.emptySlot));
+            instance.Equipslots[i].transform.SetParent(instance.EquipGrid.transform);
+
+            instance.Equipslots[i].GetComponent<Slot>().equipID = i;
+            instance.Equipslots[i].GetComponent<Slot>().SetupSlot(instance.myEquip.itemList[i]);
+
+            EquipTrue = true;
+            Slot.IsEquipBar = true;
         }
     }
+
+    
 }

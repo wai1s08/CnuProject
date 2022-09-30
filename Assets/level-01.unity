@@ -11467,6 +11467,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: money VFX
       objectReference: {fileID: 0}
+    - target: {fileID: 7017101313325838498, guid: 2d345659218ce2e498f358812df0361e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2d345659218ce2e498f358812df0361e, type: 3}
 --- !u!1001 &7698709270317446671

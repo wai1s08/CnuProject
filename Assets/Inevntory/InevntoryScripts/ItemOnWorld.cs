@@ -10,8 +10,6 @@ public class ItemOnWorld : MonoBehaviour
     [Header("物品的數據(Inventory)")]
     public Item thisItem;
 
-    public PlayerAttack a;
-
     [Header("玩家的背包(Inventory)")]
     public Inevntory playerInevntory;
 

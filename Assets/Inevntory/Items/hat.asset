@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db45ceebe46dabf44abe6c91ee4d3791, type: 3}
-  m_Name: Sword
+  m_Name: hat
   m_EditorClassIdentifier: 
-  itemName: Sword
-  itemimage: {fileID: 21300000, guid: af50dc4fa7b6d314895d0f8c79adb4a5, type: 3}
-  itemHeld: 21
-  itemInfo: "\u6E2C\u8A66"
+  itemName: hp
+  itemimage: {fileID: 6228699216087047360, guid: 8005127654f3d894dbeaa3d00f7f7165,
+    type: 3}
+  itemHeld: 5
+  itemInfo: 
   equip: 0
-  itemtype: 1
+  itemtype: 0

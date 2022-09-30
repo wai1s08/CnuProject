@@ -9,6 +9,8 @@ public class Slot : MonoBehaviour
     //宣告一個類的變數，就可以直接使用裡面的數據
     public int slotID;// 空格ID = 物品ID
 
+    public int equipID;
+
     public Item slotItem;
 
 
@@ -19,9 +21,14 @@ public class Slot : MonoBehaviour
 
     public string slotInfo;
 
+    public string itemtype;
+
+    public static bool IsEquipBar = false;
+
     public void ItemOnClicker()
     {
         InevntoryManager.UpdateItemInfo(slotInfo);
+        //Debug.Log(itemtype);
     }
 
     public void SetupSlot(Item item)
@@ -35,5 +42,6 @@ public class Slot : MonoBehaviour
         slotImage.sprite = item.itemimage;
         slotNum.text = item.itemHeld.ToString();
         slotInfo = item.itemInfo;
+        itemtype = item.itemtype.ToString();
     }
 }

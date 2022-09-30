@@ -283,8 +283,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myBag: {fileID: 11400000, guid: 44b4ee4c0e71da04eb40dbd0b6596e6e, type: 2}
+  MyEquip: {fileID: 11400000, guid: 70c6b8f98cadb0a47846e61ae2bb3235, type: 2}
   currentItemID: 0
+  currentItemType: 
   originalParent: {fileID: 0}
+  slot: {fileID: 0}
 --- !u!114 &1071461244468889605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -395,8 +398,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotID: 0
+  equipID: 0
   slotItem: {fileID: 0}
   slotImage: {fileID: 624598619091867730}
   slotNum: {fileID: 6048715147299856708}
   itemInSlot: {fileID: 5298742362843553876}
   slotInfo: 
+  itemtype: 

@@ -5,6 +5,7 @@ using UnityEngine;
 //儲存物品的所有訊息
 
 [CreateAssetMenu(fileName = "New Item ",menuName = "Inventory/new Item")]
+
 public class Item : ScriptableObject
 {
     [Header("物品名稱")]
@@ -23,4 +24,7 @@ public class Item : ScriptableObject
 
     [Header("物品是否可以裝備")]
     public bool equip;
+
+    public enum Status { hat, potion };
+    public Status itemtype;
 }
