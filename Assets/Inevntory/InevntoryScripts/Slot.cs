@@ -23,12 +23,13 @@ public class Slot : MonoBehaviour
 
     public string itemtype;
 
-    public static bool IsEquipBar = false;
+    public bool itemEquip;
 
     public void ItemOnClicker()
     {
         InevntoryManager.UpdateItemInfo(slotInfo);
         //Debug.Log(itemtype);
+        
     }
 
     public void SetupSlot(Item item)
@@ -43,5 +44,7 @@ public class Slot : MonoBehaviour
         slotNum.text = item.itemHeld.ToString();
         slotInfo = item.itemInfo;
         itemtype = item.itemtype.ToString();
+
+        itemEquip = item.equip;
     }
 }

@@ -23,6 +23,8 @@ public class InevntoryManager : MonoBehaviour
     [Header("Slot預製物")]
     public GameObject emptySlot;
 
+    public GameObject EquipemptySlot;
+
     [Header("背包裡物品的說明欄")]
     public Text itemfromation;
 
@@ -30,8 +32,9 @@ public class InevntoryManager : MonoBehaviour
 
     public List<GameObject> Equipslots = new List<GameObject>();
 
-    public static bool EquipTrue;
+    public Slot slot;
 
+ 
     private void Awake()
     {
         if (instance != null)
@@ -85,7 +88,8 @@ public class InevntoryManager : MonoBehaviour
             instance.slots[i].GetComponent<Slot>().slotID = i;
             instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
 
-            EquipTrue = false;
+            instance.slots[i].GetComponent<Slot>().itemEquip = false;
+
         }
 
 
@@ -106,14 +110,16 @@ public class InevntoryManager : MonoBehaviour
             // 生成myBag.itemList的所有數據
             //CreateNewItem(instance.myBag.itemList[i]);
 
-            instance.Equipslots.Add(Instantiate(instance.emptySlot));
+            instance.Equipslots.Add(Instantiate(instance.EquipemptySlot));
+
             instance.Equipslots[i].transform.SetParent(instance.EquipGrid.transform);
 
             instance.Equipslots[i].GetComponent<Slot>().equipID = i;
+
             instance.Equipslots[i].GetComponent<Slot>().SetupSlot(instance.myEquip.itemList[i]);
 
-            EquipTrue = true;
-            Slot.IsEquipBar = true;
+            instance.Equipslots[i].GetComponent<Slot>().itemEquip = true;      
+            
         }
     }
 
