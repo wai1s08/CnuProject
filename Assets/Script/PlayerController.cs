@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("跳躍力道")]
     public float jumpspeed;
+    public float doulbJumpSpeed;
 
     [Header("爬梯子速度")]
     public float climbSpeed;
@@ -33,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private float playerGravity;
 
     private bool isOneWayPlatform;
+    private bool canDoubleJump;
 
 
     // Start is called before the first frame update
@@ -125,16 +127,27 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump") && isGround == true && !isOpen)
+        if (Input.GetButtonDown("Jump"))
         {
-            Vector2 jumpVal = new Vector2(0, jumpspeed);
-            myRigidbody.velocity = Vector2.up * jumpVal;
-
-            myAnim.SetBool("Jump",true);
-        }
-        else
-        {
-            myAnim.SetBool("Jump", false);
+            if (isGround)
+            {
+                SoundManager.PlayJump_sound();
+                Vector2 jumpVal = new Vector2(0, jumpspeed);
+                myRigidbody.velocity = Vector2.up * jumpVal;
+                myAnim.SetBool("Jump", true);
+                canDoubleJump = true;
+            }
+            else
+            {
+                if(canDoubleJump)
+                {
+                    Vector2 doubleJumpVel = new Vector2(0, doulbJumpSpeed);
+                    myRigidbody.velocity = Vector2.up * doubleJumpVel;
+                    canDoubleJump = false;
+                    SoundManager.PlayJump_sound();
+                    myAnim.SetBool("Jump", false);
+                }
+            }
         }
     }
 
