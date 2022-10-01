@@ -52,6 +52,24 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             //如果射線 = item Image
             if (eventData.pointerCurrentRaycast.gameObject.name == "item Image")
             {
+                //如果這個item Image是裝備欄的話
+                if (eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().itemEquip == true)
+                {
+                    Debug.Log("這是裝備欄");
+
+                    transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
+                    transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
+
+                    var Equiptemp = MyEquip.itemList[currentItemID];
+
+
+
+                    eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
+                    eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(originalParent);
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
+                    return;
+                }
+
                 //物品互換
                 transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
                 transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;

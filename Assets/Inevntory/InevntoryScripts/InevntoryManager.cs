@@ -47,6 +47,7 @@ public class InevntoryManager : MonoBehaviour
     private void OnEnable()
     {
         RefreshItem();
+        RefreshEquip();
 
         //遊戲開始時背包說明欄為空
         instance.itemfromation.text = "";
@@ -91,8 +92,11 @@ public class InevntoryManager : MonoBehaviour
             instance.slots[i].GetComponent<Slot>().itemEquip = false;
 
         }
+        
+    }
 
-
+    public static void RefreshEquip()
+    {
         //裝備
         for (int i = 0; i < instance.emptySlot.transform.childCount; i++)
         {
@@ -118,8 +122,8 @@ public class InevntoryManager : MonoBehaviour
 
             instance.Equipslots[i].GetComponent<Slot>().SetupSlot(instance.myEquip.itemList[i]);
 
-            instance.Equipslots[i].GetComponent<Slot>().itemEquip = true;      
-            
+            instance.Equipslots[i].GetComponent<Slot>().itemEquip = true;
+
         }
     }
 
