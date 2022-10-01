@@ -60,8 +60,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
                     transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
 
-                    var Equiptemp = MyEquip.itemList[currentItemID];
-
+                    //數據交換
 
 
                     eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
