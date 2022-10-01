@@ -407,7 +407,6 @@ AnimatorState:
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1975733537054186856}
   - {fileID: 2157592972677093441}
   - {fileID: -2018842781046340944}
   m_StateMachineBehaviours: []
@@ -682,7 +681,7 @@ AnimatorStateMachine:
     m_Position: {x: 710, y: -80, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 713342375221532331}
-    m_Position: {x: 410, y: 170, z: 0}
+    m_Position: {x: 400, y: 250, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4327830369890242169}
     m_Position: {x: 400, y: 430, z: 0}
