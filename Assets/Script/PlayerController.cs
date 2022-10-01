@@ -90,6 +90,7 @@ public class PlayerController : MonoBehaviour
             Vector2 playerVal = new Vector2(moveDir * runSpeed, myRigidbody.velocity.y);
 
             // 回傳結果
+            
             myRigidbody.velocity = playerVal;
 
             bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
@@ -127,6 +128,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGround == true && !isOpen)
         {
+            SoundManager.PlayJump_sound();
             Vector2 jumpVal = new Vector2(0, jumpspeed);
             myRigidbody.velocity = Vector2.up * jumpVal;
 
