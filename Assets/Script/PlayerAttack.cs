@@ -38,7 +38,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense ==false && !PlayerController.isOpen)
         {
-            SoundManager.PlaySword_sound();
             coll.enabled = true;
             anim.SetTrigger("Attack");
             StartCoroutine(disableHitBox());

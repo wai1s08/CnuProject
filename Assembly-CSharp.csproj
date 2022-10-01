@@ -93,7 +93,6 @@
     <Compile Include="Assets\Script\PlayerState.cs" />
     <Compile Include="Assets\Script\Portal.cs" />
     <Compile Include="Assets\Script\Sign.cs" />
-    <Compile Include="Assets\Script\SoundManager.cs" />
     <Compile Include="Assets\Script\initPlayer.cs" />
     <Compile Include="Assets\Script\spike.cs" />
   </ItemGroup>
