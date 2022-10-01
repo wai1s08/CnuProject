@@ -108,20 +108,23 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
             if (eventData.pointerCurrentRaycast.gameObject.name == "EquipemptySlot(Clone)")
             {
-                transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
-                transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
-
-                // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
-                MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().equipID] = myBag.itemList[currentItemID];
-
-                if(eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
+                if(currentItemType == "hat" && eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID == 0)
                 {
-                    myBag.itemList[currentItemID] = null;
+                    transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
+                    transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
+
+                    // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
+                    MyEquip.itemList[0] = myBag.itemList[currentItemID];
+
+                    if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
+                    {
+                        myBag.itemList[currentItemID] = null;
+                    }
+
+                    Debug.Log("裝備帽子");
+                    return;
                 }
-
-
-
-                return;
+                
 
             }
 

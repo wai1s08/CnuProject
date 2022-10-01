@@ -125,6 +125,7 @@ public class InevntoryManager : MonoBehaviour
             instance.Equipslots[i].GetComponent<Slot>().itemEquip = true;
 
         }
+
     }
 
     
