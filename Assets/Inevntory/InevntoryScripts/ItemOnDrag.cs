@@ -49,6 +49,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         if (eventData.pointerCurrentRaycast.gameObject != null)
         {
+            //如果射線 = item Image
             if (eventData.pointerCurrentRaycast.gameObject.name == "item Image")
             {
                 //物品互換
@@ -71,6 +72,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 return;
             }
 
+
             if (eventData.pointerCurrentRaycast.gameObject.name == "Slot(Clone)")
             {
                 transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
@@ -92,8 +94,13 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
                 transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
 
-                //我裝備欄目前
-                MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().equipID] = myBag.itemList[1];
+                // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
+                MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().equipID] = myBag.itemList[currentItemID];
+
+                if(eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
+                {
+                    myBag.itemList[currentItemID] = null;
+                }
 
 
 
@@ -116,9 +123,9 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
 
 //if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().itemEquip == true)
-            //    {
-            //        transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
-            //        transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
+//    {
+//        transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
+//        transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
 
 //        //臨時變量 = 背包當前物品格的ID
 //        var Equiptemp = myBag.itemList[currentItemID];
@@ -134,3 +141,8 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 //        GetComponent<CanvasGroup>().blocksRaycasts = true;
 //        return;
 //    }
+
+
+
+//我裝備欄目前射線的 equipID = 我的背包當前物品的 slotID
+//MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().equipID] = myBag.itemList[currentItemID];
