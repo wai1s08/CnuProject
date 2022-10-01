@@ -127,6 +127,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump") && isGround == true && !isOpen)
         {
+            SoundManager.PlayJump_sound();
             Vector2 jumpVal = new Vector2(0, jumpspeed);
             myRigidbody.velocity = Vector2.up * jumpVal;
 
