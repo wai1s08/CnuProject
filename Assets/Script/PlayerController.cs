@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
                 SoundManager.PlayJump_sound();
                 Vector2 jumpVal = new Vector2(0, jumpspeed);
                 myRigidbody.velocity = Vector2.up * jumpVal;
-                myAnim.SetBool("Jump", true);
+                myAnim.SetBool("Jump", false);
                 canDoubleJump = true;
             }
             else
