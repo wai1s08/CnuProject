@@ -43,6 +43,7 @@ public class Slot : MonoBehaviour
         slotImage.sprite = item.itemimage;
         slotNum.text = item.itemHeld.ToString();
         slotInfo = item.itemInfo;
+
         itemtype = item.itemtype.ToString();
 
         itemEquip = item.equip;

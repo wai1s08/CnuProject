@@ -286,6 +286,7 @@ MonoBehaviour:
   MyEquip: {fileID: 11400000, guid: 70c6b8f98cadb0a47846e61ae2bb3235, type: 2}
   currentItemID: 0
   currentItemType: 
+  originalParentItemType: 
   originalParent: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &1071461244468889605
@@ -405,3 +406,4 @@ MonoBehaviour:
   itemInSlot: {fileID: 5298742362843553876}
   slotInfo: 
   itemtype: 
+  itemEquip: 0

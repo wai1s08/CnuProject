@@ -26,5 +26,6 @@ public class Item : ScriptableObject
     public bool equip;
 
     public enum Status { hat, potion };
+
     public Status itemtype;
 }
