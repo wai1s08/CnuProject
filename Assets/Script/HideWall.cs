@@ -1,27 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class HideWall : MonoBehaviour
 {
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject Tile;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<SpriteRenderer>().enabled = false;
+            //GetComponent<SpriteRenderer>().enabled = false;
+
+            GetComponent<TilemapRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
         }
     }
 
@@ -29,7 +22,9 @@ public class HideWall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GetComponent<SpriteRenderer>().enabled = true;
+            //GetComponent<SpriteRenderer>().enabled = true;
+
+            GetComponent<TilemapRenderer>().maskInteraction = SpriteMaskInteraction.None;
         }
     }
 }
