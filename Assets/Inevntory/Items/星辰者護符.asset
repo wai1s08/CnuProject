@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db45ceebe46dabf44abe6c91ee4d3791, type: 3}
+  m_Name: "\u661F\u8FB0\u8005\u8B77\u7B26"
+  m_EditorClassIdentifier: 
+  itemName: "\u661F\u8FB0\u8005\u8B77\u7B26"
+  itemimage: {fileID: 21300000, guid: 3ea11cf8fbef1d4499a1bf0acaada9a8, type: 3}
+  itemHeld: 1
+  itemInfo: "\u994B\u8D08\u8207\u7570\u754C\u5B58\u5728\u7DE0\u7D50\u5951\u7D04\u4E4B\u4EBA\uFF0C\u80FD\u5C07\u6575\u4EBA\u7684\u529B\u91CF\u5316\u70BA\u5DF2\u7528\u3002\r\n\u8207\u7570\u754C\u7D50\u4E0B\u5951\u7D04\uFF0C\u63DB\u53D6\u77E5\u8B58\u548C\u529B\u91CF\u7684\u90AA\u8853\u5E2B\uFF0C\u6B63\u662F\u88AB\u773E\u4EBA\u6240\u5FCC\u8AF1\u7684\u5B58\u5728\u3002"
+  equip: 0
+  itemtype: 6
+  hp: 0
