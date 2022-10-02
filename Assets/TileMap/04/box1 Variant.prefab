@@ -115,7 +115,7 @@ PrefabInstance:
     - target: {fileID: 7698709269793596500, guid: 890b5b849431dfb48980b4f90ab5463d,
         type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7698709269793596500, guid: 890b5b849431dfb48980b4f90ab5463d,
         type: 3}
@@ -125,12 +125,12 @@ PrefabInstance:
     - target: {fileID: 7698709269793596500, guid: 890b5b849431dfb48980b4f90ab5463d,
         type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: -946917047
       objectReference: {fileID: 0}
     - target: {fileID: 7698709269793596502, guid: 890b5b849431dfb48980b4f90ab5463d,
         type: 3}
       propertyPath: m_Name
-      value: box1
+      value: box1 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 890b5b849431dfb48980b4f90ab5463d, type: 3}
