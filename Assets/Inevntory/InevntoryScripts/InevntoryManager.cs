@@ -28,6 +28,8 @@ public class InevntoryManager : MonoBehaviour
     [Header("背包裡物品的說明欄")]
     public Text itemfromation;
 
+    public Text itemtype;
+
     public List<GameObject> slots = new List<GameObject>();
 
     public List<GameObject> Equipslots = new List<GameObject>();

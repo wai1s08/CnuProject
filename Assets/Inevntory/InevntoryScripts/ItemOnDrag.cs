@@ -39,9 +39,11 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         Debug.Log(currentItemType);
 
-        Debug.Log("格子" + eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().itemEquip);
+        // Debug.Log("格子" + eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().itemEquip);
 
+        // Debug.Log(eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().itemEquip);
 
+        Debug.Log(originalParent);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -55,38 +57,50 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                 //如果這個item Image是裝備欄的話
                 if (eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().itemEquip == true)
                 {
-                    Debug.Log("這是裝備欄");
+                    if (currentItemType == "hat" && eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().equipID == 0)
+                    {
+                        Debug.Log("這是裝備欄(帽子)");
+                        transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
+                        transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
 
+                        //數據交換
+                        var temp = myBag.itemList[currentItemID];
+
+                        myBag.itemList[currentItemID] = MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID];
+
+                        MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = temp;
+
+                        eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
+                        eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(originalParent);
+                        GetComponent<CanvasGroup>().blocksRaycasts = true;
+                        return;
+                    }
+
+                }
+
+                //如果是物品欄的處理方式
+                if (eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().itemEquip == false)
+                {
+                    //物品互換
                     transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
                     transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
 
-                    //數據交換
+                    //臨時變量 = 背包當前物品格的ID
+                    var temp = myBag.itemList[currentItemID];
 
+                    // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
+                    myBag.itemList[currentItemID] = myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID];
 
+                    //回傳
+                    myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = temp;
+
+                    //
                     eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
                     eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(originalParent);
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
-                //物品互換
-                transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
-                transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
-
-                //臨時變量 = 背包當前物品格的ID
-                var temp = myBag.itemList[currentItemID];
-
-                // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
-                myBag.itemList[currentItemID] = myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID];
-
-                //回傳
-                myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = temp;
-
-                //
-                eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
-                eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(originalParent);
-                GetComponent<CanvasGroup>().blocksRaycasts = true;
-                return;
             }
 
 
@@ -108,7 +122,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
             if (eventData.pointerCurrentRaycast.gameObject.name == "EquipemptySlot(Clone)")
             {
-                if(currentItemType == "hat" && eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID == 0)
+                if (currentItemType == "hat" && eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID == 0)
                 {
                     transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
                     transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
@@ -124,10 +138,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     Debug.Log("裝備帽子");
                     return;
                 }
-                
-
             }
-
         }
 
 
@@ -135,11 +146,9 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         transform.SetParent(originalParent);
         transform.position = originalParent.position;
         GetComponent<CanvasGroup>().blocksRaycasts = true;
-
     }
-
-
 }
+
 
 
 //if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().itemEquip == true)
