@@ -303,6 +303,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -318,6 +319,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -333,7 +335,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
-
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -349,7 +351,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
-
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -365,7 +367,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
-
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -381,6 +383,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -396,6 +399,7 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
 
@@ -411,44 +415,10 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
             }
-
-            //void changeEquip()
-            //{
-            //    transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform.parent.parent);
-            //    transform.position = eventData.pointerCurrentRaycast.gameObject.transform.parent.parent.position;
-
-            //    //數據交換
-            //    var temp = myBag.itemList[currentItemID];
-
-            //    myBag.itemList[currentItemID] = MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID];
-
-            //    MyEquip.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = temp;
-
-
-            //    eventData.pointerCurrentRaycast.gameObject.transform.parent.position = originalParent.position;
-            //    eventData.pointerCurrentRaycast.gameObject.transform.parent.SetParent(originalParent);
-
-
-            //    GetComponent<CanvasGroup>().blocksRaycasts = true;
-            //}
-
-
-            //void NewEquip()
-            //{
-            //    transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
-            //    transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
-
-            //    // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
-            //    MyEquip.itemList[0] = myBag.itemList[currentItemID];
-
-            //    if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
-            //    {
-            //        myBag.itemList[currentItemID] = null;
-            //    }
-            //}
         }
 
 
