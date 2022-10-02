@@ -60,7 +60,6 @@ public class InevntoryManager : MonoBehaviour
     {
         instance.itemfromation.text = itemDescription;
     }
-
    
 
 
@@ -120,6 +119,7 @@ public class InevntoryManager : MonoBehaviour
 
             instance.Equipslots[i].transform.SetParent(instance.EquipGrid.transform);
 
+            instance.Equipslots[i].GetComponent<Slot>().slotID = i;
             instance.Equipslots[i].GetComponent<Slot>().equipID = i;
 
             instance.Equipslots[i].GetComponent<Slot>().SetupSlot(instance.myEquip.itemList[i]);

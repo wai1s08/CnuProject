@@ -22,10 +22,13 @@ public class Item : ScriptableObject
     [TextArea]
     public string itemInfo;
 
-    [Header("物品是否可以裝備")]
+    [Header("是否是物品欄(不要勾)")]
     public bool equip;
 
-    public enum Status { hat, potion };
+    public enum Status { hat, top, bottom, shoes, sword, shield, pendant, ring };
 
+    [Header("物品種類")]
     public Status itemtype;
+
+    public int hp;
 }
