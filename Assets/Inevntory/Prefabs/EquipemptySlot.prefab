@@ -230,6 +230,7 @@ MonoBehaviour:
   MyEquip: {fileID: 11400000, guid: 70c6b8f98cadb0a47846e61ae2bb3235, type: 2}
   currentItemID: 0
   currentItemType: 
+  lookItemType: 
   originalParent: {fileID: 0}
   slot: {fileID: 0}
 --- !u!114 &8614198492475753599

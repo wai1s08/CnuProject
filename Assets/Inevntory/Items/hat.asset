@@ -16,6 +16,7 @@ MonoBehaviour:
   itemimage: {fileID: 6228699216087047360, guid: 8005127654f3d894dbeaa3d00f7f7165,
     type: 3}
   itemHeld: 5
-  itemInfo: 
+  itemInfo: 123
   equip: 0
-  itemtype: 0
+  itemtype: 1
+  hp: 10

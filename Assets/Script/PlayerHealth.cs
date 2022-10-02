@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
     private float Face;
 
 
-
+    public Item item;
 
 
     // Start is called before the first frame update
