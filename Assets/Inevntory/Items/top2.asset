@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: db45ceebe46dabf44abe6c91ee4d3791, type: 3}
-  m_Name: Sword
+  m_Name: top2
   m_EditorClassIdentifier: 
-  itemName: Sword
-  itemimage: {fileID: 21300000, guid: e6bdf38c3d74a3742bce12330654f66f, type: 3}
+  itemName: top2
+  itemimage: {fileID: 21300000, guid: b28160708ae0b5c4c85071d68c31b9dc, type: 3}
   itemHeld: 1
-  itemInfo: "\u6E2C\u8A66"
+  itemInfo: 
   equip: 0
-  itemtype: 4
+  itemtype: 1
   hp: 0

@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db45ceebe46dabf44abe6c91ee4d3791, type: 3}
   m_Name: hat
   m_EditorClassIdentifier: 
-  itemName: hp
-  itemimage: {fileID: 6228699216087047360, guid: 8005127654f3d894dbeaa3d00f7f7165,
-    type: 3}
-  itemHeld: 5
+  itemName: hat
+  itemimage: {fileID: 21300000, guid: d216e64aa8cb32443a34527b87298a02, type: 3}
+  itemHeld: 1
   itemInfo: 123
-  equip: 0
-  itemtype: 1
+  equip: 1
+  itemtype: 0
   hp: 10

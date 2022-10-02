@@ -13,50 +13,20 @@ MonoBehaviour:
   m_Name: MyBag
   m_EditorClassIdentifier: 
   itemList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 6b158981153285e4eba0fcce9be7ebd3, type: 2}
+  - {fileID: 11400000, guid: 0f44238894d8827419921a151617f7e9, type: 2}
+  - {fileID: 11400000, guid: b254305057de6384ca4512c0386aa01b, type: 2}
+  - {fileID: 11400000, guid: 63784e35452ff6c41a72b4db25575e09, type: 2}
   - {fileID: 11400000, guid: b9246b95f8e383341b37748ac7fd96de, type: 2}
-  - {fileID: 11400000, guid: 6b158981153285e4eba0fcce9be7ebd3, type: 2}
-  - {fileID: 11400000, guid: 6b158981153285e4eba0fcce9be7ebd3, type: 2}
-  - {fileID: 11400000, guid: 0f44238894d8827419921a151617f7e9, type: 2}
-  - {fileID: 11400000, guid: 0f44238894d8827419921a151617f7e9, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
