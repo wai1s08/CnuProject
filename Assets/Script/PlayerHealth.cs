@@ -44,7 +44,7 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HealthBar.HealthMax = Maxhealth + EquipManager.hp;
+        HealthBar.HealthMax = Maxhealth + EquipManager.Totalhp;
         Face = GetComponent<Transform>().rotation.y;
     }
 

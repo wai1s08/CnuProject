@@ -36,8 +36,10 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         currentItemEquipStatus = originalParent.GetComponent<Slot>().Equiping;
 
-        transform.SetParent(transform.parent.parent.parent.parent.parent.parent);
+        transform.SetParent(transform.parent.parent.parent.parent.parent);
+
         transform.position = eventData.position;
+
         GetComponent<CanvasGroup>().blocksRaycasts = false;
     }
 
