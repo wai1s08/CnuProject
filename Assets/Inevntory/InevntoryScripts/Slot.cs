@@ -25,6 +25,10 @@ public class Slot : MonoBehaviour
 
     public bool itemEquip;
 
+    public int itemHp;
+
+    public bool Equiping;
+
     public void ItemOnClicker()
     {
         InevntoryManager.UpdateItemInfo(slotInfo);
@@ -41,11 +45,17 @@ public class Slot : MonoBehaviour
         }
 
         slotImage.sprite = item.itemimage;
+
         slotNum.text = item.itemHeld.ToString();
+
         slotInfo = item.itemInfo;
 
         itemtype = item.itemtype.ToString();
 
-        itemEquip = item.equip;
+        itemEquip = item.equipbar;
+
+        itemHp = item.hp;
+
+        Equiping = item.equiping;
     }
 }

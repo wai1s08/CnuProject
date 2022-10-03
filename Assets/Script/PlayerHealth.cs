@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     public int health;
+    public int Maxhealth;
+
     public GameObject chin;
     public GameObject Main;
 
@@ -22,7 +24,9 @@ public class PlayerHealth : MonoBehaviour
     private float Face;
 
 
-    public Item item;
+    public Slot slot;
+
+    public int EquipHp;
 
 
     // Start is called before the first frame update
@@ -32,18 +36,16 @@ public class PlayerHealth : MonoBehaviour
         myRenderer = GetComponent<Renderer>();
         DontDestroyOnLoad(this.gameObject);
         HealthBar.HealthCurrent = health;
-        HealthBar.HealthMax = health;
 
-        
-
+        Maxhealth = health;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        HealthBar.HealthMax = Maxhealth + EquipManager.hp;
         Face = GetComponent<Transform>().rotation.y;
-        //Debug.Log(Face);
     }
 
     public void DamagePlayer(int Damage)

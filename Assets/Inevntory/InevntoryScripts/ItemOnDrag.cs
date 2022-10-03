@@ -15,11 +15,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
     public string currentItemType; //當前物品type
 
+    public bool currentItemEquipStatus;
+
     public string lookItemType; // 當前指著的物品類
 
     public Transform originalParent; //原本的父級
 
     public Slot slot;
+
+    public bool IsEquiping = false;
 
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -29,6 +33,8 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
         currentItemID = originalParent.GetComponent<Slot>().slotID;
 
         currentItemType = originalParent.GetComponent<Slot>().itemtype;
+
+        currentItemEquipStatus = originalParent.GetComponent<Slot>().Equiping;
 
         transform.SetParent(transform.parent.parent.parent.parent.parent.parent);
         transform.position = eventData.position;
@@ -41,15 +47,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
 
         lookItemType = eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().itemtype;
 
-        Debug.Log("格子" + eventData.pointerCurrentRaycast.gameObject.name);
+        //Debug.Log("格子" + eventData.pointerCurrentRaycast.gameObject.name);
 
-        Debug.Log(currentItemType);
+        //Debug.Log(currentItemType);
 
         // Debug.Log("格子" + eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().itemEquip);
 
         // Debug.Log(eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().itemEquip);
 
-        Debug.Log(originalParent);
+        Debug.Log(currentItemEquipStatus);
 
         Debug.Log("原本的類" + lookItemType);
     }
@@ -268,25 +274,53 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
             //放到空格
             if (eventData.pointerCurrentRaycast.gameObject.name == "Slot(Clone)")
             {
-                transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
-                transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
-
-                //將我放置那格的物品種類 更改為 我原來物品的種類
-                eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
-
-
-                myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = myBag.itemList[currentItemID];
-
-
-                //如果我放下的那格不是原先的位子
-                if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().slotID != currentItemID)
+                if (currentItemEquipStatus == true)
                 {
-                    myBag.itemList[currentItemID] = null;
-                    originalParent.gameObject.GetComponent<Slot>().itemtype = null;
-                }
+                    transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
+                    transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
 
-                GetComponent<CanvasGroup>().blocksRaycasts = true;
-                return;
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
+                    myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = MyEquip.itemList[currentItemID];
+
+                    //如果我放下的那格不是原先的位子
+                    if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().slotID != currentItemID)
+                    {
+                        MyEquip.itemList[currentItemID] = null;
+                        originalParent.gameObject.GetComponent<Slot>().itemtype = null;
+                    }
+
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
+                    return;
+
+                }
+                else
+                {
+                    transform.SetParent(eventData.pointerCurrentRaycast.gameObject.transform);
+                    transform.position = eventData.pointerCurrentRaycast.gameObject.transform.position;
+
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
+
+                    myBag.itemList[eventData.pointerCurrentRaycast.gameObject.GetComponentInParent<Slot>().slotID] = myBag.itemList[currentItemID];
+
+
+                    //如果我放下的那格不是原先的位子
+                    if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().slotID != currentItemID)
+                    {
+                        myBag.itemList[currentItemID] = null;
+                        originalParent.gameObject.GetComponent<Slot>().itemtype = null;
+                    }
+
+                    GetComponent<CanvasGroup>().blocksRaycasts = true;
+                    return;
+                }
+                
+
+
+
             }
 
             if (eventData.pointerCurrentRaycast.gameObject.name == "EquipemptySlot(Clone)")
@@ -299,10 +333,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[0] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -315,10 +354,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[1] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -331,10 +375,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[2] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -347,10 +396,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[3] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -363,10 +417,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[4] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -379,10 +438,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[5] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -395,10 +459,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[6] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }
@@ -411,10 +480,15 @@ public class ItemOnDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDr
                     // 我的背包目前物品格的ID = 我現在滑鼠射線那格的物品格ID
                     MyEquip.itemList[7] = myBag.itemList[currentItemID];
 
+                    //將我放置那格的物品種類 更改為 我原來物品的種類
+                    eventData.pointerPressRaycast.gameObject.GetComponentInParent<Slot>().itemtype = currentItemType;
+
                     if (eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().equipID != currentItemID)
                     {
                         myBag.itemList[currentItemID] = null;
                     }
+
+                    eventData.pointerCurrentRaycast.gameObject.GetComponent<Slot>().Equiping = true;
                     GetComponent<CanvasGroup>().blocksRaycasts = true;
                     return;
                 }

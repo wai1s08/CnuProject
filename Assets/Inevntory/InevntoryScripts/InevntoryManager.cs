@@ -91,6 +91,7 @@ public class InevntoryManager : MonoBehaviour
             instance.slots[i].GetComponent<Slot>().SetupSlot(instance.myBag.itemList[i]);
 
             instance.slots[i].GetComponent<Slot>().itemEquip = false;
+            instance.slots[i].GetComponent<Slot>().Equiping = false;
 
         }
         
@@ -125,6 +126,7 @@ public class InevntoryManager : MonoBehaviour
             instance.Equipslots[i].GetComponent<Slot>().SetupSlot(instance.myEquip.itemList[i]);
 
             instance.Equipslots[i].GetComponent<Slot>().itemEquip = true;
+            instance.Equipslots[i].GetComponent<Slot>().Equiping = true;
 
         }
 
