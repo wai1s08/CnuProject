@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         CheckLadder();
         OpenMyBag();
         Portal();
+
+        switchAnimation();
         //Defense();
 
         OneWayPlatformCheck();
@@ -134,20 +136,27 @@ public class PlayerController : MonoBehaviour
                 SoundManager.PlayJump_sound();
                 Vector2 jumpVal = new Vector2(0, jumpspeed);
                 myRigidbody.velocity = Vector2.up * jumpVal;
-                myAnim.SetBool("Jump", false);
-                canDoubleJump = true;
+                myAnim.SetBool("Jump", true);
             }
-            else
+        }
+    }
+
+    void switchAnimation()
+    {
+        myAnim.SetBool("Idle", false);
+
+        if (myAnim.GetBool("Jump"))
+        {
+            if(myRigidbody.velocity.y < 0.0f)
             {
-                if(canDoubleJump)
-                {
-                    Vector2 doubleJumpVel = new Vector2(0, doulbJumpSpeed);
-                    myRigidbody.velocity = Vector2.up * doubleJumpVel;
-                    canDoubleJump = false;
-                    SoundManager.PlayJump_sound();
-                    myAnim.SetBool("Jump", false);
-                }
+                myAnim.SetBool("Jump", false);
+                myAnim.SetBool("Fall", true);
             }
+        }
+        else if (isGround)
+        {
+            myAnim.SetBool("Fall", false);
+            myAnim.SetBool("Idle", true);
         }
     }
 
