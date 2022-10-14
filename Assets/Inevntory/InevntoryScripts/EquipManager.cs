@@ -14,14 +14,21 @@ public class EquipManager : MonoBehaviour
 
     void Start()
     {
-        
+        Totalhp = Hathp + SwordHp;
+        Hat();
+        Sword();
     }
 
     // Update is called once per frame
     void Update()
     {
         Totalhp = Hathp + SwordHp;
+        Hat();
+        Sword();
+    }
 
+    void Hat()
+    {
         if (MyEquip.itemList[0] != null)
         {
             //Debug.Log(hp);
@@ -31,8 +38,10 @@ public class EquipManager : MonoBehaviour
         {
             Hathp = 0;
         }
+    }
 
-
+    void Sword()
+    {
         if (MyEquip.itemList[1] != null)
         {
             //Debug.Log(hp);
@@ -42,6 +51,5 @@ public class EquipManager : MonoBehaviour
         {
             SwordHp = 0;
         }
-
     }
 }

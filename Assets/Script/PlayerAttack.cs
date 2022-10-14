@@ -54,9 +54,12 @@ public class PlayerAttack : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+
+        int value = Random.Range(PlayerDamage * 1, PlayerDamage * 2);
+
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.GetComponent<Enemy>().TakeDamage(PlayerDamage);
+            other.GetComponent<Enemy>().TakeDamage(value);
 
             //UnityEngine.PolygonCollider2D
         }

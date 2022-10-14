@@ -26,16 +26,16 @@ public class PlayerHealth : MonoBehaviour
 
     public Slot slot;
 
-    public int EquipHp;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
         myRenderer = GetComponent<Renderer>();
         DontDestroyOnLoad(this.gameObject);
-        HealthBar.HealthCurrent = health;
+
+        HealthBar.HealthCurrent = health ;
+        
 
         Maxhealth = health;
 

@@ -36,7 +36,7 @@ public class Sign : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && collision.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
         {
             isPlayerInSign = true;
-            warn.SetActive(true);
+            //warn.SetActive(true);
             
         }
     }
@@ -48,7 +48,7 @@ public class Sign : MonoBehaviour
         isPlayerInSign = false;
         diadialogBox.SetActive(false);
 
-        warn.SetActive(false);
+        //warn.SetActive(false);
     }
 
 }
