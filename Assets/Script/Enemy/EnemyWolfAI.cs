@@ -6,10 +6,13 @@ public class EnemyWolfAI : Enemy
 {
     public enum Status { idle, Chase, Walk , /*patrol ,*/ Death , Attack};
 
+
+    [Header("目前狀態")]
     public Status status;
 
     private float wait;
 
+    [Header("巡邏等待時間")]
     public float waitTime = 5;
 
     private BoxCollider2D box2D;
@@ -18,9 +21,10 @@ public class EnemyWolfAI : Enemy
 
     private PolygonCollider2D AttackColl;
 
-    public float time;
+   // public float time;
 
-    public float turnSpeed = 0.1f;
+
+   // public float turnSpeed = 0.1f;
 
     
 

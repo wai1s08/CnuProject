@@ -7,15 +7,20 @@ public class Boss01AI : Enemy
 
     public enum Status { idle, Chase, Walk, Death, Attack };
 
+
+    [Header("目前狀態")]
     public Status status;
 
-    public BoxCollider2D box2D;
+    private BoxCollider2D box2D;
 
-    public PolygonCollider2D Attackcoll1;
+    private PolygonCollider2D Attackcoll1;
 
-    public PolygonCollider2D Attackcoll2;
+    private PolygonCollider2D Attackcoll2;
 
+    [Header("箭矢")]
     public GameObject Arrow;
+
+    [Header("箭矢生成點")]
     public Transform ArrowPoint;
 
     // Start is called before the first frame update
