@@ -94,17 +94,6 @@ public class Boss01AI : Enemy
 
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) > Distance)
                 {
-                    //if (myTransform.position.x == moveSpots[0].position.x)
-                    //{
-                    //    transform.localRotation = Quaternion.Euler(0, 180, 0);
-                    //}
-                    //else
-                    //{
-                    //    transform.localRotation = Quaternion.Euler(0, 0, 0);
-                    //}
-
-
-
                     status = Status.idle;
                 }
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) <= 3)
@@ -117,11 +106,7 @@ public class Boss01AI : Enemy
 
                 anim.SetBool("Attack", true);
 
-
-
-                //Attack();
-
-                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 3)
+                if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 4)
                 {
                     anim.SetBool("Attack", false);
                     status = Status.idle;
