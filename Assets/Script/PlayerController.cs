@@ -19,22 +19,25 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D myRigidbody;
     private Animator myAnim;
-
     private BoxCollider2D myFeet;
-    public bool isGround;
+    
 
     public GameObject MyBag;
     public static bool isOpen;
-    private bool IsPortal;
 
-    private bool isLadder;
-    private bool isClimbing;
-    private bool isJumping;
+    private bool IsPortal, isLadder, isClimbing, isJumping, isOneWayPlatform;
 
     private float playerGravity;
 
-    private bool isOneWayPlatform;
-    private bool canDoubleJump;
+
+    public bool isGround , isJump;
+    public Transform groundCheck;
+    public LayerMask ground;
+
+    bool jumpPressed;
+    int jumpCount;
+
+
 
 
     // Start is called before the first frame update
@@ -43,31 +46,42 @@ public class PlayerController : MonoBehaviour
         // 遊戲開始後取得組件
         myRigidbody = GetComponent<Rigidbody2D>();
         myAnim = GetComponent<Animator>();
-
         myFeet = GetComponent<BoxCollider2D>();
-
         playerGravity = myRigidbody.gravityScale;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // 在遊戲進行當中不斷取得Run的數值
+        if(Input.GetButtonDown("Jump") && jumpCount > 0)
+        {
+            jumpPressed = true;
+        }
 
         CheckAirStatus();
-        Run();
-        Flip();
-        Jump();
+        
+        
+        
         Climb();
         checkGround();
         CheckLadder();
         OpenMyBag();
         Portal();
 
-        switchAnimation();
+        
         //Defense();
 
         OneWayPlatformCheck();
+    }
+
+    private void FixedUpdate()
+    {
+        isGround = Physics2D.OverlapCircle(groundCheck.position, 0.1f, ground);
+
+        Run();
+        Jump();
+        Flip();
+        switchAnim();
     }
 
     void checkGround()
@@ -87,24 +101,13 @@ public class PlayerController : MonoBehaviour
     {
         if (PlayerState.IsDefense == false && !isOpen )
         {
-            // Input.GetAxis是Unity內建偵測輸入的函式 | Horizontal = 水平 | 偵測玩家按的按鍵取的方向
-            float moveDir = Input.GetAxis("Horizontal");
-
-            // Vector2 = 2D向量和點的表示形式，用於表示2D位置，只有兩個軸x＆y | 將取得的方向乘上玩家的速度進行移動
-            Vector2 playerVal = new Vector2(moveDir * runSpeed, myRigidbody.velocity.y);
-
-            // 回傳結果
-            myRigidbody.velocity = playerVal;
-
-            bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
-
-            myAnim.SetBool("Run", playerHasXAxisSpeed);
+            float horizontalMove = Input.GetAxisRaw("Horizontal");
+            myRigidbody.velocity = new Vector2(horizontalMove * runSpeed, myRigidbody.velocity.y);
         }
         else
         {
-            float moveDir = Input.GetAxis("Horizontal");
-            Vector2 playerVal = new Vector2(moveDir * 0, myRigidbody.velocity.y);
-            myRigidbody.velocity = playerVal;
+            float horizontalMove = Input.GetAxis("Horizontal");
+            myRigidbody.velocity = new Vector2(horizontalMove * 0, myRigidbody.velocity.y);
 
         }
 
@@ -129,34 +132,47 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (isGround)
         {
-            if (isGround)
-            {
-                SoundManager.PlayJump_sound();
-                Vector2 jumpVal = new Vector2(0, jumpspeed);
-                myRigidbody.velocity = Vector2.up * jumpVal;
-                myAnim.SetBool("Jump", true);
-            }
+            jumpCount = 2;
+            isJump = false;
+        }
+
+        if(jumpPressed && isGround )
+        {
+            SoundManager.PlayJump_sound();
+            isJump = true;
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpspeed);
+            jumpCount--;
+            jumpPressed = false;
+        }
+        else if(jumpPressed && jumpCount > 0 && isJump )
+        {
+            SoundManager.PlayJump_sound();
+            myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, jumpspeed);
+            jumpCount--;
+            jumpPressed = false;
         }
     }
 
-    void switchAnimation()
+    void switchAnim()
     {
-        myAnim.SetBool("Idle", false);
+        bool playerHasXAxisSpeed = Mathf.Abs(myRigidbody.velocity.x) > Mathf.Epsilon;
 
-        if (myAnim.GetBool("Jump"))
-        {
-            if(myRigidbody.velocity.y < 0.0f)
-            {
-                myAnim.SetBool("Jump", false);
-                myAnim.SetBool("Fall", true);
-            }
-        }
-        else if (isGround)
+        myAnim.SetBool("Run", playerHasXAxisSpeed);
+
+        if (isGround)
         {
             myAnim.SetBool("Fall", false);
-            myAnim.SetBool("Idle", true);
+        }
+        else if(!isGround && myRigidbody.velocity.y > 0 && !isLadder)
+        {
+            myAnim.SetBool("Jump", true);
+        }
+        else if(myRigidbody.velocity.y < 0) 
+        {
+            myAnim.SetBool("Jump", false);
+            myAnim.SetBool("Fall", true);
         }
     }
 
@@ -184,10 +200,10 @@ public class PlayerController : MonoBehaviour
                 if (isJumping)
                 {
                     myAnim.SetBool("Climb", false);
+                    myRigidbody.gravityScale = playerGravity;
                 }
                 else
                 {
-                    //myAnim.SetBool("Climb", false);
                     myRigidbody.velocity = new Vector2(myRigidbody.velocity.x, 0.0f);
                     if(myRigidbody.velocity.x == 0.0f && isClimbing)
                     {
@@ -211,8 +227,6 @@ public class PlayerController : MonoBehaviour
         {
             myRigidbody.gravityScale = playerGravity;
         }
-
-        //Debug.Log("myRigidbody.gravityScale:"+ myRigidbody.gravityScale);
     }
 
     void CheckAirStatus()
@@ -234,7 +248,7 @@ public class PlayerController : MonoBehaviour
     void Portal()
     {
         //Debug.Log(IsPortal);
-        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow) )
         {
             IsPortal = true;
         }
@@ -248,15 +262,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Portal") && IsPortal == true)
         {
-            //Debug.Log("Portal");
             collision.gameObject.transform.GetComponent<Portal>().ChangeScene();
-            //Vector3 move = gameObject.transform.position;
-            //move = new Vector2(move.x = -10, move.y = -4);
-
-            //move = new Vector2(move.x = Portal.moveX, move.y = Portal.moveY);
-            //gameObject.transform.position = move;
-
-
         }
     }
 
