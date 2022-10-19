@@ -84,7 +84,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -102,8 +102,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -425524423
-  m_SortingLayer: 4
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9650a3e4d72f1b64ab9cec4b1da9df0c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -200,14 +200,16 @@ MonoBehaviour:
   DeathDelay: 5
   FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
     type: 3}
-  playerHealth: {fileID: 0}
   myTransform: {fileID: 0}
   PlayerTransform: {fileID: 0}
+  i: 0
   Distance: 8
   face: 0
   moveSpots: []
-  i: 0
   anim: {fileID: 0}
+  Money: {fileID: 0}
+  Monster: {fileID: 0}
+  Moeneyint: 0
   status: 0
   Arrow: {fileID: 2424067479049296397, guid: 4c739055a9650964e9ca22cc204f2dc1, type: 3}
   ArrowPoint: {fileID: 950668896901171804}
