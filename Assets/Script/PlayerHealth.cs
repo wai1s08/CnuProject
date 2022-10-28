@@ -26,6 +26,9 @@ public class PlayerHealth : MonoBehaviour
 
     public Slot slot;
 
+    public static PlayerHealth Instance;
+
+    private int EquipHp;
 
     // Start is called before the first frame update
     void Start()
@@ -35,9 +38,9 @@ public class PlayerHealth : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
 
         HealthBar.HealthCurrent = health ;
-        
-
         Maxhealth = health;
+
+        Instance = this;
 
     }
 
@@ -46,6 +49,8 @@ public class PlayerHealth : MonoBehaviour
     {
         HealthBar.HealthMax = Maxhealth + EquipManager.Totalhp;
         Face = GetComponent<Transform>().rotation.y;
+
+        //Debug.Log(EquipHp);
     }
 
     public void DamagePlayer(int Damage)
@@ -111,6 +116,11 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(seconds);
         }
         myRenderer.enabled = true;
+    }
+
+    public void TestEquipHP(int value)
+    {
+        EquipHp += value;
     }
 }
 

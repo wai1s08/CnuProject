@@ -135,7 +135,6 @@ public abstract class Enemy : MonoBehaviour
         
     }
 
-
     //怪物受傷
     public void TakeDamage(int damage)
     {

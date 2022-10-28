@@ -11,6 +11,8 @@ public class EquipManager : MonoBehaviour
     public int Hathp;
     public int SwordHp;
 
+    public PlayerHealth playerHealth;
+
 
     void Start()
     {
@@ -22,6 +24,7 @@ public class EquipManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Totalhp = Hathp + SwordHp;
         Hat();
         Sword();
@@ -31,7 +34,7 @@ public class EquipManager : MonoBehaviour
     {
         if (MyEquip.itemList[0] != null)
         {
-            //Debug.Log(hp);
+            //PlayerHealth.Instance.TestEquipHP(Hathp);
             Hathp = MyEquip.itemList[0].hp;
         }
         else

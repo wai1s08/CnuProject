@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     private float playerGravity;
 
 
-    public bool isGround , isJump;
+    public bool isGround , isJump, isFall;
     public Transform groundCheck;
     public LayerMask ground;
 
@@ -58,20 +58,18 @@ public class PlayerController : MonoBehaviour
             jumpPressed = true;
         }
 
-        CheckAirStatus();
-        
-        
-        
+        CheckAirStatus(); 
         Climb();
         checkGround();
         CheckLadder();
         OpenMyBag();
         Portal();
 
-        
         //Defense();
 
         OneWayPlatformCheck();
+
+        Debug.Log(isGround);
     }
 
     private void FixedUpdate()
@@ -163,13 +161,14 @@ public class PlayerController : MonoBehaviour
 
         if (isGround)
         {
+            myAnim.SetBool("Jump", false);
             myAnim.SetBool("Fall", false);
         }
         else if(!isGround && myRigidbody.velocity.y > 0 && !isLadder)
         {
             myAnim.SetBool("Jump", true);
         }
-        else if(myRigidbody.velocity.y < 0) 
+        else if(myRigidbody.velocity.y < 0 && !isLadder) 
         {
             myAnim.SetBool("Jump", false);
             myAnim.SetBool("Fall", true);
@@ -197,7 +196,7 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (isJumping)
+                if (isJumping || isFall)
                 {
                     myAnim.SetBool("Climb", false);
                     myRigidbody.gravityScale = playerGravity;
@@ -226,12 +225,15 @@ public class PlayerController : MonoBehaviour
         if (isLadder && isGround)
         {
             myRigidbody.gravityScale = playerGravity;
+            myAnim.SetBool("Climb", false);
         }
     }
 
     void CheckAirStatus()
     {
         isJumping = myAnim.GetBool("Jump");
+        isFall = myAnim.GetBool("Fall");
+
         isClimbing = myAnim.GetBool("Climb");
     }
 
