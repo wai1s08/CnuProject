@@ -111,7 +111,6 @@ public abstract class Enemy : MonoBehaviour
 
     }
 
-
     // 玩家碰到怪物
     void OnTriggerEnter2D(Collider2D other)
     {
