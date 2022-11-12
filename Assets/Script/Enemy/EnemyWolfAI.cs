@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyWolfAI : Enemy
 {
     public enum Status { idle, Chase, Walk , /*patrol ,*/ Death , Attack};
-
+    
+    public GameObject enemtDied1;
 
     [Header("目前狀態")]
     public Status status;
@@ -25,10 +26,6 @@ public class EnemyWolfAI : Enemy
 
 
    // public float turnSpeed = 0.1f;
-
-    
-
-
 
     
     // Start is called before the first frame update
@@ -199,6 +196,8 @@ public class EnemyWolfAI : Enemy
         }
 
     }
+
+
     void Attack()
     {
         AnimatorStateInfo animatorInfo;
