@@ -1274,6 +1274,7 @@ MonoBehaviour:
   MyEquip: {fileID: 11400000, guid: 70c6b8f98cadb0a47846e61ae2bb3235, type: 2}
   Hathp: 0
   SwordHp: 0
+  playerHealth: {fileID: 0}
 --- !u!1 &823208786
 GameObject:
   m_ObjectHideFlags: 0
