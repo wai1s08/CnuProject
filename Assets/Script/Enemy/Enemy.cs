@@ -14,6 +14,9 @@ public abstract class Enemy : MonoBehaviour
     [Header("死亡延遲")]
     public float DeathDelay;
 
+    [Header("受傷特效")]
+    public GameObject enemtDied1;
+
     [Header("傷害顯示")]
     public GameObject FloatPoint;
 
@@ -141,5 +144,7 @@ public abstract class Enemy : MonoBehaviour
         gb.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
         Instantiate(FloatPoint, transform.position, Quaternion.identity);
         health -= damage;
+
+        Instantiate(enemtDied1, transform.position, Quaternion.identity);
     }
 }

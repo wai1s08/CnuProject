@@ -123,7 +123,7 @@ BoxCollider2D:
   m_Offset: {x: -0.023993246, y: -0.18429255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51021713, y: 0.25095788}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.26, y: 0.26}
     adaptiveTilingThreshold: 0.5
@@ -146,16 +146,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  health: 10
+  health: 20
   speed: 2
   DeathDelay: 5
+  enemtDied1: {fileID: 4892459899407515763, guid: 6e9c890ee390da549b5a5f3731e8aff1,
+    type: 3}
   FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
     type: 3}
   myTransform: {fileID: 0}
   PlayerTransform: {fileID: 0}
   i: 0
   Distance: 5
-  face: 0
+  face: 1
   moveSpots:
   - {fileID: 0}
   - {fileID: 0}
@@ -163,6 +165,7 @@ MonoBehaviour:
   Money: {fileID: 8750773249442024155, guid: 6defeecbbe563ba4e9e9352a2680564f, type: 3}
   Monster: {fileID: 8547368576011972054}
   Moeneyint: 5
+  enemtDied1: {fileID: 0}
   status: 0
   waitTime: 5
 --- !u!95 &8547368576011972052
@@ -200,7 +203,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51021713, y: 0.25095788}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.26, y: 0.26}
     adaptiveTilingThreshold: 0.5

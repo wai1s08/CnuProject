@@ -5,16 +5,15 @@ using UnityEngine.Tilemaps;
 
 public class HideWall : MonoBehaviour
 {
-
-    public GameObject Tile;
+    public GameObject Fire;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //GetComponent<SpriteRenderer>().enabled = false;
-
             GetComponent<TilemapRenderer>().maskInteraction = SpriteMaskInteraction.VisibleInsideMask;
+            Fire_t(Fire);
+
         }
     }
 
@@ -22,9 +21,18 @@ public class HideWall : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //GetComponent<SpriteRenderer>().enabled = true;
-
             GetComponent<TilemapRenderer>().maskInteraction = SpriteMaskInteraction.None;
+            Fire_f(Fire);
         }
+    }
+    GameObject Fire_t(GameObject A)
+    {
+        A.SetActive(true);
+        return A;
+    }
+    GameObject Fire_f(GameObject B)
+    {
+        B.SetActive(false);
+        return B;
     }
 }
