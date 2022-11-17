@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
     public int PlayerDamage;
 
     private Animator anim;
-    private PolygonCollider2D coll;
+    private PolygonCollider2D Attackcoll_1;
 
 
     public float time;
@@ -19,8 +19,8 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        coll = GetComponent<PolygonCollider2D>();
-
+        Attackcoll_1 = GameObject.Find("PlayerAttack1").GetComponent<PolygonCollider2D>();
+        anim.SetBool("CanAttack1", true);
 
     }
 
@@ -36,20 +36,58 @@ public class PlayerAttack : MonoBehaviour
     }
     void Attack()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense ==false && !PlayerController.isOpen)
+        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense ==false && !PlayerController.isOpen && anim.GetBool("CanAttack1") == true)
         {
             SoundManager.PlaySword_sound();
-            coll.enabled = true;
+            Attackcoll_1.enabled = true;
+            anim.SetTrigger("Attack");
+            StartCoroutine(disableHitBox());
+            waitTime = AttackwaitTime;
+
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense == false && !PlayerController.isOpen && anim.GetBool("CanAttack2") == true)
+        {
+            SoundManager.PlaySword_sound();
+            Attackcoll_1.enabled = true;
+            anim.SetTrigger("Attack");
+            StartCoroutine(disableHitBox());
+            waitTime = AttackwaitTime;
+
+        }
+
+        if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense == false && !PlayerController.isOpen && anim.GetBool("CanAttack3") == true)
+        {
+            SoundManager.PlaySword_sound();
+            Attackcoll_1.enabled = true;
             anim.SetTrigger("Attack");
             StartCoroutine(disableHitBox());
             waitTime = AttackwaitTime;
 
         }
     }
+
+    void switchAttack1()
+    {
+        anim.SetBool("CanAttack1", false);
+        anim.SetBool("CanAttack2", true);
+    }
+    void switchAttack2()
+    {
+        anim.SetBool("CanAttack2", false);
+        anim.SetBool("CanAttack3", true);
+    }
+    void switchAttack3()
+    {
+        anim.SetBool("CanAttack3", false);
+        anim.SetBool("CanAttack1", true);
+    }
+
+
     IEnumerator disableHitBox()
     {
         yield return new WaitForSeconds(time);
-        coll.enabled = false;
+        Attackcoll_1.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
