@@ -7,9 +7,9 @@ public class PlayerAttack : MonoBehaviour
     public int PlayerDamage;
 
     private Animator anim;
-    private PolygonCollider2D Attackcoll_1;
-    private PolygonCollider2D Attackcoll_2;
-    private PolygonCollider2D Attackcoll_3;
+    private BoxCollider2D Attackcoll_1;
+    private BoxCollider2D Attackcoll_2;
+    private BoxCollider2D Attackcoll_3;
 
 
     public float time;
@@ -21,15 +21,15 @@ public class PlayerAttack : MonoBehaviour
     public float ResetAttack;
 
     private float waitTime;
-    private float resetAttack;
+    public float resetAttack;
 
     // Start is called before the first frame update
     void Start()
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
-        Attackcoll_1 = GameObject.Find("PlayerAttack1").GetComponent<PolygonCollider2D>();
-        Attackcoll_2 = GameObject.Find("PlayerAttack2").GetComponent<PolygonCollider2D>();
-        Attackcoll_3 = GameObject.Find("PlayerAttack3").GetComponent<PolygonCollider2D>();
+        Attackcoll_1 = GameObject.Find("PlayerAttack1").GetComponent<BoxCollider2D>();
+        Attackcoll_2 = GameObject.Find("PlayerAttack2").GetComponent<BoxCollider2D>();
+        Attackcoll_3 = GameObject.Find("PlayerAttack3").GetComponent<BoxCollider2D>();
         anim.SetBool("CanAttack1", true);
 
     }

@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         OneWayPlatformCheck();
 
-        Debug.Log(isGround);
+        //Debug.Log(isGround);
     }
 
     private void FixedUpdate()
