@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -649,6 +649,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
+      value: -0.49301574
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
+      value: 0.054380123
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].x
+      value: 0.44146782
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[4].y
+      value: -0.41115415
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].x
+      value: 1.7208306
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
+      value: -0.6965778
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
+      value: 2.4473658
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778332094242935197, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
+      value: -0.46941
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
