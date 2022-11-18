@@ -8,6 +8,8 @@ public class PlayerAttack : MonoBehaviour
 
     private Animator anim;
     private PolygonCollider2D Attackcoll_1;
+    private PolygonCollider2D Attackcoll_2;
+    private PolygonCollider2D Attackcoll_3;
 
 
     public float time;
@@ -20,6 +22,8 @@ public class PlayerAttack : MonoBehaviour
     {
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         Attackcoll_1 = GameObject.Find("PlayerAttack1").GetComponent<PolygonCollider2D>();
+        Attackcoll_2 = GameObject.Find("PlayerAttack2").GetComponent<PolygonCollider2D>();
+        Attackcoll_3 = GameObject.Find("PlayerAttack3").GetComponent<PolygonCollider2D>();
         anim.SetBool("CanAttack1", true);
 
     }
@@ -41,7 +45,7 @@ public class PlayerAttack : MonoBehaviour
             SoundManager.PlaySword_sound();
             Attackcoll_1.enabled = true;
             anim.SetTrigger("Attack");
-            StartCoroutine(disableHitBox());
+            StartCoroutine(disableHitBox1());
             waitTime = AttackwaitTime;
 
         }
@@ -49,9 +53,9 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense == false && !PlayerController.isOpen && anim.GetBool("CanAttack2") == true)
         {
             SoundManager.PlaySword_sound();
-            Attackcoll_1.enabled = true;
+            Attackcoll_2.enabled = true;
             anim.SetTrigger("Attack");
-            StartCoroutine(disableHitBox());
+            StartCoroutine(disableHitBox2());
             waitTime = AttackwaitTime;
 
         }
@@ -59,9 +63,9 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && waitTime <= 0 && PlayerState.IsDefense == false && !PlayerController.isOpen && anim.GetBool("CanAttack3") == true)
         {
             SoundManager.PlaySword_sound();
-            Attackcoll_1.enabled = true;
+            Attackcoll_3.enabled = true;
             anim.SetTrigger("Attack");
-            StartCoroutine(disableHitBox());
+            StartCoroutine(disableHitBox3());
             waitTime = AttackwaitTime;
 
         }
@@ -84,10 +88,22 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-    IEnumerator disableHitBox()
+    IEnumerator disableHitBox1()
     {
         yield return new WaitForSeconds(time);
         Attackcoll_1.enabled = false;
+    }
+
+    IEnumerator disableHitBox2()
+    {
+        yield return new WaitForSeconds(time);
+        Attackcoll_2.enabled = false;
+    }
+
+    IEnumerator disableHitBox3()
+    {
+        yield return new WaitForSeconds(time);
+        Attackcoll_3.enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
