@@ -14,8 +14,14 @@ public class PlayerAttack : MonoBehaviour
 
     public float time;
 
+    [Header("下一次攻擊延遲")]
     public float AttackwaitTime;
+
+    [Header("多久沒攻擊重製回第一段攻擊")]
+    public float ResetAttack;
+
     private float waitTime;
+    private float resetAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +43,21 @@ public class PlayerAttack : MonoBehaviour
         {
             waitTime -= Time.deltaTime;
         }
+
+        if (anim.GetBool("CanAttack2") == true || anim.GetBool("CanAttack3") == true)
+        {
+            if (resetAttack > 0)
+            {
+                resetAttack -= Time.deltaTime;
+            }
+            else
+            {
+                anim.SetBool("CanAttack1", true);
+                anim.SetBool("CanAttack2", false);
+                anim.SetBool("CanAttack3", false);
+
+            }
+        }
     }
     void Attack()
     {
@@ -47,6 +68,7 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("Attack");
             StartCoroutine(disableHitBox1());
             waitTime = AttackwaitTime;
+            resetAttack = ResetAttack;
 
         }
 
@@ -57,6 +79,7 @@ public class PlayerAttack : MonoBehaviour
             anim.SetTrigger("Attack");
             StartCoroutine(disableHitBox2());
             waitTime = AttackwaitTime;
+            resetAttack = ResetAttack;
 
         }
 
