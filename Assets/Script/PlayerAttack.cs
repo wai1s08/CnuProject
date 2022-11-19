@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public int PlayerDamage;
 
     private Animator anim;
     private BoxCollider2D Attackcoll_1;
@@ -21,11 +20,13 @@ public class PlayerAttack : MonoBehaviour
     public float ResetAttack;
 
     private float waitTime;
-    public float resetAttack;
+    public static float resetAttack;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        
         anim = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         Attackcoll_1 = GameObject.Find("PlayerAttack1").GetComponent<BoxCollider2D>();
         Attackcoll_2 = GameObject.Find("PlayerAttack2").GetComponent<BoxCollider2D>();
@@ -46,9 +47,9 @@ public class PlayerAttack : MonoBehaviour
 
         if (anim.GetBool("CanAttack2") == true || anim.GetBool("CanAttack3") == true)
         {
-            if (resetAttack > 0)
+            if (PlayerAttack.resetAttack > 0)
             {
-                resetAttack -= Time.deltaTime;
+                PlayerAttack.resetAttack -= Time.deltaTime;
             }
             else
             {
@@ -58,6 +59,8 @@ public class PlayerAttack : MonoBehaviour
 
             }
         }
+
+
     }
     void Attack()
     {
@@ -92,6 +95,7 @@ public class PlayerAttack : MonoBehaviour
             waitTime = AttackwaitTime;
 
         }
+
     }
 
     void switchAttack1()
@@ -129,18 +133,6 @@ public class PlayerAttack : MonoBehaviour
         Attackcoll_3.enabled = false;
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-
-        int value = Random.Range(PlayerDamage * 1, PlayerDamage * 2);
-
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            other.GetComponent<Enemy>().TakeDamage(value);
-
-            //UnityEngine.PolygonCollider2D
-        }
-
-    }
+    
 
 }
