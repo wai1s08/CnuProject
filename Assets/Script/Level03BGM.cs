@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Level03BGM : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Level03BGM : MonoBehaviour
         GetComponent<AudioSource>().volume = 0;
         GetComponent<AudioSource>().clip = audios[0];
         GetComponent<AudioSource>().Play();
+       
         
     }
 
@@ -28,6 +30,9 @@ public class Level03BGM : MonoBehaviour
         GetComponent<AudioSource>().clip = audios[1];
         GetComponent<AudioSource>().Play();
         GetComponent<BoxCollider2D>().enabled = false;
+        GameObject.Find("B-HP").GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        GameObject.Find("B-HP1").GetComponent<Image>().color = new Color(255, 255, 255, 255);
+        GameObject.Find("B_HPText").GetComponent<Text>().color = new Color(255, 255, 255, 255);
 
     }
 
