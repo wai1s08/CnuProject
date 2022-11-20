@@ -514,6 +514,18 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.newSize.y
       value: 0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 1536188379, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_Intensity
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536188379, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1536188379, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1843179155, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
       propertyPath: ResetAttack
       value: 2
