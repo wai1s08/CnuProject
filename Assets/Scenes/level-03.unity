@@ -221,6 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173fc487d1b17f54f824b6af49933976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A: {x: 0, y: 0, z: 0}
+  B: {x: 0, y: 0, z: 0}
   audios:
   - {fileID: 8300000, guid: 694d3285b081a794fa7c2fd2b9891e71, type: 3}
   - {fileID: 8300000, guid: a39ef0abc13688b4d99b987f78b8cc26, type: 3}
@@ -1419,6 +1421,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696451567914628147, guid: 47e2885b3d24cc34991c2abf21797230,
+        type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2696451567914628147, guid: 47e2885b3d24cc34991c2abf21797230,
+        type: 3}
+      propertyPath: health
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2696451567914628147, guid: 47e2885b3d24cc34991c2abf21797230,
         type: 3}
@@ -6306,7 +6318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 366062269}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 42.7, y: 8.71, z: 0}
+  m_LocalPosition: {x: 42.7, y: 9.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1036842160}
@@ -41272,7 +41284,7 @@ PrefabInstance:
     - target: {fileID: 2784356229128301199, guid: cccf57dec81f12846b7b5e17a2c393a5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.16
+      value: 9.01
       objectReference: {fileID: 0}
     - target: {fileID: 2784356229128301199, guid: cccf57dec81f12846b7b5e17a2c393a5,
         type: 3}

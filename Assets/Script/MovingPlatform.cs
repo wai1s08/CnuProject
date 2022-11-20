@@ -13,6 +13,7 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         i = 1; 
     }
 

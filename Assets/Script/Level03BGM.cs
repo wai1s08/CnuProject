@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class Level03BGM : MonoBehaviour
 {
+    public Vector3 A;
+    public Vector3 B;
     public AudioClip[] audios;
     private bool Boss = true;
 
@@ -14,7 +16,7 @@ public class Level03BGM : MonoBehaviour
         GetComponent<AudioSource>().volume = 0;
         GetComponent<AudioSource>().clip = audios[0];
         GetComponent<AudioSource>().Play();
-       
+        A = new Vector3(62,6, 0);
         
     }
 
@@ -33,6 +35,7 @@ public class Level03BGM : MonoBehaviour
         GameObject.Find("B-HP").GetComponent<Image>().color = new Color(255, 255, 255, 255);
         GameObject.Find("B-HP1").GetComponent<Image>().color = new Color(255, 255, 255, 255);
         GameObject.Find("B_HPText").GetComponent<Text>().color = new Color(255, 255, 255, 255);
+        
 
     }
 
