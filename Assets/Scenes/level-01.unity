@@ -128,6 +128,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585254239326766655, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585254239326766655, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 1585254239717798630, guid: bd782e481ab4f6042a5be6cb99a8085a,
         type: 3}
       propertyPath: signText
@@ -10207,6 +10217,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585254239326766655, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585254239326766655, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 1585254239717798630, guid: bd782e481ab4f6042a5be6cb99a8085a,
         type: 3}
       propertyPath: signText
@@ -10578,6 +10598,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1585254239326766640, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585254239326766655, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1585254239326766655, guid: bd782e481ab4f6042a5be6cb99a8085a,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 28
+      objectReference: {fileID: 0}
     - target: {fileID: 1585254239717798630, guid: bd782e481ab4f6042a5be6cb99a8085a,
         type: 3}
       propertyPath: warn
