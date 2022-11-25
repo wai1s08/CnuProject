@@ -6,7 +6,7 @@ public class Boss01AI : Enemy
 {
 
     public enum Status { idle, Chase, Walk, Death, Attack };
-
+    
 
     [Header("目前狀態")]
     public Status status;
@@ -147,4 +147,7 @@ public class Boss01AI : Enemy
     {
         Instantiate(Arrow, ArrowPoint.position, ArrowPoint.rotation);
     }
+
+   
+
 }
