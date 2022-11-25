@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -504,6 +504,14 @@ PrefabInstance:
       propertyPath: chin
       value: 
       objectReference: {fileID: 1392849253}
+    - target: {fileID: 220279661, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000015258789
+      objectReference: {fileID: 0}
+    - target: {fileID: 220279661, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 227101197, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -655,6 +663,47 @@ PrefabInstance:
     - target: {fileID: 1749117618, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151441, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_Text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151441, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151441, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151441, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151441, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: e3265ab4bf004d28a9537516768c1c75,
+        type: 3}
+    - target: {fileID: 1860151441, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151443, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 483.31116
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151443, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 257.99774
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151443, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1860151443, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.76
       objectReference: {fileID: 0}
     - target: {fileID: 1863991510, guid: 078115c0a1453b644aec700dcb75bfe9, type: 3}
       propertyPath: m_AnchorMax.y
