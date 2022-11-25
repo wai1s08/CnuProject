@@ -13,6 +13,10 @@ public class OpenBox : MonoBehaviour
 
     public float waitTime;
 
+    public GameObject item;
+
+    public Transform itemSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -59,5 +63,10 @@ public class OpenBox : MonoBehaviour
             isPlayerInBox = false;
             //warn.SetActive(true);       
         }
+    }
+
+    void DropItem()
+    {
+        Instantiate(item, itemSpawn.position, itemSpawn.rotation);
     }
 }
