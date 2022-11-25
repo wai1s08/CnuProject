@@ -210,7 +210,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   Money: {fileID: 8750773249442024155, guid: 6defeecbbe563ba4e9e9352a2680564f, type: 3}
   Monster: {fileID: 950668897861107764}
-  Moeneyint: 0
+  Moeneyint: 10
   status: 0
   Arrow: {fileID: 2424067479049296397, guid: 4c739055a9650964e9ca22cc204f2dc1, type: 3}
   ArrowPoint: {fileID: 950668896901171804}

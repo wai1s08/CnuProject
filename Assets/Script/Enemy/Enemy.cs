@@ -60,6 +60,8 @@ public abstract class Enemy : MonoBehaviour
     
     public static int money;
 
+    [Header("怪物經驗值")]
+    public int Moeneyint;
 
     // Start is called before the first frame update
     public void Start()
@@ -91,8 +93,8 @@ public abstract class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject, DeathDelay);
-            Instantiate(Money, Monster.position  , Monster.rotation);
 
+            
         }
 
         if (IsSuperTime == true)
@@ -144,5 +146,11 @@ public abstract class Enemy : MonoBehaviour
         health -= damage;
 
         Instantiate(enemtDied1, transform.position, Quaternion.identity);
+    }
+
+
+    public void SpawnExp()
+    {
+        Instantiate(Money, Monster.position, Monster.rotation);
     }
 }

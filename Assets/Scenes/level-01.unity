@@ -11174,6 +11174,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8547368576011972053, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
         type: 3}
+      propertyPath: Moeneyint
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547368576011972053, guid: 587e9848e88d9eb4e9c71a4623d5ad53,
+        type: 3}
       propertyPath: moveSpots.Array.data[0]
       value: 
       objectReference: {fileID: 1013018834}

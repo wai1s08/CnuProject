@@ -18,5 +18,5 @@ MonoBehaviour:
   itemInfo: 
   equipbar: 0
   equiping: 0
-  itemtype: 0
+  itemtype: 9
   hp: 0
