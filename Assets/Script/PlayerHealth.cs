@@ -68,38 +68,38 @@ public class PlayerHealth : MonoBehaviour
 
         BlinkPlayer(Blinks, BlinksTime);
 
-        if (Face.Equals(0))
-        {
+        //if (Face.Equals(0))
+        //{
 
-            if (PlayerState.IsDefense == true)
-            {
-                Vector3 move = gameObject.transform.position;
-                move = new Vector2(move.x + 0.5f, move.y + 0.3f);
-                gameObject.transform.position = move;
-            }
-            else
-            {
-                Vector3 move = gameObject.transform.position;
-                move = new Vector2(move.x - 0.5f, move.y + 0.3f);
-                gameObject.transform.position = move;
-            }
-        }
-        else
-        {
+        //    if (PlayerState.IsDefense == true)
+        //    {
+        //        Vector3 move = gameObject.transform.position;
+        //        move = new Vector2(move.x + 0.5f, move.y + 0.3f);
+        //        gameObject.transform.position = move;
+        //    }
+        //    else
+        //    {
+        //        Vector3 move = gameObject.transform.position;
+        //        move = new Vector2(move.x - 0.5f, move.y + 0.3f);
+        //        gameObject.transform.position = move;
+        //    }
+        //}
+        //else
+        //{
 
-            if (PlayerState.IsDefense == true)
-            {
-                Vector3 move = gameObject.transform.position;
-                move = new Vector2(move.x - 0.5f, move.y + 0.3f);
-                gameObject.transform.position = move;
-            }
-            else
-            {
-                Vector3 move = gameObject.transform.position;
-                move = new Vector2(move.x + 0.5f, move.y + 0.3f);
-                gameObject.transform.position = move;
-            }
-        }
+        //    if (PlayerState.IsDefense == true)
+        //    {
+        //        Vector3 move = gameObject.transform.position;
+        //        move = new Vector2(move.x - 0.5f, move.y + 0.3f);
+        //        gameObject.transform.position = move;
+        //    }
+        //    else
+        //    {
+        //        Vector3 move = gameObject.transform.position;
+        //        move = new Vector2(move.x + 0.5f, move.y + 0.3f);
+        //        gameObject.transform.position = move;
+        //    }
+        //}
 
     }
 

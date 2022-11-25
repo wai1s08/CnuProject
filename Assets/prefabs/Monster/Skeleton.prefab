@@ -198,6 +198,7 @@ MonoBehaviour:
   health: 10
   speed: 2
   DeathDelay: 5
+  enemtDied1: {fileID: 0}
   FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
     type: 3}
   myTransform: {fileID: 0}
@@ -207,8 +208,8 @@ MonoBehaviour:
   face: 0
   moveSpots: []
   anim: {fileID: 0}
-  Money: {fileID: 0}
-  Monster: {fileID: 0}
+  Money: {fileID: 8750773249442024155, guid: 6defeecbbe563ba4e9e9352a2680564f, type: 3}
+  Monster: {fileID: 950668897861107764}
   Moeneyint: 0
   status: 0
   Arrow: {fileID: 2424067479049296397, guid: 4c739055a9650964e9ca22cc204f2dc1, type: 3}
