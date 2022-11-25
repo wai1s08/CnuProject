@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Boss01AI : Enemy
 {
+   
 
     public enum Status { idle, Chase, Walk, Death, Attack };
+    
     
 
     [Header("目前狀態")]
@@ -23,9 +25,16 @@ public class Boss01AI : Enemy
     [Header("箭矢生成點")]
     public Transform ArrowPoint;
 
+
+    
+
     // Start is called before the first frame update
     new void Start()
     {
+
+        
+        
+
         base.Start();
 
 
@@ -54,6 +63,8 @@ public class Boss01AI : Enemy
 
         if (health <= 0)
         {
+            
+            
             status = Status.Death;
         }
 

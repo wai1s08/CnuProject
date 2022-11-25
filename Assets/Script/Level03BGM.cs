@@ -12,11 +12,13 @@ public class Level03BGM : MonoBehaviour
     bool Pin = false;
     Vector3 T1 = new Vector3(62.59f,6.4f);
     Vector3 T2 = new Vector3(87.64f, 6.46f);
-    Vector3 T3;
-    Vector3 T4;
+    Vector3 T3 = new Vector3(62.59f, 9.01f);
+    Vector3 T4 = new Vector3(87.64f, 9.02f);
+    bool alive=true;
+    bool again=false; //是否開過門
 
 
-    
+
     public AudioClip[] audios;
     private bool Boss = true;
 
@@ -27,23 +29,27 @@ public class Level03BGM : MonoBehaviour
         GetComponent<AudioSource>().clip = audios[0];
         GetComponent<AudioSource>().Play();
         A = new Vector3(62,6, 0);
-        T3 = closeda.transform.position;
-        T4 = closedb.transform.position;
+       
         
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
         FindBoss();
+         
 
-        if (Pin == true)
+        if (Pin == true && again == false )
         {
             V1();
-        } 
+            
+        }
+
+        
+        if (GameObject.Find("Boss01").GetComponent<Boss01AI>().health <= 0)
+        {
+            V2();
+        }
 
         
         
@@ -71,9 +77,12 @@ public class Level03BGM : MonoBehaviour
 
     void V2()
     {
-        closeda.transform.position = Vector3.MoveTowards(closeda.transform.position, T3, 5 * Time.deltaTime);
-        closedb.transform.position = Vector3.MoveTowards(closedb.transform.position, T4, 5 * Time.deltaTime);
+        closeda.transform.position = Vector3.MoveTowards(closeda.transform.position, T3, 100 * Time.deltaTime);
+        closedb.transform.position = Vector3.MoveTowards(closedb.transform.position, T4, 100 * Time.deltaTime);
+        print("Bossalive = false");
     }
+
+
 
 
     void FindBoss()

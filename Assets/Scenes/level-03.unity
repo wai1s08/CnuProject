@@ -1442,6 +1442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2696451567914628147, guid: 47e2885b3d24cc34991c2abf21797230,
         type: 3}
+      propertyPath: closedb
+      value: 
+      objectReference: {fileID: 1186270247}
+    - target: {fileID: 2696451567914628147, guid: 47e2885b3d24cc34991c2abf21797230,
+        type: 3}
       propertyPath: Moeneyint
       value: 5
       objectReference: {fileID: 0}
