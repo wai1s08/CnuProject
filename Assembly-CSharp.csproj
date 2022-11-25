@@ -64,6 +64,7 @@
     <Compile Include="Assets\Inevntory\InevntoryScripts\ItemOnWorld.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\MoveBag.cs" />
     <Compile Include="Assets\Inevntory\InevntoryScripts\Slot.cs" />
+    <Compile Include="Assets\Inevntory\InevntoryScripts\itemUse.cs" />
     <Compile Include="Assets\Script\BGMfadin.cs" />
     <Compile Include="Assets\Script\BOSSHP.cs" />
     <Compile Include="Assets\Script\BOSSROOM.cs" />

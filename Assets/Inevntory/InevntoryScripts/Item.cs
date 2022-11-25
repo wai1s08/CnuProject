@@ -27,7 +27,7 @@ public class Item : ScriptableObject
 
     public bool equiping;
 
-    public enum Status { hat, top, bottom, shoes, sword, shield, pendant, ring };
+    public enum Status { hat, top, bottom, shoes, sword, shield, pendant, ring, hp, mp };
 
     [Header("物品種類")]
     public Status itemtype;

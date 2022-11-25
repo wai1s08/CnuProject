@@ -60,8 +60,6 @@ public abstract class Enemy : MonoBehaviour
     
     public static int money;
 
-    [Header("怪物掉多少錢")]
-    public int Moeneyint;
 
     // Start is called before the first frame update
     public void Start()

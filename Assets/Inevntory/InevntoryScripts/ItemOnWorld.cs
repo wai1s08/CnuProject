@@ -17,7 +17,7 @@ public class ItemOnWorld : MonoBehaviour
     //玩家碰到物品將物品放到背包裡
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && collision.GetType().ToString() == "UnityEngine.CapsuleCollider2D")
         {
             AddNewItem();
             Destroy(gameObject);
@@ -37,6 +37,7 @@ public class ItemOnWorld : MonoBehaviour
                 if (playerInevntory.itemList[i] == null)
                 {
                     playerInevntory.itemList[i] = thisItem;
+                    thisItem.itemHeld = 1;
                     break;
                 }
             }
@@ -45,6 +46,7 @@ public class ItemOnWorld : MonoBehaviour
         {
             thisItem.itemHeld += 1;
         }
+
 
         //刷新背包
         InevntoryManager.RefreshItem();

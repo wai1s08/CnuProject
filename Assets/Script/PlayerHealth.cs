@@ -122,5 +122,14 @@ public class PlayerHealth : MonoBehaviour
     {
         EquipHp += value;
     }
+
+    public void UseHpPotion(int HP)
+    {
+
+
+        health += HP;
+
+        HealthBar.HealthCurrent = health;
+    }
 }
 
