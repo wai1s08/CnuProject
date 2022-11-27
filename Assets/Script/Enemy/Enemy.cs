@@ -11,11 +11,15 @@ public abstract class Enemy : MonoBehaviour
     [Header("怪物速度")]
     public float speed;
 
+
+
     [Header("死亡延遲")]
     public float DeathDelay;
 
     [Header("受傷特效")]
     public GameObject enemtDied1;
+
+    
 
     [Header("傷害顯示")]
     public GameObject FloatPoint;

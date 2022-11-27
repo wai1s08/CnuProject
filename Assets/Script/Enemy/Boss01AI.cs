@@ -64,7 +64,6 @@ public class Boss01AI : Enemy
         if (health <= 0)
         {
             
-            
             status = Status.Death;
         }
 

@@ -10,12 +10,14 @@ public class Level03BGM : MonoBehaviour
     public GameObject closeda;
     public GameObject closedb;
     bool Pin = false;
-    Vector3 T1 = new Vector3(62.59f,6.4f);
-    Vector3 T2 = new Vector3(87.64f, 6.46f);
-    Vector3 T3 = new Vector3(62.59f, 9.01f);
-    Vector3 T4 = new Vector3(87.64f, 9.02f);
+    Vector3 T1 = new Vector3(62.59f,6.4f,0);
+    Vector3 T2 = new Vector3(87.64f, 6.45f,0);
+    Vector3 T3 = new Vector3(62.59f, 9.01f, 0);
+    Vector3 T4 = new Vector3(87.64f, 9.02f, 0);
     bool alive=true;
-    bool again=false; //是否開過門
+    public GameObject BOSSalive;
+
+
 
 
 
@@ -39,20 +41,23 @@ public class Level03BGM : MonoBehaviour
         FindBoss();
          
 
-        if (Pin == true && again == false )
+        for (int i =0;i<1 && Pin == true;i++)
         {
-            V1();
-            
+             V1();
         }
 
-        
-        if (GameObject.Find("Boss01").GetComponent<Boss01AI>().health <= 0)
+        if (BOSSalive)
+        {
+
+        }
+        else
         {
             V2();
         }
 
         
-        
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -79,7 +84,8 @@ public class Level03BGM : MonoBehaviour
     {
         closeda.transform.position = Vector3.MoveTowards(closeda.transform.position, T3, 100 * Time.deltaTime);
         closedb.transform.position = Vector3.MoveTowards(closedb.transform.position, T4, 100 * Time.deltaTime);
-        print("Bossalive = false");
+        print("AAA");
+
     }
 
 
