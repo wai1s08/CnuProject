@@ -101,6 +101,7 @@
     <Compile Include="Assets\Script\Sign.cs" />
     <Compile Include="Assets\Script\SoundManager.cs" />
     <Compile Include="Assets\Script\initPlayer.cs" />
+    <Compile Include="Assets\Script\slime.cs" />
     <Compile Include="Assets\Script\spike.cs" />
   </ItemGroup>
   <ItemGroup>
