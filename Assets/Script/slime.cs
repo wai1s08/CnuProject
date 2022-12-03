@@ -7,28 +7,38 @@ public class slime : MonoBehaviour
     public float enemyDiedtime1;
     public GameObject enemtDied1;
     public float chasingSpeed;//追逐速度
-    new Vector3 playerPos;
-
+    new Transform playerTransform;
+    
     private void Start()
     {
 
     }
     private void OnTriggerEnter2D(Collider2D a)
     {
-        Destroy(gameObject, enemyDiedtime1);
+        if(a.gameObject.tag == "Player")
+        {
+            Destroy(gameObject, enemyDiedtime1);
+            Instantiate(enemtDied1, transform.position, Quaternion.identity);
+        }
+       
+
     }
     private void Update()
     {
-        playerPos = GameObject.Find("player").gameObject.transform.position;
+        playerTransform = GameObject.Find("player").GetComponent<Transform>();
         
-        if (Vector2.Distance(gameObject.transform.position,playerPos) > 5)
+        if (playerTransform != null)
         {
-            gameObject.transform.position = Vector2.MoveTowards(transform.position, playerPos, chasingSpeed * Time.deltaTime);
+            float distance = (transform.position - playerTransform.position).sqrMagnitude;
+            if(distance < 15)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, playerTransform.position, chasingSpeed * Time.deltaTime);
+
+            }
 
         }
 
     }
 
-    
 
 }

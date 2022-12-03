@@ -84,7 +84,7 @@ public class Level03BGM : MonoBehaviour
     {
         closeda.transform.position = Vector3.MoveTowards(closeda.transform.position, T3, 100 * Time.deltaTime);
         closedb.transform.position = Vector3.MoveTowards(closedb.transform.position, T4, 100 * Time.deltaTime);
-        print("AAA");
+        
 
     }
 
