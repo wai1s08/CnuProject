@@ -10,13 +10,17 @@ public class Level03BGM : MonoBehaviour
     public GameObject closeda;
     public GameObject closedb;
     bool Pin = false;
-    Vector3 T1 = new Vector3(62.59f,6.4f);
-    Vector3 T2 = new Vector3(87.64f, 6.46f);
-    Vector3 T3;
-    Vector3 T4;
+    Vector3 T1 = new Vector3(62.59f,6.4f,0);
+    Vector3 T2 = new Vector3(87.64f, 6.45f,0);
+    Vector3 T3 = new Vector3(62.59f, 9.01f, 0);
+    Vector3 T4 = new Vector3(87.64f, 9.02f, 0);
+    bool alive=true;
+    public GameObject BOSSalive;
 
 
-    
+
+
+
     public AudioClip[] audios;
     private bool Boss = true;
 
@@ -27,26 +31,33 @@ public class Level03BGM : MonoBehaviour
         GetComponent<AudioSource>().clip = audios[0];
         GetComponent<AudioSource>().Play();
         A = new Vector3(62,6, 0);
-        T3 = closeda.transform.position;
-        T4 = closedb.transform.position;
+       
         
-
-
-
     }
 
     // Update is called once per frame
     void Update()
     {
         FindBoss();
+         
 
-        if (Pin == true)
+        for (int i =0;i<1 && Pin == true;i++)
         {
-            V1();
-        } 
+             V1();
+        }
+
+        if (BOSSalive)
+        {
+
+        }
+        else
+        {
+            V2();
+        }
 
         
-        
+
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -71,9 +82,13 @@ public class Level03BGM : MonoBehaviour
 
     void V2()
     {
-        closeda.transform.position = Vector3.MoveTowards(closeda.transform.position, T3, 5 * Time.deltaTime);
-        closedb.transform.position = Vector3.MoveTowards(closedb.transform.position, T4, 5 * Time.deltaTime);
+        closeda.transform.position = Vector3.MoveTowards(closeda.transform.position, T3, 100 * Time.deltaTime);
+        closedb.transform.position = Vector3.MoveTowards(closedb.transform.position, T4, 100 * Time.deltaTime);
+        
+
     }
+
+
 
 
     void FindBoss()
