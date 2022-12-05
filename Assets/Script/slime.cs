@@ -38,7 +38,7 @@ public class slime : MonoBehaviour
             return;
         }
 
-        // 计算怪物与玩家的距离
+        // 計算怪物與玩家的距離
         Vector3 distance = player.transform.position - transform.position;
         
         // 若距離大於追擊範圍，則停止追擊
@@ -47,13 +47,13 @@ public class slime : MonoBehaviour
             return;
         }
 
-        // 根据距离调整怪物的移动速度
+        // 根據距離調整怪物的移動速度
         Vector3 velocity = distance.normalized * chaseSpeed * Time.deltaTime;
 
-        // 移动怪物
+        // 移動怪物
         transform.position += velocity;
 
-        // 如果距离小于一定值，则视为碰到了玩家
+        // 如果距離小於一定值，則視為碰到了玩家
         if (distance.magnitude < 1.8f)
         {
             isCollided = true;
@@ -90,7 +90,7 @@ public class slime : MonoBehaviour
         // 生成爆炸效果
         Instantiate(enemtDied1, transform.position, Quaternion.identity);
 
-        // 销毁怪物
+        // 銷毀怪物
         Destroy(gameObject, enemyDiedtime1);
     }
 }
