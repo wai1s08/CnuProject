@@ -2355,7 +2355,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51021713, y: 0.25095788}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.26, y: 0.26}
     adaptiveTilingThreshold: 0.5
@@ -2460,6 +2460,7 @@ MonoBehaviour:
   health: 10
   speed: 2
   DeathDelay: 0
+  enemtDied1: {fileID: 0}
   FloatPoint: {fileID: 8765368590188681971, guid: 923817ffe8249604da81c626d9d1c4ae,
     type: 3}
   myTransform: {fileID: 0}
@@ -2474,10 +2475,9 @@ MonoBehaviour:
   Money: {fileID: 104891876722689394, guid: 7fe24de17aa8a70438ef43239ee95934, type: 3}
   Monster: {fileID: 8547368576528135497}
   Moeneyint: 5
+  enemtDied1: {fileID: 0}
   status: 0
   waitTime: 5
-  time: 0
-  turnSpeed: 0.1
 --- !u!95 &8547368576528135499
 Animator:
   serializedVersion: 3
@@ -2557,7 +2557,7 @@ BoxCollider2D:
   m_Offset: {x: -0.0008561164, y: -0.18429255}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.51021713, y: 0.25095788}
     oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 0.26, y: 0.26}
     adaptiveTilingThreshold: 0.5
