@@ -13,19 +13,25 @@ public class MovingPlatform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
-        i = 1; 
+        // 將 i 初始化為 1，表示初始位置是 movPos[1]。
+        i = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        // 呼叫 MovePlatform 函數來控制平台的移動。
+        MovePlatform();
+    }
+
+    void MovePlatform()
+    {
         transform.position = Vector2.MoveTowards(transform.position, movPos[i].position, speed * Time.deltaTime);
-        if(Vector2.Distance(transform.position,movPos[i].position)<0.1f)
+        if (Vector2.Distance(transform.position, movPos[i].position) < 0.1f)
         {
-            if(waitTime <0.0f)
+            if (waitTime < 0.0f)
             {
-                if(i==0)
+                if (i == 0)
                 {
                     i = 1;
                 }

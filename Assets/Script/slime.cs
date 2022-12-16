@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class slime : MonoBehaviour
 {
-    // 玩家物件
-    public GameObject player;
 
     // 爆炸效果
     public GameObject enemtDied1;
@@ -28,18 +26,32 @@ public class slime : MonoBehaviour
     // 閃爍頻率
     public float flashFrequency = 0.5f;
 
+    public GameObject playerObject;
 
+    public PlayerHealth playerHPScript;
+
+    public int damage;
+
+
+
+    void Start()
+    {
+        playerObject = GameObject.Find("player");
+        playerHPScript = playerObject.GetComponent<PlayerHealth>();
+
+    }
     void Update()
     {
+        
         // 如果已經碰到玩家，則不再追擊
         if (isCollided == true)
         {
-           
+            
             return;
         }
 
         // 計算怪物與玩家的距離
-        Vector3 distance = player.transform.position - transform.position;
+        Vector3 distance = playerObject.transform.position - transform.position;
         
         // 若距離大於追擊範圍，則停止追擊
         if (distance.magnitude > chaseRange)
@@ -87,10 +99,25 @@ public class slime : MonoBehaviour
             count--;
         }
 
+
+        Vector3 distance = playerObject.transform.position - transform.position;
+
+        if (distance.magnitude < 5f)
+        {
+            //扣血
+            playerHPScript.health -= damage;
+
+            HealthBar.HealthCurrent -= damage;
+
+        }
+
         // 生成爆炸效果
         Instantiate(enemtDied1, transform.position, Quaternion.identity);
 
         // 銷毀怪物
         Destroy(gameObject, enemyDiedtime1);
+
+       
     }
+   
 }
