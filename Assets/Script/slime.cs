@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class slime : MonoBehaviour
+public class slime : Enemy
 {
 
     // 爆炸效果
