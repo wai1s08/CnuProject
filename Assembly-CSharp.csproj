@@ -101,6 +101,8 @@
     <Compile Include="Assets\Script\Portal.cs" />
     <Compile Include="Assets\Script\Sign.cs" />
     <Compile Include="Assets\Script\SoundManager.cs" />
+    <Compile Include="Assets\Script\Talk system\DailogSystem.cs" />
+    <Compile Include="Assets\Script\Talk system\TalkButton.cs" />
     <Compile Include="Assets\Script\initPlayer.cs" />
     <Compile Include="Assets\Script\slime.cs" />
     <Compile Include="Assets\Script\spike.cs" />
@@ -125,6 +127,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Script\Talk system\TEST.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
