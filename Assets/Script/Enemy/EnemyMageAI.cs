@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class EnemyMageAI : Enemy
 {
-    public enum Status { idle, Chase, Walk, /*patrol ,*/ Death, Attack };
+    public enum Status { idle, Chase, Death, Attack, SkillAttack };
+    public Status status;
+    public enum Skill { Random, FireBall, small, Teleport, Summon };
+    public Skill skill;
+
 
     [Header("目前狀態")]
-    public Status status;
+    
 
     private float wait;
 
@@ -17,13 +21,19 @@ public class EnemyMageAI : Enemy
     private BoxCollider2D box2D;
 
     [Header("火球(普通攻擊)")]
-    public GameObject FireBall;
-    public Transform FirePoint;
+    public GameObject FlameArrow;
+    public Transform FlameArrowPoint;
 
     [Header("普通攻擊冷卻時間")]
     public float NoramlAttackCD;
-   
     private float normalAttackCD ;
+    private int normalAttackNum;
+
+    public GameObject fireBall;
+    public Transform firePoint;
+    private int firePointNum;
+
+    private GameObject[] fire;
 
     private PolygonCollider2D AttackColl;
 
@@ -71,11 +81,13 @@ public class EnemyMageAI : Enemy
         switch (status)
         {
             case Status.idle:
-
                 
+                firePointNum = 0;
+                normalAttackNum = 0;
+
                 //anim.SetBool("Attack", false);
                 if (myTransform)
-                {
+                {      
                     if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
                     {
                         status = Status.Chase;
@@ -124,16 +136,47 @@ public class EnemyMageAI : Enemy
                 {
                     anim.SetTrigger("Attack");
                     normalAttackCD = NoramlAttackCD;
+                    normalAttackNum++;
                 }
 
                 Debug.Log(normalAttackCD);
                 normalAttackCD -= Time.deltaTime;
+
+                if(normalAttackNum > 3)
+                {
+                    status = Status.SkillAttack;
+                }
 
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 8)
                 {
                     anim.SetBool("Attack", false);
                     status = Status.idle;
                 }
+                break;
+
+            case Status.SkillAttack:
+
+                switch (skill)
+                {
+                    case Skill.Random:
+                        break;
+
+                    case Skill.FireBall:
+
+                        anim.SetBool("FireBall", true);
+
+                        break;
+
+                    case Skill.small:
+                        break;
+
+                    case Skill.Teleport:
+                        break;
+
+                    case Skill.Summon:
+                        break;
+                }
+
                 break;
 
             case Status.Death:
@@ -146,6 +189,31 @@ public class EnemyMageAI : Enemy
 
     void FireAttack()
     {
-        Instantiate(FireBall, FirePoint.position, FirePoint.rotation);
+        Instantiate(FlameArrow, FlameArrowPoint.position, FlameArrowPoint.rotation);
+    }
+
+    void FireBall()
+    {
+        if (GameObject.Find("FireBall(Clone)") == null)
+        {
+            Instantiate(fireBall, firePoint.position, firePoint.rotation);
+        }
+        else
+        {
+            firePointNum++;
+        }
+
+        if(firePointNum == 2)
+        {
+            var i = GameObject.Find("FireBall(Clone)").GetComponent<Transform>().localScale = new Vector3(3, 3, 3);
+        }
+
+        if (firePointNum == 4)
+        {
+            anim.SetBool("FireBall", false);          
+            status = Status.idle;
+            var i = GameObject.Find("FireBall(Clone)").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+        }
     }
 }

@@ -22,9 +22,9 @@ public class Arrow : MonoBehaviour
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         rb2d = GetComponent<Rigidbody2D>();
 
+
         
 
-        rb2d.velocity = transform.right * speed;
 
 
         startPos = transform.position;
@@ -33,6 +33,7 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rb2d.velocity = transform.right * speed;
         //transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         float distance = (transform.position - startPos).sqrMagnitude;
         if (distance > destroyDistance)
