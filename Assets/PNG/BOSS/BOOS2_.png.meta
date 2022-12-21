@@ -1,0 +1,1325 @@
+fileFormatVersion: 2
+guid: bcf7a717600da1e46b4dbbc3f5b0b86d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8375161128179264720
+    second: BOOS2__0
+  - first:
+      213: 3994048225996129843
+    second: BOOS2__1
+  - first:
+      213: -4469142532206841018
+    second: BOOS2__2
+  - first:
+      213: -8397233084411885954
+    second: BOOS2__3
+  - first:
+      213: -689477733557000576
+    second: BOOS2__4
+  - first:
+      213: -1506961351392317330
+    second: BOOS2__5
+  - first:
+      213: -6548242197316283753
+    second: BOOS2__6
+  - first:
+      213: 1327429224552931861
+    second: BOOS2__7
+  - first:
+      213: -8525932371333494247
+    second: BOOS2__8
+  - first:
+      213: 1747577375683672948
+    second: BOOS2__9
+  - first:
+      213: 4464938532205327989
+    second: BOOS2__10
+  - first:
+      213: 5656673096244618091
+    second: BOOS2__11
+  - first:
+      213: 964732415075497347
+    second: BOOS2__12
+  - first:
+      213: 3341678558663952729
+    second: BOOS2__13
+  - first:
+      213: -1235454481426416468
+    second: BOOS2__14
+  - first:
+      213: 6813297181046915523
+    second: BOOS2__15
+  - first:
+      213: -7852909663950267546
+    second: BOOS2__16
+  - first:
+      213: -5608411223508323490
+    second: BOOS2__17
+  - first:
+      213: -4891487119567831895
+    second: BOOS2__18
+  - first:
+      213: -5439568434811138893
+    second: BOOS2__19
+  - first:
+      213: 1028507285102406883
+    second: BOOS2__20
+  - first:
+      213: 6635214006417167064
+    second: BOOS2__21
+  - first:
+      213: 9120890066044669466
+    second: BOOS2__22
+  - first:
+      213: 1300000447142953752
+    second: BOOS2__23
+  - first:
+      213: -4524064809289599618
+    second: BOOS2__24
+  - first:
+      213: -5762692758379602276
+    second: BOOS2__25
+  - first:
+      213: 3884775238209271501
+    second: BOOS2__26
+  - first:
+      213: 1282118516544851922
+    second: BOOS2__27
+  - first:
+      213: -166556193554008959
+    second: BOOS2__28
+  - first:
+      213: -7207750605845290389
+    second: BOOS2__29
+  - first:
+      213: -5597684206107661454
+    second: BOOS2__30
+  - first:
+      213: 8558950443299686462
+    second: BOOS2__31
+  - first:
+      213: -8316276296264955492
+    second: BOOS2__32
+  - first:
+      213: 4026711948486190277
+    second: BOOS2__33
+  - first:
+      213: -6948918612215719261
+    second: BOOS2__34
+  - first:
+      213: 6620040519278955146
+    second: BOOS2__35
+  - first:
+      213: -8789880200840225936
+    second: BOOS2__36
+  - first:
+      213: -355479006983785435
+    second: BOOS2__37
+  - first:
+      213: -5334149427261664390
+    second: BOOS2__38
+  - first:
+      213: -1738983528849146793
+    second: BOOS2__39
+  - first:
+      213: -5513960828261479731
+    second: BOOS2__40
+  - first:
+      213: 7756389479264386042
+    second: BOOS2__41
+  - first:
+      213: -3715465977091192396
+    second: BOOS2__42
+  - first:
+      213: 5278602301587890249
+    second: BOOS2__43
+  - first:
+      213: -5857034890204662534
+    second: BOOS2__44
+  - first:
+      213: -1756354717399847793
+    second: BOOS2__45
+  - first:
+      213: -1196659988873588039
+    second: BOOS2__46
+  - first:
+      213: 844669226122382337
+    second: BOOS2__47
+  - first:
+      213: 1244831314576248450
+    second: BOOS2__48
+  - first:
+      213: 7683680766283097867
+    second: BOOS2__49
+  - first:
+      213: 4843964586451940556
+    second: BOOS2__50
+  - first:
+      213: 4917500282542293399
+    second: BOOS2__51
+  - first:
+      213: 865780498434689828
+    second: BOOS2__52
+  - first:
+      213: -3706834406372511246
+    second: BOOS2__53
+  - first:
+      213: -6344438792077624757
+    second: BOOS2__54
+  - first:
+      213: 2911567474454033656
+    second: BOOS2__55
+  - first:
+      213: 4458675331656770520
+    second: BOOS2__56
+  - first:
+      213: -5365478079148260598
+    second: BOOS2__57
+  - first:
+      213: 563850364428929304
+    second: BOOS2__58
+  - first:
+      213: 1072856079604914682
+    second: BOOS2__59
+  - first:
+      213: -4702000371202050986
+    second: BOOS2__60
+  - first:
+      213: 1272541725373142144
+    second: BOOS2__61
+  - first:
+      213: -7930111344347512681
+    second: BOOS2__62
+  - first:
+      213: -1418663645529303526
+    second: BOOS2__63
+  - first:
+      213: -6584036264781533357
+    second: BOOS2__64
+  - first:
+      213: 3936761555539367454
+    second: BOOS2__65
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BOOS2__0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0331732d35375cb80800000000000000
+      internalID: -8375161128179264720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 336474e33b5bd6730800000000000000
+      internalID: 3994048225996129843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643b835ab8a6af1c0800000000000000
+      internalID: -4469142532206841018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76c87b0009077b80800000000000000
+      internalID: -8397233084411885954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0862bc287ab7e66f0800000000000000
+      internalID: -689477733557000576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__5
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60b40892a2361be0800000000000000
+      internalID: -1506961351392317330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__6
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7925db56a68ff15a0800000000000000
+      internalID: -6548242197316283753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__7
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51223f1c8d9fb6210800000000000000
+      internalID: 1327429224552931861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ac9ab3eadcda980800000000000000
+      internalID: -8525932371333494247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b72273d54a04810800000000000000
+      internalID: 1747577375683672948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 348
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5767d0450f5a6fd30800000000000000
+      internalID: 4464938532205327989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b636b20f53a808e40800000000000000
+      internalID: 5656673096244618091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__12
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38531e7250b636d00800000000000000
+      internalID: 964732415075497347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95944b2b1f6006e20800000000000000
+      internalID: 3341678558663952729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__14
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cacf962e1b8cadee0800000000000000
+      internalID: -1235454481426416468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__15
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c1c87110b1bd8e50800000000000000
+      internalID: 6813297181046915523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b1303644cd40390800000000000000
+      internalID: -7852909663950267546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__17
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53f874f4bbea22b0800000000000000
+      internalID: -5608411223508323490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__18
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acb2c68162fd1cb0800000000000000
+      internalID: -4891487119567831895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__19
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc87af1455c284b0800000000000000
+      internalID: -5439568434811138893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__20
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ec2e613dedf54e00800000000000000
+      internalID: 1028507285102406883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__21
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 261
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d21135ebf3051c50800000000000000
+      internalID: 6635214006417167064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e4bf5c039e39e70800000000000000
+      internalID: 9120890066044669466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__23
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8130ecbd4878a0210800000000000000
+      internalID: 1300000447142953752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__24
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75b275860b4731c0800000000000000
+      internalID: -4524064809289599618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__25
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9e5113e77dc600b0800000000000000
+      internalID: -5762692758379602276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__26
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc672b92f7e79e530800000000000000
+      internalID: 3884775238209271501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df4b927ffffac110800000000000000
+      internalID: 1282118516544851922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__28
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1847210460640bdf0800000000000000
+      internalID: -166556193554008959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__29
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b622cf4230de8fb90800000000000000
+      internalID: -7207750605845290389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__30
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27b63225fd70152b0800000000000000
+      internalID: -5597684206107661454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__31
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38cc07b41087c670800000000000000
+      internalID: 8558950443299686462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__32
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 174
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99402325c6a69c80800000000000000
+      internalID: -8316276296264955492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c42756ce21c1e730800000000000000
+      internalID: 4026711948486190277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__34
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa18c1d65b709f90800000000000000
+      internalID: -6948918612215719261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__35
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a805e17cb1fdb50800000000000000
+      internalID: 6620040519278955146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__36
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bdda23782140680800000000000000
+      internalID: -8789880200840225936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5247f9ff9b5111bf0800000000000000
+      internalID: -355479006983785435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__38
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7317318b5b49f5b0800000000000000
+      internalID: -5334149427261664390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__39
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75cf0bca1b3edd7e0800000000000000
+      internalID: -1738983528849146793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__41
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afb7123e22b34ab60800000000000000
+      internalID: 7756389479264386042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__43
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940a4b873dc514940800000000000000
+      internalID: 5278602301587890249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__40
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca4e0647d97a73b0800000000000000
+      internalID: -5513960828261479731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__42
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 87
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b90e641163007cc0800000000000000
+      internalID: -3715465977091192396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__44
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4384c9cc1a7bea0800000000000000
+      internalID: -5857034890204662534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__45
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cecc9a0bc20a7e0800000000000000
+      internalID: -1756354717399847793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOOS2__46
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b2544e841c946fe0800000000000000
+      internalID: -1196659988873588039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
