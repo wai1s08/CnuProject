@@ -64,6 +64,7 @@ public abstract class Enemy : MonoBehaviour
     
     public static int money;
 
+
     [Header("怪物經驗值")]
     public int Moeneyint;
 
@@ -114,6 +115,7 @@ public abstract class Enemy : MonoBehaviour
         {
             IsSuperTime = false;
         }
+
 
 
     }
