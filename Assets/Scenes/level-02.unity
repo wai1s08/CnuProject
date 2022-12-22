@@ -2257,7 +2257,7 @@ GameObject:
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &534511320
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6459,6 +6459,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 950668897861107765, guid: b9df6803dbf5bd3448b72d3ed02f619d,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 950668897861107765, guid: b9df6803dbf5bd3448b72d3ed02f619d,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 950668897861107915, guid: b9df6803dbf5bd3448b72d3ed02f619d,
         type: 3}
       propertyPath: m_Name
@@ -6532,6 +6542,16 @@ PrefabInstance:
     - target: {fileID: 950668897861107764, guid: b9df6803dbf5bd3448b72d3ed02f619d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 950668897861107765, guid: b9df6803dbf5bd3448b72d3ed02f619d,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 950668897861107765, guid: b9df6803dbf5bd3448b72d3ed02f619d,
+        type: 3}
+      propertyPath: m_SortingLayerID
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 950668897861107915, guid: b9df6803dbf5bd3448b72d3ed02f619d,
