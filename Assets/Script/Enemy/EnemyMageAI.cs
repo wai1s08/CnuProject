@@ -30,6 +30,9 @@ public class EnemyMageAI : Enemy
     [Header("普通攻擊冷卻時間")]
     public float NoramlAttackCD;
     private float normalAttackCD;
+
+    [Header("普通攻擊幾次後施放技能")]
+    public int NormalAttackNum;
     private int normalAttackNum;
 
     [Header("火球術")]
@@ -165,7 +168,7 @@ public class EnemyMageAI : Enemy
                 //Debug.Log(normalAttackCD);
                 normalAttackCD -= Time.deltaTime;
 
-                if (normalAttackNum > 3)
+                if (normalAttackNum >= NormalAttackNum)
                 {
                     status = Status.SkillAttack;
                     //skill = Skill.Random;
@@ -189,19 +192,7 @@ public class EnemyMageAI : Enemy
 
                         anim.SetBool("FireBall", true);
 
-                        if (disrupt > Disrupt)
-                        {
-                            status = Status.idle;
-                            anim.SetBool("FireBall", false);
-
-                            anim.SetTrigger("Hit");
-                            if (GameObject.Find("FireBall(Clone)"))
-                            {
-                                Destroy(GameObject.Find("FireBall(Clone)"), 2);
-                            }
-
-                            waittime = waitTime;
-                        }
+                        DisruptFireBall();
 
                         break;
 
@@ -234,6 +225,7 @@ public class EnemyMageAI : Enemy
         Instantiate(FlameArrow, FlameArrowPoint.position, FlameArrowPoint.rotation);
     }
 
+    //火球術(動畫方法)
     void FireBall()
     {
         if (GameObject.Find("FireBall(Clone)") == null)
@@ -260,6 +252,25 @@ public class EnemyMageAI : Enemy
         Debug.Log(disrupt);
     }
 
+    //火球術(打斷)
+    void DisruptFireBall()
+    {
+        if (disrupt > Disrupt)
+        {
+            status = Status.idle;
+            anim.SetBool("FireBall", false);
+
+            anim.SetTrigger("Hit");
+            if (GameObject.Find("FireBall(Clone)"))
+            {
+                Destroy(GameObject.Find("FireBall(Clone)"), 2);
+            }
+
+            waittime = waitTime;
+        }
+    }
+
+    //變小術(動畫方法)
     void Small()
     {
 
@@ -276,6 +287,7 @@ public class EnemyMageAI : Enemy
 
     }
 
+    //變小術(還原)
     void Smillimg()
     {
         if (isSmall == true && smilltime <= 0)
