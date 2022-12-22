@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Beholder : Enemy
 {
-    public float speed;
+    //public float speed;
     public float startWaitTime;
     private float waitTime;
 
@@ -12,7 +12,7 @@ public class Beholder : Enemy
     public Transform leftDownPos;
     public Transform rightUpPos;
 
-   
+    
 
     public GameObject playerObject;
 
@@ -25,8 +25,8 @@ public class Beholder : Enemy
     // 是否已經碰到玩家
     private bool isChasingPlayer = false;
 
-
-
+    [Header("地圖物件")]
+    public bool isMap;
 
     // Start is called before the first frame update
     public new void Start()
@@ -79,7 +79,11 @@ public class Beholder : Enemy
             }
         }
 
+        if (health <= 0 && !isMap)
+        {
 
+            EnemyMageAI.killNum++;
+        }
 
 
     }

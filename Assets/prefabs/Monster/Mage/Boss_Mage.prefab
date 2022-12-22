@@ -214,6 +214,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   unrivaled: {fileID: 4357786253302043466}
+  Beholder: {fileID: 2943391138732382659, guid: db059152cc2ff1f45a597c5b5245238a,
+    type: 3}
+  spawn:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!61 &1147216557194181491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -277,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3574283026614457193
 Transform:
   m_ObjectHideFlags: 0

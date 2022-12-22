@@ -56,6 +56,19 @@ public class EnemyMageAI : Enemy
     [Header("無敵")]
     public GameObject unrivaled;
 
+    [Header("眼魔")]
+
+    public GameObject Beholder;
+    [Header("召喚點(眼魔)")]
+    public Transform[] spawn;
+    public int spawnNum;
+    public static int killNum;
+
+    [Header("補血間隔")]
+    public float healTime;
+    private float healtime;
+
+
 
 
     // public float time;
@@ -101,7 +114,7 @@ public class EnemyMageAI : Enemy
 
 
 
-        Debug.Log(smilltime);
+        //Debug.Log(smilltime);
 
         switch (status)
         {
@@ -350,7 +363,46 @@ public class EnemyMageAI : Enemy
 
     void summon()
     {
+       // killNum = 0;
         unrivaled.SetActive(true);
         box2D.enabled = false;
+
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    Instantiate(Beholder, spawn[i].position, spawn[i].rotation);
+        //    i++;
+        //}
+
+
+        if(spawnNum <= 4)
+        {
+            Instantiate(Beholder, spawn[spawnNum].position, spawn[spawnNum].rotation);
+            spawnNum++;
+        }
+
+        if(killNum == 5)
+        {
+            unrivaled.SetActive(false);
+            box2D.enabled = true;
+            killNum = 0;
+
+            status = Status.idle;
+        }
+
+        if(healtime <= 0)
+        {
+            health += 2;
+
+            healtime = healTime;
+        }
+        else
+        {
+            healtime -= Time.deltaTime;
+        }
+        
+
+        Debug.Log(killNum);
+
+       // Debug.Log(spawnNum);
     }
 }

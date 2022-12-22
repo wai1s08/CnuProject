@@ -8,7 +8,7 @@ public class MageTelepor : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(playerIsLeft);
+       // Debug.Log(playerIsLeft);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
