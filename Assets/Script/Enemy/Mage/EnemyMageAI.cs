@@ -50,9 +50,13 @@ public class EnemyMageAI : Enemy
     public float smillTime;
     private float smilltime;
 
-    private GameObject[] fire;
+    [Header("傳送")]
+    public Transform[] Boss_Teleport;
 
-    private PolygonCollider2D AttackColl;
+    [Header("無敵")]
+    public GameObject unrivaled;
+
+
 
     // public float time;
 
@@ -70,8 +74,6 @@ public class EnemyMageAI : Enemy
         player = GameObject.Find("player").GetComponent<Transform>();
 
         box2D = GetComponent<BoxCollider2D>();
-
-        AttackColl = GetComponent<PolygonCollider2D>();
 
         wait = waitTime;
 
@@ -111,7 +113,7 @@ public class EnemyMageAI : Enemy
                 normalAttackNum = 0;
 
                 waittime -= Time.deltaTime;
-                //anim.SetBool("Attack", false);
+
                 if (myTransform)
                 {
                     if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance && waittime <= 0f)
@@ -157,6 +159,20 @@ public class EnemyMageAI : Enemy
                 break;
 
             case Status.Attack:
+
+                if (PlayerTransform)
+                {
+                    if (myTransform.position.x >= PlayerTransform.position.x)
+                    {
+                        transform.localRotation = Quaternion.Euler(0, 180, 0);
+                        face = Face.Left;
+                    }
+                    else
+                    {
+                        transform.localRotation = Quaternion.Euler(0, 0, 0);
+                        face = Face.Right;
+                    }
+                }
 
                 if (normalAttackCD <= 0)
                 {
@@ -204,9 +220,15 @@ public class EnemyMageAI : Enemy
                         break;
 
                     case Skill.Teleport:
+
+                        anim.SetBool("Teleport1",true);
+
                         break;
 
                     case Skill.Summon:
+
+                        summon();
+
                         break;
                 }
 
@@ -219,7 +241,7 @@ public class EnemyMageAI : Enemy
         }
     }
 
-
+    //普通攻擊(動畫方法)
     void FireAttack()
     {
         Instantiate(FlameArrow, FlameArrowPoint.position, FlameArrowPoint.rotation);
@@ -249,7 +271,7 @@ public class EnemyMageAI : Enemy
             var i = GameObject.Find("FireBall(Clone)").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             waittime = waitTime;
         }
-        Debug.Log(disrupt);
+        //Debug.Log(disrupt);
     }
 
     //火球術(打斷)
@@ -305,4 +327,30 @@ public class EnemyMageAI : Enemy
         }
     }
 
+    void Teleport()
+    {
+        anim.SetBool("Teleport1", false);
+
+        anim.SetTrigger("Teleport2");
+
+        if (MageTelepor.playerIsLeft == true)
+        {
+            Monster.position = new Vector2(Boss_Teleport[0].position.x, myTransform.position.y);
+            
+        }
+        else
+        {
+            Monster.position = new Vector2(Boss_Teleport[1].position.x, myTransform.position.y);
+            
+        }
+        skill = Skill.Summon;
+
+    }
+
+
+    void summon()
+    {
+        unrivaled.SetActive(true);
+        box2D.enabled = false;
+    }
 }

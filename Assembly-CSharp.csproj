@@ -77,9 +77,10 @@
     <Compile Include="Assets\Script\Enemy\ArrowBoss.cs" />
     <Compile Include="Assets\Script\Enemy\Boss01AI.cs" />
     <Compile Include="Assets\Script\Enemy\Enemy.cs" />
-    <Compile Include="Assets\Script\Enemy\EnemyMageAI.cs" />
     <Compile Include="Assets\Script\Enemy\EnemySkeletonAi.cs" />
     <Compile Include="Assets\Script\Enemy\EnemyWolfAI.cs" />
+    <Compile Include="Assets\Script\Enemy\Mage\EnemyMageAI.cs" />
+    <Compile Include="Assets\Script\Enemy\Mage\MageTelepor.cs" />
     <Compile Include="Assets\Script\Enemy\Money.cs" />
     <Compile Include="Assets\Script\Enemy\test.cs" />
     <Compile Include="Assets\Script\FloatPointBase.cs" />
