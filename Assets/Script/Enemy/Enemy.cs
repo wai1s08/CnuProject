@@ -150,8 +150,13 @@ public abstract class Enemy : MonoBehaviour
         gb.transform.GetChild(0).GetComponent<TextMesh>().text = damage.ToString();
         Instantiate(FloatPoint, transform.position, Quaternion.identity);
         health -= damage;
-
         Instantiate(enemtDied1, transform.position, Quaternion.identity);
+
+        if (anim.GetBool("FireBall") == true)
+        {
+            EnemyMageAI.disrupt += damage;
+
+        }
     }
 
 

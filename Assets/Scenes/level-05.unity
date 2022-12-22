@@ -1839,6 +1839,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
+      propertyPath: Disrupt
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
+        type: 3}
       propertyPath: FireBall
       value: 
       objectReference: {fileID: 8946697781946442415, guid: 78e9a0cac15b3fc43a68f095354b9125,
@@ -1849,6 +1854,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 805182857685240639, guid: eaea3da047efc9840a0e9657f832335e,
         type: 3}
+    - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
+        type: 3}
+      propertyPath: waitTime
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
       propertyPath: FirePoint
@@ -129169,6 +129179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
+    - target: {fileID: 3248099340498301435, guid: 078115c0a1453b644aec700dcb75bfe9,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3248099340498301436, guid: 078115c0a1453b644aec700dcb75bfe9,
         type: 3}
       propertyPath: m_RootOrder
@@ -130720,7 +130735,7 @@ PrefabInstance:
     - target: {fileID: 4217874136243427782, guid: 93ce137d765428b42b831da52d597388,
         type: 3}
       propertyPath: damge
-      value: 2
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4217874136243427785, guid: 93ce137d765428b42b831da52d597388,
         type: 3}

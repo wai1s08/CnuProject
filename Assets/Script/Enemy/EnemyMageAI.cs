@@ -11,12 +11,13 @@ public class EnemyMageAI : Enemy
 
 
     [Header("目前狀態")]
-    
+
 
     private float wait;
 
-    [Header("巡邏等待時間")]
-    public float waitTime = 5;
+    [Header("技能結束等待時間")]
+    public float waitTime;
+    private float waittime;
 
     private BoxCollider2D box2D;
 
@@ -26,12 +27,17 @@ public class EnemyMageAI : Enemy
 
     [Header("普通攻擊冷卻時間")]
     public float NoramlAttackCD;
-    private float normalAttackCD ;
+    private float normalAttackCD;
     private int normalAttackNum;
 
+    [Header("火球術")]
     public GameObject fireBall;
     public Transform firePoint;
     private int firePointNum;
+    [Header("打斷火球術傷害")]
+    public int Disrupt;
+    public static int disrupt;
+
 
     private GameObject[] fire;
 
@@ -81,14 +87,17 @@ public class EnemyMageAI : Enemy
         switch (status)
         {
             case Status.idle:
-                
+
+
+                disrupt = 0;
                 firePointNum = 0;
                 normalAttackNum = 0;
 
+                waittime -= Time.deltaTime;
                 //anim.SetBool("Attack", false);
                 if (myTransform)
-                {      
-                    if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance)
+                {
+                    if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) < Distance && waittime <= 0f)
                     {
                         status = Status.Chase;
                     }
@@ -96,7 +105,7 @@ public class EnemyMageAI : Enemy
                 break;
 
             case Status.Chase:
-                
+
                 if (PlayerTransform)
                 {
                     if (myTransform.position.x >= PlayerTransform.position.x)
@@ -132,17 +141,17 @@ public class EnemyMageAI : Enemy
 
             case Status.Attack:
 
-                if(normalAttackCD <= 0)
+                if (normalAttackCD <= 0)
                 {
                     anim.SetTrigger("Attack");
                     normalAttackCD = NoramlAttackCD;
                     normalAttackNum++;
                 }
 
-                Debug.Log(normalAttackCD);
+                //Debug.Log(normalAttackCD);
                 normalAttackCD -= Time.deltaTime;
 
-                if(normalAttackNum > 3)
+                if (normalAttackNum > 3)
                 {
                     status = Status.SkillAttack;
                 }
@@ -164,6 +173,20 @@ public class EnemyMageAI : Enemy
                     case Skill.FireBall:
 
                         anim.SetBool("FireBall", true);
+
+                        if (disrupt > Disrupt)
+                        {
+                            status = Status.idle;
+                            anim.SetBool("FireBall", false);
+
+                            anim.SetTrigger("Hit");
+                            if (GameObject.Find("FireBall(Clone)"))
+                            {
+                                Destroy(GameObject.Find("FireBall(Clone)"), 2);
+                            }
+
+                            waittime = waitTime;
+                        }
 
                         break;
 
@@ -203,17 +226,19 @@ public class EnemyMageAI : Enemy
             firePointNum++;
         }
 
-        if(firePointNum == 2)
+        if (firePointNum == 2)
         {
             var i = GameObject.Find("FireBall(Clone)").GetComponent<Transform>().localScale = new Vector3(3, 3, 3);
         }
 
         if (firePointNum == 4)
         {
-            anim.SetBool("FireBall", false);          
+            anim.SetBool("FireBall", false);
             status = Status.idle;
             var i = GameObject.Find("FireBall(Clone)").GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-
+            waittime = waitTime;
         }
+        Debug.Log(disrupt);
     }
+
 }

@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   damage: 20
-  destroyDistance: 50
+  destroyDistance: 300
   playerHealth: {fileID: 0}
 --- !u!50 &8114978591409730797
 Rigidbody2D:
