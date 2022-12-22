@@ -5,13 +5,15 @@ using UnityEngine;
 public class EnemyMageAI : Enemy
 {
     public enum Status { idle, Chase, Death, Attack, SkillAttack };
-    public Status status;
-    public enum Skill { Random, FireBall, small, Teleport, Summon };
-    public Skill skill;
-
 
     [Header("目前狀態")]
+    public Status status;
+    public enum Skill { Random, FireBall, small, Teleport, Summon };
 
+    [Header("目前技能狀態")]
+    public Skill skill;
+
+    private Transform player;
 
     private float wait;
 
@@ -38,6 +40,12 @@ public class EnemyMageAI : Enemy
     public int Disrupt;
     public static int disrupt;
 
+    [Header("縮小術")]
+    private bool isSmall = false;
+
+    [Header("縮小時間")]
+    public float smillTime;
+    private float smilltime;
 
     private GameObject[] fire;
 
@@ -56,7 +64,7 @@ public class EnemyMageAI : Enemy
 
         status = Status.Chase;
 
-
+        player = GameObject.Find("player").GetComponent<Transform>();
 
         box2D = GetComponent<BoxCollider2D>();
 
@@ -83,6 +91,12 @@ public class EnemyMageAI : Enemy
             status = Status.Death;
         }
         //Debug.Log(status);
+
+        Smillimg();
+
+
+
+        Debug.Log(smilltime);
 
         switch (status)
         {
@@ -154,6 +168,7 @@ public class EnemyMageAI : Enemy
                 if (normalAttackNum > 3)
                 {
                     status = Status.SkillAttack;
+                    //skill = Skill.Random;
                 }
 
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 8)
@@ -191,6 +206,10 @@ public class EnemyMageAI : Enemy
                         break;
 
                     case Skill.small:
+
+                        anim.SetBool("Small", true);
+
+
                         break;
 
                     case Skill.Teleport:
@@ -239,6 +258,39 @@ public class EnemyMageAI : Enemy
             waittime = waitTime;
         }
         Debug.Log(disrupt);
+    }
+
+    void Small()
+    {
+
+        var i = GameObject.Find("player").GetComponent<Transform>().localScale = new Vector2(1, 1);
+        
+        isSmall = true;
+
+        if(isSmall == true)
+        {
+            smilltime = smillTime;
+            anim.SetBool("Small", false);
+            status = Status.idle;            
+        }
+
+    }
+
+    void Smillimg()
+    {
+        if (isSmall == true && smilltime <= 0)
+        {
+            isSmall = false;
+
+            player.localScale = new Vector2(5, 5);
+
+            player.position = new Vector2(player.position.x, player.position.y + 2);
+
+        }
+        else if (isSmall == true)
+        {
+            smilltime -= Time.deltaTime;
+        }
     }
 
 }

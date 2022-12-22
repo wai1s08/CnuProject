@@ -1827,10 +1827,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1147216557194181491, guid: e6fb51e6234cefa4d8320389763b26b3,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 5.625
+      objectReference: {fileID: 0}
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
       propertyPath: skill
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
@@ -1840,7 +1845,7 @@ PrefabInstance:
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
       propertyPath: Disrupt
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
@@ -1869,6 +1874,11 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1922257825}
+    - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
+        type: 3}
+      propertyPath: smillTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3094329968226265415, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
       propertyPath: FlameArrow
@@ -1929,6 +1939,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690692991642019403, guid: e6fb51e6234cefa4d8320389763b26b3,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 5.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5690692991642019403, guid: e6fb51e6234cefa4d8320389763b26b3,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8393233889252229405, guid: e6fb51e6234cefa4d8320389763b26b3,
         type: 3}
