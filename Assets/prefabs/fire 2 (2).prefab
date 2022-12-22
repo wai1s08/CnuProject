@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8164578538114780460
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3090225919209850020, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.37486652
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919209850020, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6710273
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919209850020, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9811321
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919209850020, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 2.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919209850020, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 4.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919209850023, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919209850023, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773962, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 62.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773963, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090225919913773964, guid: fb9047a1597857a479a77f93372843e7,
+        type: 3}
+      propertyPath: m_Name
+      value: fire 2 (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb9047a1597857a479a77f93372843e7, type: 3}
