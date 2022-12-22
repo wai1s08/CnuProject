@@ -200,7 +200,7 @@ public class EnemyMageAI : Enemy
                 if (normalAttackNum >= NormalAttackNum)
                 {
                     status = Status.SkillAttack;
-                    //skill = Skill.Random;
+                    skill = Skill.Random;
                 }
 
                 if (Mathf.Abs(myTransform.position.x - PlayerTransform.position.x) >= 8)
@@ -215,6 +215,29 @@ public class EnemyMageAI : Enemy
                 switch (skill)
                 {
                     case Skill.Random:
+                        var i = Random.Range(0, 3);
+
+                        if (i == 0)
+                        {
+                            skill = Skill.FireBall;
+                        }
+
+                        if (i == 1)
+                        {
+                            skill = Skill.small;
+                        }
+
+                        if ( i == 2)
+                        {
+                            skill = Skill.Teleport;
+                        }
+
+                        if (i == 3)
+                        {
+                            skill = Skill.Summon;
+                        }
+
+
                         break;
 
                     case Skill.FireBall:
@@ -356,8 +379,10 @@ public class EnemyMageAI : Enemy
             Monster.position = new Vector2(Boss_Teleport[1].position.x, myTransform.position.y);
             
         }
-        skill = Skill.Summon;
 
+            skill = Skill.Summon;
+       
+       
     }
 
 
@@ -385,7 +410,7 @@ public class EnemyMageAI : Enemy
             unrivaled.SetActive(false);
             box2D.enabled = true;
             killNum = 0;
-
+            spawnNum = 0; 
             status = Status.idle;
         }
 
@@ -401,7 +426,7 @@ public class EnemyMageAI : Enemy
         }
         
 
-        Debug.Log(killNum);
+        //Debug.Log(killNum);
 
        // Debug.Log(spawnNum);
     }
