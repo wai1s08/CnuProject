@@ -13,6 +13,7 @@ public class DailogSystem : MonoBehaviour
     public TextAsset textFile;
     public int index;
 
+    public GameObject Button;
     List<string> textList = new List<string>();
     // Start is called before the first frame update
 
@@ -33,6 +34,7 @@ public class DailogSystem : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.F) && index == textList.Count)
         {
             gameObject.SetActive(false);
+            Button.SetActive(false);
             index = 0;
             return;
         }
@@ -41,6 +43,11 @@ public class DailogSystem : MonoBehaviour
         {
             textLabel.text = textList[index];
             index++;
+        }
+
+        if(index == 5)
+        {
+            Button.SetActive(true);
         }
     }
 
@@ -55,5 +62,10 @@ public class DailogSystem : MonoBehaviour
         {
             textList.Add(line);
         }
+    }
+
+    public void LevelUpdate()
+    {
+        Debug.Log("升級");
     }
 }
