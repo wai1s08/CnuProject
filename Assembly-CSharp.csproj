@@ -67,6 +67,7 @@
     <Compile Include="Assets\Inevntory\InevntoryScripts\itemUse.cs" />
     <Compile Include="Assets\Script\BGMfadin.cs" />
     <Compile Include="Assets\Script\BOSSHP.cs" />
+    <Compile Include="Assets\Script\BOSSHPMAGE.cs" />
     <Compile Include="Assets\Script\BOSSROOM.cs" />
     <Compile Include="Assets\Script\CameraFollow.cs" />
     <Compile Include="Assets\Script\CheckInit.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Assets\Script\HealthBar.cs" />
     <Compile Include="Assets\Script\HideWall.cs" />
     <Compile Include="Assets\Script\Level03BGM.cs" />
+    <Compile Include="Assets\Script\Level05BGM.cs" />
     <Compile Include="Assets\Script\Menu.cs" />
     <Compile Include="Assets\Script\MeshRendererSortingEditor.cs" />
     <Compile Include="Assets\Script\MovingPlatform.cs" />
