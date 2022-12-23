@@ -10,6 +10,8 @@ public class BOSSHP : MonoBehaviour
     public int B_HPMAX;
     private Image BOSS_Image;
 
+
+
     // Start is called before the first frame update
     void Start()
     {
