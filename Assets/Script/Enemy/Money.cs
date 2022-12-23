@@ -13,7 +13,7 @@ public class Money : MonoBehaviour
 
     public float speed;
 
-    private static int money;
+    public static int money;
 
     public Text MoneyNum;
 
@@ -38,6 +38,8 @@ public class Money : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+
+        MoneyNum.text = money.ToString();
     }
 
     void OnTriggerEnter2D (Collider2D collision)
@@ -54,6 +56,5 @@ public class Money : MonoBehaviour
 
         Debug.Log("trigger");
     }
-
 
 }

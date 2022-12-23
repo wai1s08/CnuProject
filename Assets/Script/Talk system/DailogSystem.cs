@@ -15,6 +15,8 @@ public class DailogSystem : MonoBehaviour
 
     public GameObject Button;
     List<string> textList = new List<string>();
+
+    public static int LevelHp;
     // Start is called before the first frame update
 
     void Awake()
@@ -66,6 +68,11 @@ public class DailogSystem : MonoBehaviour
 
     public void LevelUpdate()
     {
-        Debug.Log("升級");
+        if(Money.money >= 10)
+        {
+            LevelHp += 10;
+            Money.money -= 10;
+
+        }
     }
 }
