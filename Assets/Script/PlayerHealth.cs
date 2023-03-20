@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     public int Blinks;
     public float BlinksTime;
 
-    public float SuperTime;
+    public static float SuperTime;
 
     private float Face;
 
@@ -47,6 +47,8 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //Debug.Log(SuperTime);
         HealthBar.HealthMax = Maxhealth + EquipManager.Totalhp + DailogSystem.LevelHp;
         Face = GetComponent<Transform>().rotation.y;
 

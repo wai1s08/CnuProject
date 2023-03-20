@@ -68,11 +68,14 @@ public abstract class Enemy : MonoBehaviour
     [Header("怪物經驗值")]
     public int Moeneyint;
 
+
+
     // Start is called before the first frame update
     public void Start()
     {
         PlayerCollider = GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+
         // anim = this.GetComponent<Animator>();
 
         myTransform = this.transform;
@@ -132,7 +135,8 @@ public abstract class Enemy : MonoBehaviour
                     playerHealth.DamagePlayer(damage);
                     //Debug.Log(damage);
 
-                    superTime = playerHealth.SuperTime;
+
+                    superTime = PlayerHealth.SuperTime;
 
                     IsSuperTime = true;
 

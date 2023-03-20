@@ -416,14 +416,19 @@ public class EnemyMageAI : Enemy
 
         if(healtime <= 0)
         {
-            health += 2;
 
+            if(health < 100)
+            {
+                health += 10;
+            }
+            
             healtime = healTime;
         }
         else
         {
             healtime -= Time.deltaTime;
         }
+
         
 
         //Debug.Log(killNum);

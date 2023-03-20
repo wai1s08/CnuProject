@@ -44,7 +44,7 @@ public class spike : Enemy
                 {
                     playerHealth.DamagePlayer(damge);
 
-                    superTime = playerHealth.SuperTime;
+                    superTime = PlayerHealth.SuperTime;
 
                     IsSuperTime = true;
                 }
