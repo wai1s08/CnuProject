@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -354,7 +354,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.27450982, g: 0.52156866, b: 0.85098046, a: 1}
+    m_NormalColor: {r: 0.2264151, g: 0.0074759745, b: 0.21716468, a: 1}
     m_HighlightedColor: {r: 0.27450982, g: 0.52156866, b: 0.85098046, a: 1}
     m_PressedColor: {r: 0.16078433, g: 0.26605865, b: 0.4509804, a: 1}
     m_SelectedColor: {r: 0.16078433, g: 0.32315242, b: 0.4509804, a: 1}
@@ -704,8 +704,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291753981
-  m_fontColor: {r: 0.990566, g: 0.9703186, b: 0.80833924, a: 1}
+    rgba: 4278226687
+  m_fontColor: {r: 1, g: 0.55833334, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -837,8 +837,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291753981
-  m_fontColor: {r: 0.990566, g: 0.9703186, b: 0.80833924, a: 1}
+    rgba: 4278226687
+  m_fontColor: {r: 1, g: 0.5568628, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -964,7 +964,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.28862584, g: 0.53928596, b: 0.8867924, a: 1}
+    m_NormalColor: {r: 0.2264151, g: 0.0074759745, b: 0.21716468, a: 1}
     m_HighlightedColor: {r: 0.2901961, g: 0.5411765, b: 0.8862746, a: 1}
     m_PressedColor: {r: 0.16078433, g: 0.26605865, b: 0.4509804, a: 1}
     m_SelectedColor: {r: 0.16078433, g: 0.32315242, b: 0.4509804, a: 1}
